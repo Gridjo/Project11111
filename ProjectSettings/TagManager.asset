@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - projectile
+  - Platforrm
+  - MeleDistance
+  - RangeGistance
+  - RangeEntity
+  - MeleEntity
   layers:
   - Default
   - TransparentFX
