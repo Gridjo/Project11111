@@ -25,27 +25,34 @@ public class SpawnEnemy : MonoBehaviour
     }
 
     // Update is called once per frame
+    public void SpawnMele(GameObject[] spawnPoint, GameObject enemyPoolMeles)
+    {
+        var curEnemy = enemyPoolMeles.transform.GetChild(0);
+        curEnemy.SetParent(spawnPoint[UnityEngine.Random.Range(0, spawnPoint.Length)].transform, false);
+        gameObject.transform.localPosition = new Vector3();
+        curEnemy.gameObject.SetActive(true);
+    }
+    public void SpawnRange(GameObject[] spawnPoint, GameObject enemyPoolRange)
+    {
+        var curEnemy = enemyPoolRange.transform.GetChild(0);
+        curEnemy.SetParent(spawnPoint[UnityEngine.Random.Range(0, spawnPoint.Length)].transform, false);
+        gameObject.transform.localPosition = new Vector3();
+        curEnemy.gameObject.SetActive(true);
+    }
     void Update()
     {
 
-        if (timeToSpawn <= 0 && waves.Length >= WaveNomber)
+        if (timeToSpawn <= 0 && waves.Length - 1 >= WaveNomber)
         {
 
             for (int i = 0; waves[WaveNomber].meles >= i; i++)
             {
-                var curEnemy = enemyPoolMeles.transform.GetChild(0);
-                curEnemy.SetParent(spawnPoint[UnityEngine.Random.Range(0, spawnPoint.Length)].transform, false);
-                gameObject.transform.localPosition = new Vector3();
-                curEnemy.gameObject.SetActive(true);
-
+                SpawnMele(spawnPoint, enemyPoolMeles);
             }
 
             for (int i = 0; waves[WaveNomber].ranges >= i; i++)
             {
-                var curEnemy = enemyPoolRanges.transform.GetChild(0);
-                curEnemy.SetParent(spawnPoint[UnityEngine.Random.Range(0, spawnPoint.Length)].transform, false);
-                gameObject.transform.localPosition = new Vector3();
-                curEnemy.gameObject.SetActive(true);
+                SpawnRange(spawnPoint, enemyPoolRanges);
             }
             timeToSpawn = timeToSpawnClone;
             WaveNomber++;

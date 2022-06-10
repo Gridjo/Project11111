@@ -12,7 +12,10 @@ public class Platform : MonoBehaviour
     {
          
     }
-
+    public void GetDamage(float Damage)
+    {
+        HeetPoints -= Damage;
+    }
     // Update is called once per frame
     void Update()
     {
