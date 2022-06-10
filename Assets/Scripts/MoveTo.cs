@@ -6,8 +6,15 @@ using UnityEngine.AI;
 
 public class MoveTo : MonoBehaviour
 {
+    public int AttackDamage = 1;
+    public float EnemySpeed = 3.5f;
+    public float timeToAtack = 1f, timeToAtackClone = 1f;
+    public float curHeetPoint = 100, maxHeetPoint = 100;
+
     public Transform goal;
     public GameObject enemyPool;
+    public bool reachedAttackDistance = false; 
+
 
     void OnEnable()
     {
@@ -16,44 +23,68 @@ public class MoveTo : MonoBehaviour
             = GetComponent<NavMeshAgent>();
         // ”казаие точки назначени€
         agent.destination = goal.position;
+        agent.speed = EnemySpeed;
+        gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        curHeetPoint = maxHeetPoint;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (reachedAttackDistance ) //TODO
+        {
+            if (timeToAtack <= 0)
+            {
+                GiveDamage(goal);
+                timeToAtack = timeToAtackClone;
+            }
+            timeToAtack -= Time.deltaTime;
+        }
+        if (curHeetPoint <= 0)
+        {
+            EnemyDeath();
+        }
         
     }
-    void OnCollisionEnter(Collision myCollision)
+    public void Stop()
+    {
+        NavMeshAgent agent  = GetComponent<NavMeshAgent>();
+        agent.isStopped = true;
+        
+    }
+        
+    
+    void OnTriggerEnter(Collider myCollision)
     {
         // определение столкновени€ с двум€ разноименными объектами
         if (myCollision.gameObject.tag == "MeleDistance" && gameObject.activeSelf && this.gameObject.tag == "MeleEntity")
         {
-            /*gameObject.SetActive(false);
-            gameObject.transform.SetParent(enemyPool.transform, false);
-            gameObject.transform.localPosition = new Vector3();
-            Debug.Log("spawn " + gameObject.name);*/
-            myCollision.gameObject.transform.parent.gameObject.GetComponent<Platform>().HeetPoints -= 1;
-            gameObject.GetComponent<Rigidbody>().isKinematic = true;
-            gameObject.GetComponent<Rigidbody>().isKinematic = false;
-
+            Stop();
+            reachedAttackDistance = true; 
         }
-        if (myCollision.gameObject.tag == "RangeGistance" && gameObject.activeSelf && this.gameObject.tag == "MeleEntity")
-        {
-            Physics.IgnoreCollision(myCollision.gameObject.GetComponent<Collider>(), GetComponent<Collider>());
-        }
+       
         if (myCollision.gameObject.tag == "RangeGistance" && gameObject.activeSelf && this.gameObject.tag == "RangeEntity")
         {
-            /*gameObject.SetActive(false);*/
-            /*gameObject.GetComponent<NavMeshAgent>().enabled = false;*/
-            /*gameObject.transform.SetParent(enemyPool.transform, false);
-            gameObject.transform.localPosition = new Vector3();
-            Debug.Log("spawn " + gameObject.name);*/
-            myCollision.gameObject.transform.parent.gameObject.GetComponent<Platform>().HeetPoints -= 1;
-            gameObject.GetComponent<Rigidbody>().isKinematic = true;
-            gameObject.GetComponent<Rigidbody>().isKinematic = false;
-
+            Stop();
+            reachedAttackDistance = true;
         }
 
     }
+    void GiveDamage(Transform target)
+    {
+        goal.gameObject.GetComponent<Platform>().GetDamage(AttackDamage);
+
+    }
+    public void GetDamage(int Damage)
+    {
+        curHeetPoint -= Damage;
+    }
+    public void EnemyDeath()
+    {
+        gameObject.SetActive(false);
+        gameObject.transform.SetParent(enemyPool.transform, false);
+        gameObject.transform.localPosition = new Vector3();
+    }
+
 }
 
