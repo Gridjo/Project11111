@@ -30,6 +30,7 @@ namespace HurricaneVR.Framework.ControllerInput
         public bool IsSprintingActivated;
         public bool SprintRequiresDoubleClick;
 
+        public bool IsInventoryButton;
         public bool IsCrouchActivated;
         public bool IsStandActivated;
 
@@ -100,6 +101,7 @@ namespace HurricaneVR.Framework.ControllerInput
             IsTeleportDeactivated = GetTeleportDeactivated();
             IsSprintingActivated = GetSprinting();
 
+            IsInventoryButton = GetInventoryButton();
             IsCrouchActivated = GetCrouch();
 
             IsLeftGrabActivated = GetIsLeftGrabActivated();
@@ -427,6 +429,21 @@ namespace HurricaneVR.Framework.ControllerInput
             }
 
             return RightController.SecondaryButtonState.JustActivated;
+        }
+
+        protected virtual bool GetInventoryButton()
+        {
+            /*if (LeftController.ControllerType == HVRControllerType.Vive)
+            {
+                return LeftController.TrackPadUp.JustActivated;
+            }
+
+            if (LeftController.ControllerType == HVRControllerType.WMR)
+            {
+                return LeftController.TrackPadDown.JustActivated;
+            }*/
+
+            return LeftController.SecondaryButtonState.JustActivated;
         }
 
         protected virtual Vector2 GetMouse(out bool mouseDown)
