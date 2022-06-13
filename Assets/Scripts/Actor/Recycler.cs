@@ -22,6 +22,7 @@ public class Recycler : MonoBehaviour
 
     public void TakeScrap()
     {
+        //IDK
         if(gameObject.TryGetComponent<HVRSocket>(out HVRSocket socket))
         {
             
