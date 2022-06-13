@@ -2025,6 +2025,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 253467609864924289, guid: 9c04d4bd649dbd345970b113a72adc75, type: 3}
+      propertyPath: BeforeGrabbed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddScrapToRecycle
+      objectReference: {fileID: 0}
     - target: {fileID: 798177804649302824, guid: 9c04d4bd649dbd345970b113a72adc75, type: 3}
       propertyPath: Transforms.Array.data[1]
       value: 
