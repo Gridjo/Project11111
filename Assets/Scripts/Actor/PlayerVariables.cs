@@ -34,15 +34,6 @@ public class PlayerVariables : MonoBehaviour
             Debug.LogError($"{scrap.gameObject.name} has cost is {scrap.AmountScrap}");
     }
 
-    public void delScraps(Scrap scrap)
-    {
-        if (scrap.AmountScrap > 0)
-        {
-            scrapsBagHave += scrap.AmountScrap;
-            Debug.Log(scrapsBagHave);
-        }
-    }
-
     public void AddScraps(RecyclerItem item)
     {
         if (item.RecyclerCost > 0)
