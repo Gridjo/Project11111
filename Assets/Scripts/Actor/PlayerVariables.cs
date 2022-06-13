@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerVariables : MonoBehaviour
 {
-    private int scrapsHave;
+    private int scrapsBagHave;
+    private int ammoScrap;
     public static PlayerVariables Instance;
 
     private void Awake()
@@ -12,19 +13,48 @@ public class PlayerVariables : MonoBehaviour
         Instance = this;
     }
 
-    public int GetScrapsAmount()
+    public int GetBagScrapsAmount()
     {
-        return scrapsHave;
-    }    
+        return scrapsBagHave;
+    }
+
+    public int GetAmmoScrapsAmount()
+    {
+        return ammoScrap;
+    }
+
+    public void AddAmmoScraps(Scrap scrap)
+    {
+        if (scrap.AmountScrap > 0)
+        {
+            ammoScrap += scrap.AmountScrap;
+            Debug.Log(scrapsBagHave);
+        }
+        else
+            Debug.LogError($"{scrap.gameObject.name} has cost is {scrap.AmountScrap}");
+    }
 
     public void AddScraps(RecyclerItem item)
     {
         if (item.RecyclerCost > 0)
         {
-            scrapsHave += item.RecyclerCost;
-            Debug.Log(scrapsHave);
+            scrapsBagHave += item.RecyclerCost;
+            Debug.Log(scrapsBagHave);
         }
         else
             Debug.LogError($"{item.gameObject.name} has cost is {item.RecyclerCost}");
-    }    
+    }
+
+    public void AddScraps(Scrap scrap)
+    {
+        if (scrap.AmountScrap > 0)
+        {
+            scrapsBagHave += scrap.AmountScrap;
+            Debug.Log(scrapsBagHave);
+        }
+        else
+            Debug.LogError($"{scrap.gameObject.name} has cost is {scrap.AmountScrap}");
+    }
+
+
 }
