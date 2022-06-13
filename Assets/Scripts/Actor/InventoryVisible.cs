@@ -6,7 +6,6 @@ using UnityEngine;
 public class InventoryVisible : MonoBehaviour
 {
     public GameObject PlayerController;
-    private HVRPlayerInputs hVRPlayerInputs;
 
     private bool isVisible = false;
 
@@ -14,7 +13,6 @@ public class InventoryVisible : MonoBehaviour
     {
         if (PlayerController.GetComponent<HVRPlayerInputs>().IsInventoryButton)
         {
-            Debug.Log("hoba");
             changeVisible();
         }
     }
