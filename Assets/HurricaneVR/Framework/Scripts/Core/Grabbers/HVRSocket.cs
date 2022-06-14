@@ -184,7 +184,7 @@ namespace HurricaneVR.Framework.Core.Grabbers
             action();
         }
 
-        protected virtual void CheckAutoSpawn()
+        public virtual void CheckAutoSpawn()
         {
             if (AutoSpawnPrefab)
             {
