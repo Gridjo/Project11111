@@ -10,6 +10,7 @@ TagManager:
   - RangeGistance
   - RangeEntity
   - MeleEntity
+  - EnemyPoolRange
   layers:
   - Default
   - TransparentFX

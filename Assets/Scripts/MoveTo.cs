@@ -31,7 +31,7 @@ public class MoveTo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (reachedAttackDistance ) //TODO
+        if (reachedAttackDistance ) 
         {
             if (timeToAtack <= 0)
             {
@@ -52,8 +52,12 @@ public class MoveTo : MonoBehaviour
         agent.isStopped = true;
         
     }
+    private void Start()
+    {
         
-    
+    }
+
+
     void OnTriggerEnter(Collider myCollision)
     {
         // определение столкновения с двумя разноименными объектами
