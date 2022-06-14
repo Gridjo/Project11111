@@ -34,13 +34,15 @@ public class PlayerVariables : MonoBehaviour
             Debug.LogError($"{scrap.gameObject.name} has cost is {scrap.AmountScrap}");
     }
 
-    public void TakeScraps(Scrap scrap)
+    public bool TakeScraps(Scrap scrap)
     {
-        if (scrap.AmountScrap > 0)
+        if (scrap.AmountScrap > 0 && scrapsBagHave >= scrap.AmountScrap)
         {
             scrapsBagHave -= scrap.AmountScrap;
-            Debug.Log(scrapsBagHave);
+            return true;
         }
+        else
+            return false;
     }
 
     public void AddScraps(RecyclerItem item)

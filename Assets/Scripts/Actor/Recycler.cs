@@ -13,6 +13,10 @@ public class Recycler : MonoBehaviour
     private void Awake()
     {
         ScrapText.text = "0";
+
+        //Debug moment, lol
+        //Spawn of scrap after start game
+        
     }
 
     public void ShowBagScrapText()
@@ -23,15 +27,34 @@ public class Recycler : MonoBehaviour
     public void TakeScrap(HVRGrabberBase grabberBase, HVRGrabbable grabbable)
     {
         //IDK, maybe not work
-        if(gameObject.TryGetComponent<HVRSocket>(out HVRSocket socket))
+        //Spawn of scrap it time on event of hovering start
+
+        //Variant 1
+        /*
+        if (gameObject.TryGetComponent<HVRSocket>(out HVRSocket _socket))
         {
-            socket.AutoSpawnPrefab = prefabScrap;
-            socket.CheckAutoSpawn();
-            if (prefabScrap.TryGetComponent(out Scrap _scrap))
+            if (prefabScrap.TryGetComponent<Scrap>(out Scrap _scrap))
+            {
+                if (PlayerVariables.Instance.TakeScraps(_scrap))
+                {
+                    prefabScrap.transform.SetParent(_socket.gameObject.transform, false);
+                    prefabScrap.transform.position = new Vector3(0, 0, 0);
+                    //_socket.AutoSpawnPrefab = prefabScrap;
+                    //_socket.CheckAutoSpawn();
+                }
+            }
+        }
+        */
+
+        //Variant 2
+        if (PlayerVariables.Instance.TakeScraps(prefabScrap.GetComponent<Scrap>()))
+        {
+            if (grabbable.TryGetComponent<Scrap>(out Scrap _scrap))
             {
                 PlayerVariables.Instance.TakeScraps(_scrap);
             }
         }
+        
     }
 
     public void AddScrapToRecycle(HVRGrabberBase grabberBase, HVRGrabbable grabbable)
