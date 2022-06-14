@@ -20,12 +20,17 @@ public class Recycler : MonoBehaviour
         ScrapText.text = $"{PlayerVariables.Instance.GetBagScrapsAmount()}";
     }
 
-    public void TakeScrap()
+    public void TakeScrap(HVRGrabberBase grabberBase, HVRGrabbable grabbable)
     {
-        //IDK
+        //IDK, maybe not work
         if(gameObject.TryGetComponent<HVRSocket>(out HVRSocket socket))
         {
-            
+            socket.AutoSpawnPrefab = prefabScrap;
+            socket.CheckAutoSpawn();
+            if (prefabScrap.TryGetComponent(out Scrap _scrap))
+            {
+                PlayerVariables.Instance.TakeScraps(_scrap);
+            }
         }
     }
 

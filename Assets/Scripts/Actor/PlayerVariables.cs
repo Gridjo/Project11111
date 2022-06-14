@@ -34,11 +34,11 @@ public class PlayerVariables : MonoBehaviour
             Debug.LogError($"{scrap.gameObject.name} has cost is {scrap.AmountScrap}");
     }
 
-    public void delScraps(Scrap scrap)
+    public void TakeScraps(Scrap scrap)
     {
         if (scrap.AmountScrap > 0)
         {
-            scrapsBagHave += scrap.AmountScrap;
+            scrapsBagHave -= scrap.AmountScrap;
             Debug.Log(scrapsBagHave);
         }
     }

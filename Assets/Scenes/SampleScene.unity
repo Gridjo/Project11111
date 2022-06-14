@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.2850269, g: 0.3713935, b: 0.49601045, a: 1}
+  m_IndirectSpecularColor: {r: 0.28502667, g: 0.37139323, b: 0.49600998, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2026,8 +2026,40 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 253467609864924289, guid: 9c04d4bd649dbd345970b113a72adc75, type: 3}
+      propertyPath: AutoSpawnPrefab
+      value: 
+      objectReference: {fileID: 8163845335962463041, guid: d749865239fc53745a1622782ce04a2f, type: 3}
+    - target: {fileID: 253467609864924289, guid: 9c04d4bd649dbd345970b113a72adc75, type: 3}
+      propertyPath: HoverEnter.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 253467609864924289, guid: 9c04d4bd649dbd345970b113a72adc75, type: 3}
+      propertyPath: HoverEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 253467609864924289, guid: 9c04d4bd649dbd345970b113a72adc75, type: 3}
+      propertyPath: HoverEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8350267460866154491}
+    - target: {fileID: 253467609864924289, guid: 9c04d4bd649dbd345970b113a72adc75, type: 3}
+      propertyPath: HoverEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 253467609864924289, guid: 9c04d4bd649dbd345970b113a72adc75, type: 3}
+      propertyPath: HoverEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TakeScrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 253467609864924289, guid: 9c04d4bd649dbd345970b113a72adc75, type: 3}
       propertyPath: BeforeGrabbed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: AddScrapToRecycle
+      objectReference: {fileID: 0}
+    - target: {fileID: 253467609864924289, guid: 9c04d4bd649dbd345970b113a72adc75, type: 3}
+      propertyPath: HoverEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Recycler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 253467609864924289, guid: 9c04d4bd649dbd345970b113a72adc75, type: 3}
+      propertyPath: HoverEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 798177804649302824, guid: 9c04d4bd649dbd345970b113a72adc75, type: 3}
       propertyPath: Transforms.Array.data[1]
@@ -2109,5 +2141,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: TechDemoXRRig
       objectReference: {fileID: 0}
+    - target: {fileID: 8350267461202069345, guid: 9c04d4bd649dbd345970b113a72adc75, type: 3}
+      propertyPath: prefabScrap
+      value: 
+      objectReference: {fileID: 8163845335962463041, guid: d749865239fc53745a1622782ce04a2f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c04d4bd649dbd345970b113a72adc75, type: 3}
+--- !u!114 &8350267460866154491 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8350267461202069345, guid: 9c04d4bd649dbd345970b113a72adc75, type: 3}
+  m_PrefabInstance: {fileID: 8350267460866154490}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c4fa615cd1a4db428b7fc82c9b200f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
