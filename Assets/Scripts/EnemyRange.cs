@@ -46,4 +46,13 @@ public class EnemyRange : Enemy
         OnCollisionRange(myCollision);
 
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("COLLISION");
+        if (collision.gameObject.tag == "ggwp")
+        {
+            Debug.Log("EnTER");
+            GetDamage(100);
+        }
+    }
 }

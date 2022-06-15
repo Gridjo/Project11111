@@ -10,6 +10,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
+
 namespace HurricaneVR.Framework.Weapons.Guns
 {
     public class HVRGunBase : HVRDamageProvider
@@ -243,14 +244,17 @@ namespace HurricaneVR.Framework.Weapons.Guns
             for (int i = 0; i < MaxPooledBullets; i++)
             {
                 _objects.Add(new HVRBulletTracker());
-
+                
                 if (BulletPrefab)
                 {
                     _objects[i].Bullet = Instantiate(BulletPrefab);
+                    _objects[i].Bullet.tag = "ggwp";
+
                 }
                 else
                 {
                     _objects[i].Bullet = new GameObject("Bullet");
+                    _objects[i].Bullet.tag = "ggwp";
                 }
 
                 _objects[i].Bullet.SetActive(false);
@@ -1124,6 +1128,7 @@ namespace HurricaneVR.Framework.Weapons.Guns
                     }
                 }
             }
+            
         }
     }
 }

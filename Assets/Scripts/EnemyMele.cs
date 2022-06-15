@@ -11,4 +11,11 @@ public class EnemyMele : Enemy
         OnCollisionMele(myCollision);
 
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (true)
+        {
+            GetDamage(1);
+        }
+    }
 }

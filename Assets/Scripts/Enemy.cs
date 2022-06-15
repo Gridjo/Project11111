@@ -4,92 +4,94 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-public class Enemy : MonoBehaviour
-{
-    public int AttackDamage = 1;
-    public float EnemySpeed = 3.5f;
-    public float timeToAtack = 1f, timeToAtackClone = 1f;
-    public float curHeetPoint = 100, maxHeetPoint = 100;
 
-    public Transform goal;
-    public GameObject enemyPool;
-    public bool reachedAttackDistance = false;
-
-
-    void OnEnable()
+    public class Enemy : MonoBehaviour
     {
-        // Получение компонента агента
-        NavMeshAgent agent
-            = GetComponent<NavMeshAgent>();
-        // Указаие точки назначения
-        agent.destination = goal.position;
-        agent.speed = EnemySpeed;
-        gameObject.GetComponent<Rigidbody>().isKinematic = true;
-        curHeetPoint = maxHeetPoint;
-    }
+        public int AttackDamage = 1;
+        public float EnemySpeed = 3.5f;
+        public float timeToAtack = 1f, timeToAtackClone = 1f;
+        public float curHeetPoint = 100, maxHeetPoint = 100;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (reachedAttackDistance)
+        public Transform goal;
+        public GameObject enemyPool;
+        public bool reachedAttackDistance = false;
+
+
+        void OnEnable()
         {
-            if (timeToAtack <= 0)
+            // Получение компонента агента
+            NavMeshAgent agent
+                = GetComponent<NavMeshAgent>();
+            // Указаие точки назначения
+            agent.destination = goal.position;
+            agent.speed = EnemySpeed;
+            gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            curHeetPoint = maxHeetPoint;
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (reachedAttackDistance)
             {
-                GiveDamage(goal);
-                timeToAtack = timeToAtackClone;
+                if (timeToAtack <= 0)
+                {
+                    GiveDamage(goal);
+                    timeToAtack = timeToAtackClone;
+                }
+                timeToAtack -= Time.deltaTime;
             }
-            timeToAtack -= Time.deltaTime;
+            if (curHeetPoint <= 0)
+            {
+                EnemyDeath();
+            }
+
         }
-        if (curHeetPoint <= 0)
+        public void Stop()
         {
-            EnemyDeath();
+            NavMeshAgent agent = GetComponent<NavMeshAgent>();
+            agent.isStopped = true;
+
         }
-
-    }
-    public void Stop()
-    {
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        agent.isStopped = true;
-
-    }
-    private void Start()
-    {
-
-    }
-
-
-    
-    void GiveDamage(Transform target)
-    {
-        goal.gameObject.GetComponent<Platform>().GetDamage(AttackDamage);
-
-    }
-    public void GetDamage(int Damage)
-    {
-        curHeetPoint -= Damage;
-    }
-    public void EnemyDeath()
-    {
-        gameObject.SetActive(false);
-        gameObject.transform.SetParent(enemyPool.transform, false);
-        gameObject.transform.localPosition = new Vector3();
-    }
-    public void OnCollisionMele(Collider myCollision)
-    {
-        if (myCollision.gameObject.tag == "MeleDistance" && gameObject.activeSelf && this.gameObject.tag == "MeleEntity")
+        private void Start()
         {
-            Stop();
-            reachedAttackDistance = true;
+
+        }
+
+
+
+        void GiveDamage(Transform target)
+        {
+            goal.gameObject.GetComponent<Platform>().GetDamage(AttackDamage);
+
+        }
+        public void GetDamage(int Damage)
+        {
+            curHeetPoint -= Damage;
+        }
+        public void EnemyDeath()
+        {
+            gameObject.SetActive(false);
+            gameObject.transform.SetParent(enemyPool.transform, false);
+            gameObject.transform.localPosition = new Vector3();
+        }
+        public void OnCollisionMele(Collider myCollision)
+        {
+            if (myCollision.gameObject.tag == "MeleDistance" && gameObject.activeSelf && this.gameObject.tag == "MeleEntity")
+            {
+                Stop();
+                reachedAttackDistance = true;
+            }
+        }
+
+        public void OnCollisionRange(Collider myCollision)
+        {
+            if (myCollision.gameObject.tag == "RangeGistance" && gameObject.activeSelf && this.gameObject.tag == "RangeEntity")
+            {
+                Stop();
+                reachedAttackDistance = true;
+            }
         }
     }
 
-    public void OnCollisionRange(Collider myCollision)
-    {
-        if (myCollision.gameObject.tag == "RangeGistance" && gameObject.activeSelf && this.gameObject.tag == "RangeEntity")
-        {
-            Stop();
-            reachedAttackDistance = true;
-        }
-    }
-}
 
