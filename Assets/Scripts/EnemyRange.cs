@@ -49,7 +49,7 @@ public class EnemyRange : Enemy
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("COLLISION");
+        
         if (collision.gameObject.tag == "ggwp")
         {
             Debug.Log("EnTER");

@@ -60,7 +60,7 @@ using UnityEngine.AI;
 
 
 
-        void GiveDamage(Transform target)
+        public void GiveDamage(Transform target)
         {
             goal.gameObject.GetComponent<Platform>().GetDamage(AttackDamage);
 
@@ -77,7 +77,7 @@ using UnityEngine.AI;
         }
         public void OnCollisionMele(Collider myCollision)
         {
-            if (myCollision.gameObject.tag == "MeleDistance" && gameObject.activeSelf && this.gameObject.tag == "MeleEntity")
+            if (myCollision.gameObject.tag == "MeleDistance" && gameObject.activeSelf && gameObject.tag == "MeleEntity")
             {
                 Stop();
                 reachedAttackDistance = true;

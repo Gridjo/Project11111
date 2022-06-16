@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1836701, g: 0.22799993, b: 0.2984837, a: 1}
+  m_IndirectSpecularColor: {r: 0.1836698, g: 0.22799963, b: 0.29848313, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -377,11 +377,11 @@ MonoBehaviour:
   enemyPoolRanges: {fileID: 1990842650}
   enemyPoolNpc: {fileID: 1941298404}
   waves:
-  - meles: 3
-    ranges: 1
-    Npc: 2
+  - meles: 2
+    ranges: 0
+    Npc: 0
   - meles: 0
-    ranges: 3
+    ranges: 0
     Npc: 0
   canSpawnM: 1
   canSpawnR: 1
@@ -1712,6 +1712,10 @@ PrefabInstance:
       propertyPath: plat
       value: 
       objectReference: {fileID: 635319147}
+    - target: {fileID: 4106967545854621108, guid: 07fe71e05d2bb004b88d6894a157438c, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 5342731118385530413, guid: 0fd3c5f1a99f02b428eddcea5f42baa5, type: 3}
     - target: {fileID: 4106967545854621110, guid: 07fe71e05d2bb004b88d6894a157438c, type: 3}
       propertyPath: m_Name
       value: enemyPoolMele
