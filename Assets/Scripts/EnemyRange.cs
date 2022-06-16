@@ -18,6 +18,7 @@ public class EnemyRange : Enemy
             if (timeToAtack <= 0)
             {
                 /*GiveDamage(goal);*/
+                transform.LookAt(goal);
                 RangeAtack();
                 timeToAtack = timeToAtackClone;
             }
