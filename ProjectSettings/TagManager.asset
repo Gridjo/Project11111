@@ -10,7 +10,8 @@ TagManager:
   - RangeGistance
   - RangeEntity
   - MeleEntity
-  - Enemy
+  - EnemyPoolRange
+  - ggwp
   layers:
   - Default
   - TransparentFX

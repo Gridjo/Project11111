@@ -10,8 +10,10 @@ public class SpawnEnemy : MonoBehaviour
     public GameObject[] spawnPoint;
     public GameObject enemyPoolMeles;
     public GameObject enemyPoolRanges;
+    public GameObject enemyPoolNpc;
     public wave[] waves;
     private int WaveNomber = 0;
+    public bool canSpawnM = true, canSpawnR = true, canSpawnN = true;
 
 
 
@@ -21,41 +23,48 @@ public class SpawnEnemy : MonoBehaviour
     void Start()
     {
 
-
     }
 
     // Update is called once per frame
-    public void SpawnMele(GameObject[] spawnPoint, GameObject enemyPoolMeles)
+    public void SpawnM(GameObject[] spawnPoint, GameObject enemyPoolMeles)
     {
         var curEnemy = enemyPoolMeles.transform.GetChild(0);
         curEnemy.SetParent(spawnPoint[UnityEngine.Random.Range(0, spawnPoint.Length)].transform, false);
         gameObject.transform.localPosition = new Vector3();
         curEnemy.gameObject.SetActive(true);
     }
-    public void SpawnRange(GameObject[] spawnPoint, GameObject enemyPoolRange)
-    {
-        var curEnemy = enemyPoolRange.transform.GetChild(0);
-        curEnemy.SetParent(spawnPoint[UnityEngine.Random.Range(0, spawnPoint.Length)].transform, false);
-        gameObject.transform.localPosition = new Vector3();
-        curEnemy.gameObject.SetActive(true);
-    }
+    
     void Update()
     {
 
         if (timeToSpawn <= 0 && waves.Length - 1 >= WaveNomber)
         {
 
-            for (int i = 0; waves[WaveNomber].meles >= i; i++)
+            for (int i = 1; waves[WaveNomber].meles >= i && canSpawnM; i++)
             {
-                SpawnMele(spawnPoint, enemyPoolMeles);
+                SpawnM(spawnPoint, enemyPoolMeles);
+                if (waves[WaveNomber].meles <= i)
+                    canSpawnM = false;
             }
 
-            for (int i = 0; waves[WaveNomber].ranges >= i; i++)
+            for (int i = 1; waves[WaveNomber].ranges >= i && canSpawnR; i++)
             {
-                SpawnRange(spawnPoint, enemyPoolRanges);
+                SpawnM(spawnPoint, enemyPoolRanges);
+                if (waves[WaveNomber].ranges <= i)
+                    canSpawnR = false;
+            }
+
+            for (int i = 1; waves[WaveNomber].Npc >= i && canSpawnN; i++)
+            {
+                SpawnM(spawnPoint, enemyPoolNpc);
+                if (waves[WaveNomber].Npc <= i)
+                    canSpawnN = false;
             }
             timeToSpawn = timeToSpawnClone;
             WaveNomber++;
+            canSpawnM = true;
+            canSpawnR = true;
+            canSpawnN = true;
         }
         timeToSpawn -= Time.deltaTime;
     }
@@ -65,5 +74,6 @@ public class SpawnEnemy : MonoBehaviour
     {
         public int meles;
         public int ranges;
+        public int Npc;
     }
 }
