@@ -26,6 +26,10 @@ public class EnemyRange : Enemy
         }
         if (curHeetPoint <= 0)
         {
+            if(!reachedAttackDistance)
+                GameManager1.transform.GetComponent<GameManager>().GetScore((int)(ScorePoint * 1.1));
+            else
+                GameManager1.transform.GetComponent<GameManager>().GetScore((int)(ScorePoint));
             EnemyDeath();
         }
 

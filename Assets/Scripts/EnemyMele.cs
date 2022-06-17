@@ -33,6 +33,7 @@ public class EnemyMele : Enemy
         gameObject.GetComponent<Rigidbody>().isKinematic = true;
         curHeetPoint = maxHeetPoint;
         gameObject.GetComponent<Animator>().SetInteger("State", 0);
+        reachedAttackDistance = false;
     }
     void Update()
     {
@@ -48,6 +49,10 @@ public class EnemyMele : Enemy
         }
         if (curHeetPoint <= 0)
         {
+            if (!reachedAttackDistance)
+                GameManager1.transform.GetComponent<GameManager>().GetScore((int)(ScorePoint * 1.1));
+            else
+                GameManager1.transform.GetComponent<GameManager>().GetScore((int)(ScorePoint));
             EnemyDeath();
         }
     }

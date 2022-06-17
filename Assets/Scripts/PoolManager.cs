@@ -7,6 +7,7 @@ public class PoolManager : MonoBehaviour
     public int CountPool = 11;
     public GameObject prefab;
     public GameObject plat;
+    public GameObject GameManager11;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class PoolManager : MonoBehaviour
             e.transform.SetParent(gameObject.transform, false);
             e.GetComponent<Enemy>().goal = plat.transform;
             e.GetComponent<Enemy>().enemyPool = gameObject;
+            e.GetComponent<Enemy>().GameManager1 = GameManager11;
         }
     }
 

@@ -269,6 +269,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f6914ee08131a84b95bf9a3ee9e0fe4, type: 3}
+--- !u!1 &357845948 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5688493640717583194, guid: e5a8e811cf84de147aa355c0ee8be380, type: 3}
+  m_PrefabInstance: {fileID: 5688493641075394790}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &417502498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -377,9 +382,9 @@ MonoBehaviour:
   enemyPoolRanges: {fileID: 1990842650}
   enemyPoolNpc: {fileID: 1941298404}
   waves:
-  - meles: 2
+  - meles: 0
     ranges: 0
-    Npc: 0
+    Npc: 6
   - meles: 0
     ranges: 0
     Npc: 0
@@ -1651,6 +1656,10 @@ PrefabInstance:
       propertyPath: plat
       value: 
       objectReference: {fileID: 635319147}
+    - target: {fileID: 3523271792038204241, guid: b3e836ec1f40b6841bfd5d375d716beb, type: 3}
+      propertyPath: GameManager11
+      value: 
+      objectReference: {fileID: 357845948}
     - target: {fileID: 3523271792038204246, guid: b3e836ec1f40b6841bfd5d375d716beb, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1716,6 +1725,10 @@ PrefabInstance:
       propertyPath: prefab
       value: 
       objectReference: {fileID: 5342731118385530413, guid: 0fd3c5f1a99f02b428eddcea5f42baa5, type: 3}
+    - target: {fileID: 4106967545854621108, guid: 07fe71e05d2bb004b88d6894a157438c, type: 3}
+      propertyPath: GameManager11
+      value: 
+      objectReference: {fileID: 357845948}
     - target: {fileID: 4106967545854621110, guid: 07fe71e05d2bb004b88d6894a157438c, type: 3}
       propertyPath: m_Name
       value: enemyPoolMele
@@ -1781,6 +1794,10 @@ PrefabInstance:
       propertyPath: prefab
       value: 
       objectReference: {fileID: 9018132253737501679, guid: 9c126656df6a2944a85a381cee02f813, type: 3}
+    - target: {fileID: -492323522463136213, guid: 3cf96117b9afa2741a059a53095e162a, type: 3}
+      propertyPath: GameManager11
+      value: 
+      objectReference: {fileID: 357845948}
     - target: {fileID: 3076519245164628505, guid: 3cf96117b9afa2741a059a53095e162a, type: 3}
       propertyPath: m_Name
       value: enemyPoolNpc
@@ -1904,3 +1921,64 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1a4fd06475ae7b43bf41d1c1e0a6df2, type: 3}
+--- !u!1001 &5688493641075394790
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5688493640717583192, guid: e5a8e811cf84de147aa355c0ee8be380, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5688493640717583192, guid: e5a8e811cf84de147aa355c0ee8be380, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5688493640717583192, guid: e5a8e811cf84de147aa355c0ee8be380, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5688493640717583192, guid: e5a8e811cf84de147aa355c0ee8be380, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5688493640717583192, guid: e5a8e811cf84de147aa355c0ee8be380, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5688493640717583192, guid: e5a8e811cf84de147aa355c0ee8be380, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5688493640717583192, guid: e5a8e811cf84de147aa355c0ee8be380, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5688493640717583192, guid: e5a8e811cf84de147aa355c0ee8be380, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5688493640717583192, guid: e5a8e811cf84de147aa355c0ee8be380, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5688493640717583192, guid: e5a8e811cf84de147aa355c0ee8be380, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5688493640717583192, guid: e5a8e811cf84de147aa355c0ee8be380, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5688493640717583194, guid: e5a8e811cf84de147aa355c0ee8be380, type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5688493640717583195, guid: e5a8e811cf84de147aa355c0ee8be380, type: 3}
+      propertyPath: EnergyMultiplier
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e5a8e811cf84de147aa355c0ee8be380, type: 3}
