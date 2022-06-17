@@ -12,7 +12,16 @@ public class EnemyMele : Enemy
         OnCollisionMele(myCollision);
 
     }
-    
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        if (collision.gameObject.tag == "ggwp")
+        {
+            Debug.Log("EnTER");
+            GetDamage(100);
+        }
+    }
+
     void OnEnable()
     {
         // Получение компонента агента
