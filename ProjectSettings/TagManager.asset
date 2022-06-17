@@ -12,6 +12,8 @@ TagManager:
   - MeleEntity
   - EnemyPoolRange
   - ggwp
+  - Enemy
+  - Slide
   layers:
   - Default
   - TransparentFX

@@ -7,8 +7,11 @@ public class InventoryVisible : MonoBehaviour
 {
     public GameObject PlayerController;
 
-    private bool isVisible = false;
-
+    private bool isVisible = true;
+    private void Awake()
+    {
+        HideInventrory();
+    }
     private void Update()
     {
         if (PlayerController.GetComponent<HVRPlayerInputs>().IsInventoryButton)
