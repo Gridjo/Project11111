@@ -9,21 +9,21 @@ public class RecyclerOut : MonoBehaviour
 
     public GameObject prefabScrap;
     public RecyclerIn recIn;
-/*
+
     private void Awake()
     {
         prefabScrap.GetComponent<HVRGrabbable>().StartingSocket = transform.GetComponentInParent<HVRSocket>();
         prefabScrap.GetComponent<HVRGrabbable>().LinkStartingSocket = true;
     }
-*/
     public void TakeScrap()
     {
-        //IDK, maybe not work
-        //Spawn of scrap it time on event of hovering start
-        //Variant 1
+        //Spawn of scrap
         Debug.Log("fuck1");
         if (PlayerVariables.Instance.GetBagScrapsAmount() <= 0)
         {
+            //20.06 upd
+            if (prefabScrap.activeInHierarchy)
+                prefabScrap.SetActive(false);
             Debug.Log("fuck2");
             //prefabScrap.GetComponent<Scrap>().AmountScrap = 0;
             return;
