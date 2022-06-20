@@ -7,6 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6495610503811774673, guid: 7f894eec2c2317a43b50633ca92b6204, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6495610503811774673, guid: 7f894eec2c2317a43b50633ca92b6204, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6495610503811774673, guid: 7f894eec2c2317a43b50633ca92b6204, type: 3}
+      propertyPath: HandReleased.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6495610503811774678, guid: 7f894eec2c2317a43b50633ca92b6204, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -63,6 +75,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScrapCube
       objectReference: {fileID: 0}
+    - target: {fileID: 6495610505061385982, guid: 7f894eec2c2317a43b50633ca92b6204, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c532880e607f8c84d8b9bf0c46a522ad, type: 2}
     m_RemovedComponents:
     - {fileID: 6495610503811774679, guid: 7f894eec2c2317a43b50633ca92b6204, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7f894eec2c2317a43b50633ca92b6204, type: 3}

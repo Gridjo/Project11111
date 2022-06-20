@@ -14,6 +14,7 @@ public class SpawnEnemy : MonoBehaviour
     public wave[] waves;
     private int WaveNomber = 0;
     public bool canSpawnM = true, canSpawnR = true, canSpawnN = true;
+    public bool endOfWaveAndCanSpawnModuls = false;
 
 
 
@@ -65,6 +66,7 @@ public class SpawnEnemy : MonoBehaviour
             canSpawnM = true;
             canSpawnR = true;
             canSpawnN = true;
+            endOfWaveAndCanSpawnModuls = true;
         }
         timeToSpawn -= Time.deltaTime;
     }

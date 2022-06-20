@@ -1,3 +1,5 @@
+using HurricaneVR.Framework.Core;
+using HurricaneVR.Framework.Core.Grabbers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +9,33 @@ public class PlayerVariables : MonoBehaviour
     private int scrapsBagHave;
     private int ammoScrap;
     public static PlayerVariables Instance;
+
+    public bool playerUseLeftArm = false;
+    public bool playerUseRightArm = false;
+    public bool playerUseAnyArm() {
+        if (playerUseLeftArm || playerUseRightArm)
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+
+    public void useLeftArm(bool zxc)
+    {
+        if (zxc)
+            playerUseLeftArm = true;
+        else
+            playerUseLeftArm = false;
+    }
+
+    public void useRightArm(bool zxc)
+    {
+        if (zxc)
+            playerUseRightArm = true;
+        else
+            playerUseRightArm = false;
+    }
 
     private void Awake()
     {
