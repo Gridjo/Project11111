@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public float Energy = 0, MaxEnergy = 100;
     public float EnergyMultiplier = 1;
     private float TimeEner = 1f, TimeEnerOut = 1f;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -45,5 +46,9 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Lj,fdktybt");
         EnergyMultiplier += mult;
+    }
+    public void SpawnModul()
+    {
+
     }
 }
