@@ -1235,10 +1235,20 @@ namespace HurricaneVR.Framework.Core
 
         public virtual void ResetRigidBody()
         {
-            Rigidbody.useGravity = WasGravity;
-            Rigidbody.mass = _mass;
-            Rigidbody.collisionDetectionMode = OriginalCollisionMode;
-            Rigidbody.interpolation = _rbInterpolation;
+            try
+            {
+                Rigidbody.useGravity = WasGravity;
+                Rigidbody.mass = _mass;
+                Rigidbody.collisionDetectionMode = OriginalCollisionMode;
+                Rigidbody.interpolation = _rbInterpolation;
+            } catch (MissingReferenceException e)
+            {
+                Debug.Log("ok2");
+                Rigidbody.useGravity = WasGravity;
+                Rigidbody.mass = _mass;
+                Rigidbody.collisionDetectionMode = OriginalCollisionMode;
+                Rigidbody.interpolation = _rbInterpolation;
+            }
         }
 
         /// <summary>
@@ -1263,10 +1273,20 @@ namespace HurricaneVR.Framework.Core
                 _waitingForColDetectionReset = true;
                 yield return new WaitForSeconds(10f);
                 _waitingForColDetectionReset = false;
-
-                if (!IsBeingHeld)
+                try
                 {
-                    Rigidbody.collisionDetectionMode = OriginalCollisionMode;
+                    if (!IsBeingHeld)
+                    {
+                        Rigidbody.collisionDetectionMode = OriginalCollisionMode;
+                    }
+                }
+                catch (MissingReferenceException e)
+                {
+                    Debug.Log("vse okay");
+                    if (!IsBeingHeld)
+                    {
+                        Rigidbody.collisionDetectionMode = OriginalCollisionMode;
+                    }
                 }
             }
             finally
