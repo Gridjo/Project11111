@@ -33,8 +33,8 @@ public class RecyclerOut : MonoBehaviour
             prefabScrap.GetComponent<Scrap>().AmountScrap = PlayerVariables.Instance.GetBagScrapsAmount();
             Debug.Log("fuck3");
         }
-        //if (gameObject.TryGetComponent(out HVRSocket _socket))
-        //{
+        if (gameObject.TryGetComponent(out HVRSocket _socket))
+        {
             Debug.Log("fuck4");
             if (prefabScrap.TryGetComponent(out Scrap _scrap))
             {
@@ -48,9 +48,12 @@ public class RecyclerOut : MonoBehaviour
                     //_socket.CheckAutoSpawn();
                 }
                 */
+                
+                prefabScrap.transform.localPosition = _socket.gameObject.transform.localPosition;
+               
                 prefabScrap.SetActive(true);
                 recIn.ShowBagScrapText();
             }
-        //} 
+        } 
     }
 }
