@@ -45,7 +45,7 @@ public class RecyclerIn : MonoBehaviour
             if (scrap)
             {
                 Debug.Log("FUCKTHIS 3");
-                grabbable.Socket.ForceRelease();
+                //grabbable.Socket.ForceRelease();
             }
         }
         else if (grabbable.TryGetComponent(out RecyclerItem item))
