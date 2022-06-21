@@ -386,6 +386,7 @@ GameObject:
   - component: {fileID: 5162100992255741864}
   - component: {fileID: 835082614896580767}
   - component: {fileID: 2399304758437985532}
+  - component: {fileID: 2919586621823758682}
   m_Layer: 0
   m_Name: slide
   m_TagString: Untagged
@@ -647,6 +648,24 @@ FixedJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &2919586621823758682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5162100992255741858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa5fd02aca9a8874881c231f6307fd14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Raryti: 0
+  durCoef: 1
+  junkPrice: 14
+  attSpeed: 2
+  magCapacity: 10
+  shootingType: 0
 --- !u!1 &5162100992398131935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1720,6 +1739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 25
   Force: 10
+  TypeGun: 0
   TriggerPullThreshold: 0.7
   TriggerResetThreshold: 0.6
   Cooldown: 0.06666667

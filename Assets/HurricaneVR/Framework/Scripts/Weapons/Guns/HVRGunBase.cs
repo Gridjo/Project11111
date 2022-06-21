@@ -13,10 +13,19 @@ using UnityEngine.Serialization;
 
 namespace HurricaneVR.Framework.Weapons.Guns
 {
+    public enum TypeGun
+    {
+        rifle,
+        pistol
+    }
+
     public class HVRGunBase : HVRDamageProvider
     {
 
         public HVRGrabbable Grabbable { get; private set; }
+
+        [Header("Additional Settings")]
+        public TypeGun TypeGun; 
 
         [Header("Settings")]
         public float TriggerPullThreshold = .7f;
@@ -1101,9 +1110,10 @@ namespace HurricaneVR.Framework.Weapons.Guns
 
         }
 
-        private class HVRBulletTracker
+        public class HVRBulletTracker
         {
             public GameObject Bullet;
+            public float Damage;
             public float Elapsed;
             public float TimeToLive;
             public float Speed;

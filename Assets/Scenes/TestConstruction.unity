@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1815468, g: 0.22718975, b: 0.3074059, a: 1}
+  m_IndirectSpecularColor: {r: 0.18154702, g: 0.22719009, b: 0.30740646, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -663,6 +663,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 28531543}
     - target: {fileID: 5162100993017133240, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
+      propertyPath: HoldType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162100993017133240, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
       propertyPath: Rigidbody
       value: 
       objectReference: {fileID: 129964334}
@@ -684,7 +688,7 @@ PrefabInstance:
       objectReference: {fileID: 2026407188}
     - target: {fileID: 5162100993017133243, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
       propertyPath: m_RootOrder
-      value: 29
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5162100993017133243, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -733,6 +737,10 @@ PrefabInstance:
     - target: {fileID: 5162100993017133246, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162100993633407168, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5162100993633407172, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1197,6 +1205,14 @@ PrefabInstance:
       objectReference: {fileID: 1183019545}
     - target: {fileID: 5162100993017133240, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
       propertyPath: TrackingType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162100993017133241, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
+      propertyPath: TypeGun
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162100993017133241, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
+      propertyPath: FireType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5162100993017133241, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
@@ -2210,6 +2226,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1770868717}
     m_Modifications:
+    - target: {fileID: 7833497201186505362, guid: 930ef9f0ded48a94fb6efddfaaca09e2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7833497201186505366, guid: 930ef9f0ded48a94fb6efddfaaca09e2, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2286,6 +2306,113 @@ MonoBehaviour:
     Tags: {fileID: 11400000, guid: 0e83bcde818c784468e6c9a69d44702f, type: 2}
     _data: 8
   Any: 1
+--- !u!114 &580104654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580104652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ebc937e678155e4d86feeb9248cca97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GrabType: 0
+  TrackingType: 0
+  HoldType: 1
+  GrabControl: 0
+  OverrideGrabTrigger: 0
+  GrabTrigger: 0
+  RequireLineOfSight: 1
+  PoseImmediately: 1
+  ParentHandModel: 1
+  BreakDistance: 1
+  RemainsKinematic: 1
+  Stationary: 1
+  ReleasedAngularConversionFactor: 0
+  ReleasedVelocityFactor: 1
+  ReleasedAngularFactor: 1
+  GrabIndicator: {fileID: 0}
+  ForceGrabIndicator: {fileID: 0}
+  ShowGrabIndicator: 1
+  ShowTriggerGrabIndicator: 1
+  ShowForceGrabIndicator: 1
+  ForceGrabbable: 1
+  ForcePullOverride: {fileID: 0}
+  JointOverride: {fileID: 0}
+  OneHandJointSettings: {fileID: 0}
+  TwoHandJointSettings: {fileID: 0}
+  PullingSettingsOverride: {fileID: 0}
+  PalmCenterOfMass: 0
+  HandGrabbedClip: {fileID: 0}
+  StartingSocket: {fileID: 0}
+  LinkStartingSocket: 0
+  SocketGrabPoints: []
+  Rigidbody: {fileID: 129964334}
+  AutoApplyLayer: 1
+  RequireOverlapClearance: 0
+  OverlapTimeout: 0.1
+  FinalJointMaxAngle: 40
+  FinalJointQuick: 1
+  FinalJointTimeout: 0.5
+  CollisionParents: []
+  ExtraIgnoreCollisionParents: []
+  GrabColliders: []
+  ConsiderGrabPointAngle: 1
+  UseColliderClosestPoint: 1
+  DisableHandCollision: 0
+  AllowMultiplayerSwap: 0
+  MasterGrabbable: {fileID: 580104654}
+  CollisionDetection: 2
+  PhysicsPoserFallback: 1
+  ShowBoundingBox: 0
+  DrawCenterOfMass: 0
+  GrabPoints: []
+  Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  Grabbed:
+    m_PersistentCalls:
+      m_Calls: []
+  Released:
+    m_PersistentCalls:
+      m_Calls: []
+  HoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  HoverExit:
+    m_PersistentCalls:
+      m_Calls: []
+  Collided:
+    m_PersistentCalls:
+      m_Calls: []
+  Destroyed:
+    m_PersistentCalls:
+      m_Calls: []
+  HandGrabbed:
+    m_PersistentCalls:
+      m_Calls: []
+  HandReleased:
+    m_PersistentCalls:
+      m_Calls: []
+  HandFullReleased:
+    m_PersistentCalls:
+      m_Calls: []
+  Socketed:
+    m_PersistentCalls:
+      m_Calls: []
+  UnSocketed:
+    m_PersistentCalls:
+      m_Calls: []
+  GrabPointsMeta: []
+  Grabbers: []
+  HandGrabbers: []
+  Stabbers: []
+  Stabbable: {fileID: 0}
 --- !u!1001 &596720261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2707,11 +2834,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: add805f03ddc3f7498b179e94e22c78a, type: 3}
---- !u!4 &895214278 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 163985259729858019, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
-  m_PrefabInstance: {fileID: 1989129545}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &909313387
 GameObject:
   m_ObjectHideFlags: 0
@@ -5163,7 +5285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 163985259729858019, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_RootOrder
-      value: 28
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 163985259729858019, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5470,6 +5592,8 @@ GameObject:
   - component: {fileID: 2047890945}
   - component: {fileID: 2047890944}
   - component: {fileID: 2047890950}
+  - component: {fileID: 2047890951}
+  - component: {fileID: 2047890952}
   m_Layer: 0
   m_Name: slide
   m_TagString: Slide
@@ -5484,15 +5608,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2047890942}
-  m_LocalRotation: {x: 0.00042377412, y: -0.10004152, z: 0.0021385502, w: -0.9949809}
-  m_LocalPosition: {x: 0.302, y: 0.933, z: 1.343}
-  m_LocalScale: {x: 0.212989, y: 0.032212127, z: 0.04259932}
+  m_LocalRotation: {x: 0.0013864858, y: -0.70659184, z: -0.0016824503, w: 0.70761806}
+  m_LocalPosition: {x: 0.525, y: 1.019, z: 2.807}
+  m_LocalScale: {x: 0.21298906, y: 0.03221213, z: 0.04259933}
   m_Children:
   - {fileID: 1353437061}
   - {fileID: 1682566372}
   - {fileID: 1429913183}
-  m_Father: {fileID: 895214278}
-  m_RootOrder: 7
+  m_Father: {fileID: 0}
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: -0.024, y: 270.083, z: -0.249}
 --- !u!114 &2047890944
 MonoBehaviour:
@@ -5548,7 +5672,7 @@ MonoBehaviour:
   ShowGrabIndicator: 1
   ShowTriggerGrabIndicator: 1
   ShowForceGrabIndicator: 1
-  ForceGrabbable: 0
+  ForceGrabbable: 1
   ForcePullOverride: {fileID: 0}
   JointOverride: {fileID: 0}
   OneHandJointSettings: {fileID: 0}
@@ -5738,6 +5862,39 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2047890951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047890942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa5fd02aca9a8874881c231f6307fd14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Raryti: 1
+  durCoef: 1
+  junkPrice: 36
+  attSpeed: 3.5
+  magCapacity: 20
+  shootingType: 2
+--- !u!114 &2047890952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047890942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77dbe74f0338a6c438b0af580dd1253e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Data: {fileID: 0}
+  Force: 0
+  Grabbable: {fileID: 0}
 --- !u!1 &2051705453
 GameObject:
   m_ObjectHideFlags: 0
