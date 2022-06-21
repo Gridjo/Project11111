@@ -8,7 +8,9 @@ public class GameManager : MonoBehaviour
     public float Energy = 0, MaxEnergy = 100;
     public float EnergyMultiplier = 1;
     private float TimeEner = 1f, TimeEnerOut = 1f;
-    
+    public GameObject ModulPool;
+    public GameObject[] Childs;
+    public GameObject[] ModSp;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,5 +52,23 @@ public class GameManager : MonoBehaviour
     public void SpawnModul()
     {
 
+        ModSp = null;
+        float ScoreWaveMod = Score * 0.8f;
+        float ScoreJunk = Score - ScoreWaveMod;
+        for (int i = 0; i < ModulPool.transform.childCount; i++)
+        {
+            Childs[i] = ModulPool.transform.GetChild(i).gameObject;
+        }
+        for (int i = 0, j=0; i < Childs.Length; i++)
+        {
+            if (ScoreWaveMod > Childs[i].GetComponent<Moduls>().junkPrice)
+            {
+                ModSp[j] = Childs[i];
+            }
+        }
+        for (int i = 0, j = 0; i < ModSp.Length; i++)
+        {
+
+        }
     }
 }
