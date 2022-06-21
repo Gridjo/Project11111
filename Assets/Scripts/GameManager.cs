@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int Score = 0;
+    public float Score = 0;
     public float Energy = 0, MaxEnergy = 100;
     public float EnergyMultiplier = 1;
     private float TimeEner = 1f, TimeEnerOut = 1f;
@@ -49,11 +49,12 @@ public class GameManager : MonoBehaviour
         Debug.Log("Lj,fdktybt");
         EnergyMultiplier += mult;
     }
-    public void SpawnModul()
+    public void ChSpawnModul()
     {
 
         ModSp = null;
         float ScoreWaveMod = Score * 0.8f;
+        Score *= 0.8f;
         float ScoreJunk = Score - ScoreWaveMod;
         for (int i = 0; i < ModulPool.transform.childCount; i++)
         {
@@ -66,9 +67,42 @@ public class GameManager : MonoBehaviour
                 ModSp[j] = Childs[i];
             }
         }
+        int rr = UnityEngine.Random.Range(0, 100);
         for (int i = 0, j = 0; i < ModSp.Length; i++)
         {
-
+            
+            if (rr < 50)
+            {
+                if (ModSp[i].GetComponent<Moduls>().Raryti == Rarity.Common) 
+                {
+                    SpawnModul(ModSp[i]);
+                }
+            }
+            else if(rr < 80)
+            {
+                if (ModSp[i].GetComponent<Moduls>().Raryti == Rarity.Rare)
+                {
+                    SpawnModul(ModSp[i]);
+                }
+            }
+            else if (rr < 95)
+            {
+                if (ModSp[i].GetComponent<Moduls>().Raryti == Rarity.Epic)
+                {
+                    SpawnModul(ModSp[i]);
+                }
+            }
+            else if (rr < 100)
+            {
+                if (ModSp[i].GetComponent<Moduls>().Raryti == Rarity.Legendary)
+                {
+                    SpawnModul(ModSp[i]);
+                }
+            }
         }
+    }
+    public void SpawnModul(GameObject Mod)
+    {
+
     }
 }
