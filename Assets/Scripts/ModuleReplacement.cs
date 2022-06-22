@@ -97,20 +97,32 @@ public class ModuleReplacement : MonoBehaviour
         */
         if (other.TryGetComponent<HVRGrabbable>(out HVRGrabbable grb))
         {
+            if (other.TryGetComponent<Moduls>(out Moduls modsInfo))
+                if(modsInfo.AlreadyInGun)
+                    return;
             if (other.GetComponent<bodyModul>())
             {
-                Debug.Log("This Body");
-                BodyReplace(grb, other);
+                if (this.moduleType == ModuleType.body)
+                {
+                    Debug.Log("This Body");
+                    BodyReplace(grb, other);
+                }
             }
             else if (other.GetComponent<bareModul>())
             {
-                Debug.Log("This Barrel");
-                BarrelReplace(grb, other);
+                if (this.moduleType == ModuleType.barrel)
+                {
+                    Debug.Log("This Barrel");
+                    BarrelReplace(grb, other);
+                }
             }
             else if (other.GetComponent<ModulsInfo>())
             {
-                Debug.Log("This Stock");
-                StockReplace(grb, other);
+                if (this.moduleType == ModuleType.stock)
+                {
+                    Debug.Log("This Stock");
+                    StockReplace(grb, other);
+                }
             }
         }
 
@@ -130,6 +142,8 @@ public class ModuleReplacement : MonoBehaviour
         other.transform.SetParent(pistol.transform);
         other.transform.localPosition = new Vector3(0, 1, 0);
         _module = other.gameObject;
+        module.GetComponent<Moduls>().AlreadyInGun = false;
+        _module.GetComponent<Moduls>().AlreadyInGun = true;
         _module.transform.localRotation = new Quaternion(0f, 270f, 0f, 0f);
         _module.transform.localScale = new Vector3(0.04259932f, 0.03221213f, 0.212989f);
         module.gameObject.AddComponent<Rigidbody>();
@@ -153,6 +167,8 @@ public class ModuleReplacement : MonoBehaviour
         other.transform.SetParent(pistol.transform);
         other.transform.localPosition = new Vector3(0, 1, 0);
         _module = other.gameObject;
+        module.GetComponent<Moduls>().AlreadyInGun = false;
+        _module.GetComponent<Moduls>().AlreadyInGun = true;
         _module.transform.localRotation = new Quaternion(0f, 270f, 0f, 0f);
         _module.transform.localScale = new Vector3(0.04259932f, 0.03221213f, 0.212989f);
         module.gameObject.AddComponent<Rigidbody>();
@@ -193,6 +209,8 @@ public class ModuleReplacement : MonoBehaviour
         other.transform.SetParent(pistol.transform);
         other.transform.localPosition = new Vector3(0, 1, 0);
         _module = other.gameObject;
+        module.GetComponent<Moduls>().AlreadyInGun = false;
+        _module.GetComponent<Moduls>().AlreadyInGun = true;
         _module.transform.localRotation = new Quaternion(0f, 270f, 0f, 0f);
         _module.transform.localScale = new Vector3(0.04259932f, 0.03221213f, 0.212989f);
         module.gameObject.AddComponent<Rigidbody>();
@@ -243,6 +261,11 @@ public class ModuleReplacement : MonoBehaviour
         //other.transform.localPosition = new Vector3(0, 0, 0.125f);
         Debug.Log("fuckthis12");
         _module = other.gameObject;
+        try
+        {
+            module.GetComponent<Moduls>().AlreadyInGun = false;
+        } catch (NullReferenceException e) { }
+        _module.GetComponent<Moduls>().AlreadyInGun = true;
         Debug.Log("fuckthis13");
         _module.transform.localRotation = new Quaternion(0f, 270f, 0f, 0f);
         Debug.Log("fuckthis14");

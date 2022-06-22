@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Moduls : MonoBehaviour
 {
+    public bool AlreadyInGun;
     public Rarity Raryti;
     public float durCoef;
     public int junkPrice;

@@ -87,6 +87,11 @@ public class Enemy : MonoBehaviour
             Stop();
             reachedAttackDistance = true;
         }
+        if (myCollision.gameObject.tag == "ggwp")
+        {
+            Debug.Log("EnTER");
+            GetDamage(100);
+        }
     }
 
     public void OnCollisionRange(Collider myCollision)
