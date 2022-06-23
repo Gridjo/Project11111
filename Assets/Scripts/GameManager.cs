@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject ModulPool;
     public GameObject[] Childs;
     public GameObject[] ModSp;
+    public GameObject spawnPoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,58 +52,88 @@ public class GameManager : MonoBehaviour
     }
     public void ChSpawnModul()
     {
-
+        Childs = new GameObject[ModulPool.transform.childCount];
         ModSp = null;
         float ScoreWaveMod = Score * 0.8f;
         Score *= 0.8f;
-        float ScoreJunk = Score - ScoreWaveMod;
-        for (int i = 0; i < ModulPool.transform.childCount; i++)
+        if (Score < 14f)
         {
-            Childs[i] = ModulPool.transform.GetChild(i).gameObject;
+            return;
         }
+        float ScoreJunk = Score - ScoreWaveMod;
+        for (int i = 0; i < ModulPool.transform.childCount;  i++)
+        {
+            Debug.Log(ModulPool.transform.GetChild(i).gameObject.name);
+            Childs[i] = ModulPool.transform.GetChild(i).gameObject;
+            Debug.Log(Childs[i].name);
+        }
+        ModSp = new GameObject[Childs.Length];
         for (int i = 0, j=0; i < Childs.Length; i++)
         {
             if (ScoreWaveMod > Childs[i].GetComponent<Moduls>().junkPrice)
             {
                 ModSp[j] = Childs[i];
+                j++;
             }
         }
         int rr = UnityEngine.Random.Range(0, 100);
-        for (int i = 0, j = 0; i < ModSp.Length; i++)
+        for (int i = 0; i < ModSp.Length; i++)
         {
             
             if (rr < 50)
             {
-                if (ModSp[i].GetComponent<Moduls>().Raryti == Rarity.Common) 
+                if (ModSp[i].TryGetComponent<Moduls>(out Moduls cc))
                 {
-                    SpawnModul(ModSp[i]);
+                    if (cc.Raryti == Rarity.Common)
+                    {
+                        SpawnModul(ModSp[i]);
+                        return;
+                    } 
                 }
             }
             else if(rr < 80)
             {
-                if (ModSp[i].GetComponent<Moduls>().Raryti == Rarity.Rare)
+                if (ModSp[i].TryGetComponent<Moduls>(out Moduls cc))
                 {
-                    SpawnModul(ModSp[i]);
+                    if (cc.Raryti == Rarity.Rare)
+                    {
+                        SpawnModul(ModSp[i]);
+                        return;
+                    }
                 }
             }
             else if (rr < 95)
             {
-                if (ModSp[i].GetComponent<Moduls>().Raryti == Rarity.Epic)
+                if (ModSp[i].TryGetComponent<Moduls>(out Moduls cc))
                 {
-                    SpawnModul(ModSp[i]);
+                    if (cc.Raryti == Rarity.Epic)
+                    {
+                        SpawnModul(ModSp[i]);
+                        return;
+                    }
                 }
             }
             else if (rr < 100)
             {
-                if (ModSp[i].GetComponent<Moduls>().Raryti == Rarity.Legendary)
+                if (ModSp[i].TryGetComponent<Moduls>(out Moduls cc))
                 {
-                    SpawnModul(ModSp[i]);
+                    if (cc.Raryti == Rarity.Legendary)
+                    {
+                        SpawnModul(ModSp[i]);
+                        return;
+                    }
                 }
             }
+              
         }
+        
     }
     public void SpawnModul(GameObject Mod)
     {
 
+        Mod.transform.SetParent(spawnPoint.transform, false);
+        gameObject.transform.localPosition = new Vector3();
+        Mod.SetActive(true);
+        ChSpawnModul();
     }
 }
