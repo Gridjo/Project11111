@@ -6,10 +6,16 @@ using UnityEngine;
 
 public class PlayerVariables : MonoBehaviour
 {
+    [Header("Player Controller")]
     private int scrapsBagHave;
     private int ammoScrap;
     public static PlayerVariables Instance;
 
+    [Header("Guns")]
+    public GameObject pistolGun;
+    public GameObject rifleGun;
+
+    [Header("Debug")]
     public bool playerUseLeftArm = false;
     public bool playerUseRightArm = false;
     public bool playerUseAnyArm() {
