@@ -406,6 +406,7 @@ MonoBehaviour:
   enemyPoolMeles: {fileID: 1181186405}
   enemyPoolRanges: {fileID: 579929985}
   enemyPoolNpc: {fileID: 654503420}
+  GameManager: {fileID: 0}
   waves:
   - meles: 7
     ranges: 4
@@ -2870,6 +2871,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2796171631445110268, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: bulletType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3029227068502546164, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.0007789731
@@ -3512,6 +3517,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9012087759578481677, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122977590740752628, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: bulletType
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

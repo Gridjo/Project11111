@@ -26,7 +26,7 @@ public class ModulAllInGun : MonoBehaviour
         {
             for (int i = 0; i < gameObject.transform.GetChild(x).childCount; i++)
             {
-                if (gameObject.transform.GetChild(x).TryGetComponent<bodyModul>(out bodyModul bodm))
+                if (gameObject.transform.GetChild(x).GetChild(i).TryGetComponent<bodyModul>(out bodyModul bodm))
                 {
                     attSpeed = bodm.attSpeed;
                     magCapacity = bodm.magCapacity;
@@ -41,12 +41,13 @@ public class ModulAllInGun : MonoBehaviour
         {
             for (int i = 0; i < gameObject.transform.GetChild(x).childCount; i++)
             {
-                if (gameObject.transform.GetChild(x).TryGetComponent<bareModul>(out bareModul barm))
+                if (gameObject.transform.GetChild(x).GetChild(i).TryGetComponent<bareModul>(out bareModul barm))
                 {
                     recoilBaree = barm.recoil;
                     recoil = recoilBaree;
                     damage = barm.damage;
                     junkPerShot = barm.junkPerShot;
+                    bulletType = barm.bulletType;
                     return;
                 }
             }
@@ -58,7 +59,7 @@ public class ModulAllInGun : MonoBehaviour
         {
             for (int i = 0; i < gameObject.transform.GetChild(x).childCount; i++)
             {
-                if (gameObject.transform.GetChild(x).TryGetComponent<ModulsInfo>(out ModulsInfo stm))
+                if (gameObject.transform.GetChild(x).GetChild(i).TryGetComponent<ModulsInfo>(out ModulsInfo stm))
                 {
                     recoilStock = stm.recoil;
                     recoil = recoilBaree + recoilStock;

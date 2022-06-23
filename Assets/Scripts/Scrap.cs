@@ -16,11 +16,9 @@ public class Scrap : MonoBehaviour
         if(other.TryGetComponent(out gunScript))
         {
             gun = gunScript.gameObject;
-            //Check need ammo and other
-            
-            //But it's not by writed
             if(gameObject.TryGetComponent(out grb))
             {
+
 
             }    
         }
@@ -28,6 +26,11 @@ public class Scrap : MonoBehaviour
 
     private void ToInputScrapToAmmo()
     {
-
+        if (PlayerVariables.Instance.TakeScraps(this))
+        {
+            Debug.Log("Reloading is success");
+        }
+        else
+            Debug.Log("Reloading is failed");
     }
 }
