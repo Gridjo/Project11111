@@ -2712,7 +2712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1224040311354089651, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1224040311354089661, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: Rigidbody
@@ -3529,6 +3529,18 @@ PrefabInstance:
     - target: {fileID: 8301473801868483963, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8488745767830794099, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_Size.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8488745767830794099, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_Size.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8488745767830794099, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_Size.z
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8878678843225312159, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: HoverEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
