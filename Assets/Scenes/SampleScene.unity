@@ -2746,14 +2746,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1794558451180522925, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
-      propertyPath: rifleGun
-      value: 
-      objectReference: {fileID: 8301473802455262188}
-    - target: {fileID: 1794558451180522925, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
-      propertyPath: pistolGun
-      value: 
-      objectReference: {fileID: 1512748040}
     - target: {fileID: 2380306047704902724, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: IncludeTriggers
       value: 0
@@ -3602,8 +3594,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &8301473802455262188 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5784419669841177265, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
-  m_PrefabInstance: {fileID: 8301473802455262185}
-  m_PrefabAsset: {fileID: 0}
