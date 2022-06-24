@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.2850269, g: 0.3713935, b: 0.49601045, a: 1}
+  m_IndirectSpecularColor: {r: 0.28502667, g: 0.37139323, b: 0.49600998, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2125,6 +2125,17 @@ ReflectionProbe:
   m_UseOcclusionCulling: 1
   m_Importance: 1
   m_CustomBakedTexture: {fileID: 0}
+--- !u!114 &1971529643 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8841355934763415555, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+  m_PrefabInstance: {fileID: 8301473802455262185}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2006181776
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2735,6 +2746,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1794558451180522925, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: rifleGun
+      value: 
+      objectReference: {fileID: 8301473802455262188}
+    - target: {fileID: 1794558451180522925, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: pistolGun
+      value: 
+      objectReference: {fileID: 1512748040}
     - target: {fileID: 2380306047704902724, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: IncludeTriggers
       value: 0
@@ -2872,6 +2891,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796171631445110268, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: AmmoText
+      value: 
+      objectReference: {fileID: 8301473802455262187}
+    - target: {fileID: 2796171631445110268, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: bulletType
       value: 0
       objectReference: {fileID: 0}
@@ -2879,6 +2902,30 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.0007789731
       objectReference: {fileID: 0}
+    - target: {fileID: 3224311453684633191, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+    - target: {fileID: 3224311453684633191, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+    - target: {fileID: 3224311453684633191, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 3224311453684633191, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3224311453684633191, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_enableVertexGradient
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3224311453684633191, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_fontColorGradientPreset
+      value: 
+      objectReference: {fileID: 11400000, guid: 479a66fa4b094512a62b0a8e553ad95a, type: 2}
     - target: {fileID: 3280551612135609627, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.323
@@ -3147,6 +3194,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5474472259874296721, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: AmmoText
+      value: 
+      objectReference: {fileID: 1971529643}
     - target: {fileID: 5474834564338724818, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3211,6 +3262,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.0050005913
       objectReference: {fileID: 0}
+    - target: {fileID: 5696196053387218494, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
     - target: {fileID: 5784419668175901747, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3536,3 +3591,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d924166925eb40e2be6e7d5a2f425dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8301473802455262187 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3224311453684633191, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+  m_PrefabInstance: {fileID: 8301473802455262185}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &8301473802455262188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5784419669841177265, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+  m_PrefabInstance: {fileID: 8301473802455262185}
+  m_PrefabAsset: {fileID: 0}

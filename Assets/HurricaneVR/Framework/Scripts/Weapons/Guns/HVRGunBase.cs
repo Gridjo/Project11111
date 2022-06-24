@@ -13,6 +13,7 @@ using UnityEngine.Serialization;
 
 namespace HurricaneVR.Framework.Weapons.Guns
 {
+
     public enum TypeGun
     {
         rifle,
@@ -25,7 +26,10 @@ namespace HurricaneVR.Framework.Weapons.Guns
         public HVRGrabbable Grabbable { get; private set; }
 
         [Header("Additional Settings")]
-        public TypeGun TypeGun; 
+        public TypeGun TypeGun;
+        public int GameAmmo;
+        public int GameMaxAmmo;
+        public int ShotAmmoTake;
 
         [Header("Settings")]
         public float TriggerPullThreshold = .7f;
@@ -698,6 +702,10 @@ namespace HurricaneVR.Framework.Weapons.Guns
 
         protected virtual bool CanFire()
         {
+            if (ShotAmmoTake > GameAmmo)
+                return false;
+            if (GameAmmo <= 0)
+                return false;
             if (RequiresChamberedBullet)
             {
                 return IsBulletChambered;
@@ -883,6 +891,7 @@ namespace HurricaneVR.Framework.Weapons.Guns
 
         protected virtual void OnFire(Vector3 direction)
         {
+            GameAmmo--;
             FireBullet(direction);
             FireHaptics();
         }
@@ -952,7 +961,7 @@ namespace HurricaneVR.Framework.Weapons.Guns
 
         protected virtual void AfterFired()
         {
-
+            GameAmmo -= 1;
         }
 
         protected virtual void MuzzleFlash()

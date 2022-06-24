@@ -124,6 +124,7 @@ public class ModuleReplacement : MonoBehaviour
                     StockReplace(grb, other);
                 }
             }
+            hvrp.gameObject.GetComponent<ModulAllInGun>().ModulsFind();
         }
 
     }

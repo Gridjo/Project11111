@@ -1,5 +1,6 @@
 using HurricaneVR.Framework.Core;
 using HurricaneVR.Framework.Core.Grabbers;
+using HurricaneVR.Framework.Weapons.Guns;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,6 @@ public class PlayerVariables : MonoBehaviour
 {
     [Header("Player Controller")]
     private int scrapsBagHave;
-    private int ammoScrap;
     public static PlayerVariables Instance;
 
     [Header("Guns")]
@@ -43,6 +43,26 @@ public class PlayerVariables : MonoBehaviour
             playerUseRightArm = false;
     }
 
+    public int GetAmmo(TypeGun type)
+    {
+        if (type == TypeGun.pistol)
+            return pistolGun.GetComponent<HVRPistol>().GameAmmo;
+        else if (type == TypeGun.rifle)
+            return rifleGun.GetComponent<HVRPistol>().GameAmmo;
+        else
+            return -1;
+    }
+
+    public int GetMaxAmmo(TypeGun type)
+    {
+        if (type == TypeGun.pistol)
+            return pistolGun.GetComponent<HVRPistol>().GameMaxAmmo;
+        else if (type == TypeGun.rifle)
+            return rifleGun.GetComponent<HVRPistol>().GameAmmo;
+        else
+            return -1;
+    }
+
     private void Awake()
     {
         Instance = this;
@@ -53,16 +73,11 @@ public class PlayerVariables : MonoBehaviour
         return scrapsBagHave;
     }
 
-    public int GetAmmoScrapsAmount()
-    {
-        return ammoScrap;
-    }
-
     public void AddAmmoScraps(Scrap scrap)
     {
         if (scrap.AmountScrap > 0)
         {
-            ammoScrap += scrap.AmountScrap;
+            
             Debug.Log(scrapsBagHave);
         }
         else
@@ -71,13 +86,24 @@ public class PlayerVariables : MonoBehaviour
 
     public bool TakeScraps(Scrap scrap)
     {
-        if (scrap.AmountScrap > 0 && scrapsBagHave >= scrap.AmountScrap)
+        if (scrap.AmountScrap > 0)
         {
-            scrapsBagHave -= scrap.AmountScrap;
-            return true;
+            if (scrapsBagHave >= scrap.AmountScrap)
+            {
+                scrapsBagHave -= scrap.AmountScrap;
+                scrapsBagHave += pistolGun.GetComponent<HVRPistol>().AddAmmo(scrap.AmountScrap);
+                return true;
+            }
+            else
+            {
+                Scrap sc = new Scrap();
+                sc.AmountScrap = scrapsBagHave;
+                scrapsBagHave -= sc.AmountScrap;
+                scrapsBagHave += pistolGun.GetComponent<HVRPistol>().AddAmmo(sc.AmountScrap);
+                return true;
+            }
         }
-        else
-            return false;
+        return false;
     }
 
     public void AddScraps(RecyclerItem item)

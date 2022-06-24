@@ -18,16 +18,16 @@ public class Scrap : MonoBehaviour
             gun = gunScript.gameObject;
             if(gameObject.TryGetComponent(out grb))
             {
-
-
+                ToInputScrapToAmmo(gameObject.GetComponent<HVRGrabbable>());
             }    
         }
     }
 
-    private void ToInputScrapToAmmo()
+    private void ToInputScrapToAmmo(HVRGrabbable _grb)
     {
         if (PlayerVariables.Instance.TakeScraps(this))
         {
+            _grb.ForceRelease();
             Debug.Log("Reloading is success");
         }
         else
