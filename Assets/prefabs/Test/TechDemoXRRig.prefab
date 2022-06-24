@@ -175,6 +175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b9429e7bdf93e94790e1a1711a6b093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pistolGun: {fileID: 0}
+  rifleGun: {fileID: 0}
   playerUseLeftArm: 0
   playerUseRightArm: 0
 --- !u!1 &101864637406513328
@@ -21470,6 +21472,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8301473803137089321}
     m_Modifications:
+    - target: {fileID: 3158289967248110026, guid: 05f2bd6efe6fd9144a73c42cc9956d4b, type: 3}
+      propertyPath: moduleType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5398533708634721654, guid: 05f2bd6efe6fd9144a73c42cc9956d4b, type: 3}
       propertyPath: m_Name
       value: LastRifleGun

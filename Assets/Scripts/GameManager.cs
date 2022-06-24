@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public float Score = 0;
-    public float Energy = 0, MaxEnergy = 100;
+    public float Energy = 0, MaxEnergy = 500;
     public float EnergyMultiplier = 1;
     private float TimeEner = 1f, TimeEnerOut = 1f;
     public GameObject ModulPool;
@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
     }
     public void ChSpawnModul()
     {
+        Debug.Log("ffggg1");
         Childs = new GameObject[ModulPool.transform.childCount];
         ModSp = null;
         float ScoreWaveMod = Score * 0.8f;
@@ -132,7 +133,8 @@ public class GameManager : MonoBehaviour
     {
 
         Mod.transform.SetParent(spawnPoint.transform, false);
-        gameObject.transform.localPosition = new Vector3();
+        Mod.transform.position = new Vector3();
+        Mod.transform.localPosition = new Vector3();
         Mod.SetActive(true);
         ChSpawnModul();
     }
