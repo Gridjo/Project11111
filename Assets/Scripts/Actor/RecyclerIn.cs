@@ -24,7 +24,7 @@ public class RecyclerIn : MonoBehaviour
 
     private void FixedUpdate()
     {
-
+        ShowBagScrapText();
     }
 
     //I have fun, you have fun, we have fun...
@@ -35,11 +35,13 @@ public class RecyclerIn : MonoBehaviour
 
     public void AddScrapToRecycle(HVRGrabberBase grabberBase, HVRGrabbable grabbable)
     {
-        if (grabbable.TryGetComponent(out RecyclerItem item))
+        if (grabbable.TryGetComponent(out Moduls item))
         {
+            RecyclerItem costil = new RecyclerItem();
+            costil.RecyclerCost = item.junkPrice;
             if (item)
             {
-                PlayerVariables.Instance.AddScraps(item);
+                PlayerVariables.Instance.AddScraps(costil);
                 Destroy(item.gameObject);
             }
         }
@@ -48,6 +50,5 @@ public class RecyclerIn : MonoBehaviour
             Debug.LogError("Nullable item. lol");
         }
         recOut.TakeScrap();
-        ShowBagScrapText();
     }
 }

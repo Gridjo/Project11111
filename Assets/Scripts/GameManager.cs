@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public float Score = 0;
     public float Energy = 0, MaxEnergy = 500;
-    public float EnergyMultiplier = 1;
+    public float EnergyMultiplier = 1, ScoreWaveMod = 0, CountVis = 0;
     private float TimeEner = 1f, TimeEnerOut = 1f;
     public GameObject ModulPool;
     public GameObject[] Childs;
@@ -47,21 +47,30 @@ public class GameManager : MonoBehaviour
     }
     public void EnerMult(float mult)
     {
-        Debug.Log("Lj,fdktybt");
         EnergyMultiplier += mult;
     }
     public void ChSpawnModul()
     {
-        Debug.Log("ffggg1");
         Childs = new GameObject[ModulPool.transform.childCount];
         ModSp = null;
-        float ScoreWaveMod = Score * 0.8f;
-        Score *= 0.8f;
-        if (Score < 14f)
+        ScoreWaveMod += Score * 0.8f;
+        float ScoreJunk = Score - ScoreWaveMod;
+        
+        
+        if(CountVis == 0 && ScoreJunk > 0)
+        {
+            Score = 0;
+            RecyclerItem costil = new RecyclerItem();
+            costil.RecyclerCost = (int)ScoreJunk;
+            PlayerVariables.Instance.AddScraps(costil);
+            ScoreJunk = 0;
+        }
+        CountVis++;
+        if (ScoreWaveMod < 14f)
         {
             return;
         }
-        float ScoreJunk = Score - ScoreWaveMod;
+        
         for (int i = 0; i < ModulPool.transform.childCount;  i++)
         {
             Debug.Log(ModulPool.transform.GetChild(i).gameObject.name);
@@ -83,10 +92,11 @@ public class GameManager : MonoBehaviour
             
             if (rr < 50)
             {
-                if (ModSp[i].TryGetComponent<Moduls>(out Moduls cc))
+                if (ModSp[i].TryGetComponent(out Moduls ccc))
                 {
-                    if (cc.Raryti == Rarity.Common)
+                    if (ccc.Raryti == Rarity.Common)
                     {
+                        ScoreWaveMod -= ccc.junkPrice;
                         SpawnModul(ModSp[i]);
                         return;
                     } 
@@ -94,10 +104,11 @@ public class GameManager : MonoBehaviour
             }
             else if(rr < 80)
             {
-                if (ModSp[i].TryGetComponent<Moduls>(out Moduls cc))
+                if (ModSp[i].TryGetComponent(out Moduls ccr))
                 {
-                    if (cc.Raryti == Rarity.Rare)
+                    if (ccr.Raryti == Rarity.Rare)
                     {
+                        ScoreWaveMod -= ccr.junkPrice;
                         SpawnModul(ModSp[i]);
                         return;
                     }
@@ -105,10 +116,11 @@ public class GameManager : MonoBehaviour
             }
             else if (rr < 95)
             {
-                if (ModSp[i].TryGetComponent<Moduls>(out Moduls cc))
+                if (ModSp[i].TryGetComponent(out Moduls cce))
                 {
-                    if (cc.Raryti == Rarity.Epic)
+                    if (cce.Raryti == Rarity.Epic)
                     {
+                        ScoreWaveMod -= cce.junkPrice;
                         SpawnModul(ModSp[i]);
                         return;
                     }
@@ -116,14 +128,19 @@ public class GameManager : MonoBehaviour
             }
             else if (rr < 100)
             {
-                if (ModSp[i].TryGetComponent<Moduls>(out Moduls cc))
+                if (ModSp[i].TryGetComponent(out Moduls ccl))
                 {
-                    if (cc.Raryti == Rarity.Legendary)
+                    if (ccl.Raryti == Rarity.Legendary)
                     {
+                        ScoreWaveMod -= ccl.junkPrice;
                         SpawnModul(ModSp[i]);
                         return;
                     }
                 }
+            }
+            else
+            {
+                ChSpawnModul();
             }
               
         }

@@ -27,7 +27,7 @@ namespace HurricaneVR.Framework.Weapons.Guns
 
         [Header("Additional Settings")]
         public TypeGun TypeGun;
-        public int GameAmmo;
+        public int GameAmmo = 0;
         public int GameMaxAmmo;
         public int ShotAmmoTake;
 
@@ -706,12 +706,9 @@ namespace HurricaneVR.Framework.Weapons.Guns
                 return false;
             if (GameAmmo <= 0)
                 return false;
-            if (RequiresChamberedBullet)
-            {
-                return IsBulletChambered;
-            }
-
-            return !RequiresAmmo || Ammo && Ammo.HasAmmo;
+            
+            return true;
+            
         }
 
         protected virtual void PlaySFX()

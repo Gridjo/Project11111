@@ -64,6 +64,7 @@ public class SpawnEnemy : MonoBehaviour
             }
             timeToSpawn = timeToSpawnClone;
             GameManager.GetComponent<GameManager>().ChSpawnModul();
+            GameManager.GetComponent<GameManager>().CountVis = 0;
             Debug.Log("ffggg");
 
             WaveNomber++;

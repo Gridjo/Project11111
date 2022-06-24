@@ -1,5 +1,5 @@
 using HurricaneVR.Framework.Core;
-using HurricaneVR.Framework.Weapons;
+using HurricaneVR.Framework.Weapons.Guns;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,25 +7,30 @@ using UnityEngine;
 public class Scrap : MonoBehaviour
 {
     public int AmountScrap;
-    private GameObject gun;
-    private HVRPistol gunScript;
     private HVRGrabbable grb;
+    private HVRPistol hvrp;
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent(out gunScript))
+        Debug.Log("Sssssssss");
+        if (other.gameObject.tag == "gunn")
         {
-            gun = gunScript.gameObject;
-            if(gameObject.TryGetComponent(out grb))
+            if (other.gameObject.TryGetComponent(out hvrp))
             {
-                ToInputScrapToAmmo(gameObject.GetComponent<HVRGrabbable>());
-            }    
+                Debug.Log("Scrap_0");
+                if (gameObject.TryGetComponent(out grb))
+                {
+                    Debug.Log("Scrap_1");
+                    ToInputScrapToAmmo(gameObject.GetComponent<HVRGrabbable>());
+                }
+            }
         }
     }
+    
 
     private void ToInputScrapToAmmo(HVRGrabbable _grb)
     {
-        if (PlayerVariables.Instance.TakeScraps(this))
+        if (PlayerVariables.Instance.TakeScraps(this, hvrp.TypeGun))
         {
             _grb.ForceRelease();
             Debug.Log("Reloading is success");

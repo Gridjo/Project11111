@@ -84,14 +84,17 @@ public class PlayerVariables : MonoBehaviour
             Debug.LogError($"{scrap.gameObject.name} has cost is {scrap.AmountScrap}");
     }
 
-    public bool TakeScraps(Scrap scrap)
+    public bool TakeScraps(Scrap scrap, TypeGun typeGun)
     {
         if (scrap.AmountScrap > 0)
         {
             if (scrapsBagHave >= scrap.AmountScrap)
             {
                 scrapsBagHave -= scrap.AmountScrap;
-                scrapsBagHave += pistolGun.GetComponent<HVRPistol>().AddAmmo(scrap.AmountScrap);
+                if(typeGun == TypeGun.pistol)
+                    scrapsBagHave += pistolGun.GetComponent<HVRPistol>().AddAmmo(scrap.AmountScrap);
+                else if (typeGun == TypeGun.rifle)
+                    scrapsBagHave += rifleGun.GetComponent<HVRPistol>().AddAmmo(scrap.AmountScrap);
                 return true;
             }
             else
@@ -99,7 +102,10 @@ public class PlayerVariables : MonoBehaviour
                 Scrap sc = new Scrap();
                 sc.AmountScrap = scrapsBagHave;
                 scrapsBagHave -= sc.AmountScrap;
-                scrapsBagHave += pistolGun.GetComponent<HVRPistol>().AddAmmo(sc.AmountScrap);
+                if (typeGun == TypeGun.pistol)
+                    scrapsBagHave += pistolGun.GetComponent<HVRPistol>().AddAmmo(sc.AmountScrap);
+                else if (typeGun == TypeGun.rifle)
+                    scrapsBagHave += rifleGun.GetComponent<HVRPistol>().AddAmmo(sc.AmountScrap);
                 return true;
             }
         }

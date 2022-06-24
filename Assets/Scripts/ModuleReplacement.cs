@@ -88,13 +88,7 @@ public class ModuleReplacement : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collision");
-        /*
-        if (other.TryGetComponent<HVRGrabbable>(out HVRGrabbable grb) && other.gameObject.tag == "Slide") 
-        {
-            BodyReplace(grb, other);
-        }
-        */
+        
         if (other.TryGetComponent<HVRGrabbable>(out HVRGrabbable grb))
         {
             if (other.TryGetComponent<Moduls>(out Moduls modsInfo))

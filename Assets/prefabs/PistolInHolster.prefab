@@ -1825,6 +1825,7 @@ GameObject:
   - component: {fileID: 3248615794247338506}
   - component: {fileID: 2849102136229929694}
   - component: {fileID: 8451021301951081821}
+  - component: {fileID: 1670313336893675728}
   m_Layer: 0
   m_Name: PistolInHolster
   m_TagString: Untagged
@@ -1976,7 +1977,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 25
   Force: 10
-  TypeGun: 0
+  TypeGun: 1
   GameAmmo: 0
   GameMaxAmmo: 0
   ShotAmmoTake: 0
@@ -1989,7 +1990,7 @@ MonoBehaviour:
   MuzzleFlashTime: 0.2
   BarrelRange: 10
   RequiresAmmo: 0
-  RequiresChamberedBullet: 0
+  RequiresChamberedBullet: 1
   FireType: 0
   BulletSpeed: 80
   AmmoEjectVelocity: 0
@@ -2166,8 +2167,21 @@ MonoBehaviour:
   damage: 0
   recoilBaree: 0
   bulletType: 0
-  junkPerShot: 0
-  AmmoText: {fileID: 0}
+  junkPerShot: 1
+  AmmoText: {fileID: 4901036778587768527}
+--- !u!135 &1670313336893675728
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3248615794247338505}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.12
+  m_Center: {x: -0.03, y: 0, z: 0}
 --- !u!1 &3248615794257314724
 GameObject:
   m_ObjectHideFlags: 0
@@ -2849,14 +2863,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52bf3cf5802c7cd4b8985dd28e5a40c8, type: 3}
---- !u!4 &3885124042135090433 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1801401786172886063, guid: 52bf3cf5802c7cd4b8985dd28e5a40c8, type: 3}
-  m_PrefabInstance: {fileID: 3248615793736055086}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2798479966504201017 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 847613968714027543, guid: 52bf3cf5802c7cd4b8985dd28e5a40c8, type: 3}
+  m_PrefabInstance: {fileID: 3248615793736055086}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3885124042135090433 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1801401786172886063, guid: 52bf3cf5802c7cd4b8985dd28e5a40c8, type: 3}
   m_PrefabInstance: {fileID: 3248615793736055086}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4729706398410399979

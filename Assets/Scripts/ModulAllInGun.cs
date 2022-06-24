@@ -7,11 +7,11 @@ using UnityEngine;
     public class ModulAllInGun : MonoBehaviour
     {
         public float attSpeed;
-        public int magCapacity;
+        public int magCapacity = 0;
         public float damage;
         public int recoilBaree;
         public BuletType bulletType;
-        public int junkPerShot;
+        public int junkPerShot = 0;
         public TextMeshPro AmmoText;
         private int recoil;
         private int recoilStock;
@@ -20,8 +20,8 @@ using UnityEngine;
         // Start is called before the first frame update
         void Awake()
         {
-            ModulsFind();
-            hvrp = gameObject.GetComponent<HVRPistol>();
+        hvrp = gameObject.GetComponent<HVRPistol>();
+        ModulsFind();
         }
 
         public void ModulsFind()
