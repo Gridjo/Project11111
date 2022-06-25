@@ -10,8 +10,13 @@ public class RecyclerOut : MonoBehaviour
     public GameObject prefabScrap;
     public RecyclerIn recIn;
 
+    public static RecyclerOut Instance;
+
+
+
     private void Awake()
     {
+        Instance = this;
         prefabScrap.GetComponent<HVRGrabbable>().StartingSocket = transform.GetComponentInParent<HVRSocket>();
         prefabScrap.GetComponent<HVRGrabbable>().LinkStartingSocket = true;
     }

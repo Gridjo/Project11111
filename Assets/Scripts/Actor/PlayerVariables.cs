@@ -117,6 +117,7 @@ public class PlayerVariables : MonoBehaviour
         if (item.RecyclerCost > 0)
         {
             scrapsBagHave += item.RecyclerCost;
+            RecyclerOut.Instance.TakeScrap();
             Debug.Log(scrapsBagHave);
         }
         else

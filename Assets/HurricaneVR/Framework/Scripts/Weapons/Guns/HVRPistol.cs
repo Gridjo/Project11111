@@ -27,8 +27,9 @@ namespace HurricaneVR.Framework.Weapons.Guns
                         GameAmmo += amount;
                     else if (GameAmmo + amount > GameMaxAmmo)
                     {
-                        GameAmmo = GameMaxAmmo;
-                        ostatok = GameAmmo + amount - GameMaxAmmo;
+                        var amountneed = GameMaxAmmo - GameAmmo;
+                        ostatok = amount - amountneed;
+                        GameAmmo += amountneed;
                     }
                 }
                 else

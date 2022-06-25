@@ -126,7 +126,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7655865766964357308}
-  - component: {fileID: 5897121906172056557}
   m_Layer: 0
   m_Name: stock
   m_TagString: Untagged
@@ -149,23 +148,6 @@ Transform:
   m_Father: {fileID: 5398533708659377370}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!320 &5897121906172056557
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2743961932665061569}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 7028282ad608a2546bb082b5c509d927, type: 2}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings: []
-  m_ExposedReferences:
-    m_References: []
 --- !u!1 &2995199279254697949
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,6 +1348,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 835082614896580767, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
       propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919586621823758682, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
+      propertyPath: AlreadyInGun
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5162100992116928008, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}

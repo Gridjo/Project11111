@@ -144,7 +144,7 @@ public class ModuleReplacement : MonoBehaviour
         module.gameObject.AddComponent<Rigidbody>();
         module.gameObject.GetComponent<HVRGrabbable>().Rigidbody = module.gameObject.GetComponent<Rigidbody>();
         module.gameObject.GetComponent<HVRGrabbable>().enabled = true;
-        module.TryGetComponent<HVRGrabbable>(out HVRGrabbable grbb);
+        module.TryGetComponent(out HVRGrabbable grbb);
         grbb.TrackingType = HurricaneVR.Framework.Shared.HVRGrabTracking.ConfigurableJoint;
     }
 
@@ -157,7 +157,7 @@ public class ModuleReplacement : MonoBehaviour
         grb.TrackingType = HurricaneVR.Framework.Shared.HVRGrabTracking.None;
         module.gameObject.GetComponent<HVRGrabbable>().enabled = true;
         Destroy(other.GetComponent<Rigidbody>());
-        module.transform.position = new Vector3(0, 0, 0);
+        //module.transform.position = new Vector3(0, 0, 0);
         module.transform.localScale = new Vector3(0.212989f, 0.03221213f, 0.04259932f);
         other.transform.SetParent(pistol.transform);
         other.transform.localPosition = new Vector3(0, 1, 0);
@@ -169,7 +169,7 @@ public class ModuleReplacement : MonoBehaviour
         module.gameObject.AddComponent<Rigidbody>();
         module.gameObject.GetComponent<HVRGrabbable>().Rigidbody = module.gameObject.GetComponent<Rigidbody>();
         module.gameObject.GetComponent<HVRGrabbable>().enabled = true;
-        module.TryGetComponent<HVRGrabbable>(out HVRGrabbable grbb);
+        module.TryGetComponent(out HVRGrabbable grbb);
         grbb.TrackingType = HurricaneVR.Framework.Shared.HVRGrabTracking.ConfigurableJoint;
     }
 
@@ -211,78 +211,52 @@ public class ModuleReplacement : MonoBehaviour
         module.gameObject.AddComponent<Rigidbody>();
         module.gameObject.GetComponent<HVRGrabbable>().Rigidbody = module.gameObject.GetComponent<Rigidbody>();
         module.gameObject.GetComponent<HVRGrabbable>().enabled = true;
-        module.TryGetComponent<HVRGrabbable>(out HVRGrabbable grbb);
+        module.TryGetComponent(out HVRGrabbable grbb);
         grbb.TrackingType = HurricaneVR.Framework.Shared.HVRGrabTracking.ConfigurableJoint;
     }
 
     void StockReplace(HVRGrabbable grb, Collider other)
     {
-        Debug.Log("fuckthis1");
         FindStock();
-        Debug.Log("fuckthis2");
         grb.ForceRelease();
-        Debug.Log("fuckthis3");
         grb.enabled = false;
-        Debug.Log("fuckthis4");
         try
         {
-            Debug.Log("fuckthis5");
             module.transform.SetParent(null);
-        } catch (NullReferenceException e) {
-            Debug.Log("fuckthis5.1");
-        }
-        Debug.Log("fuckthis6");
+        } catch (NullReferenceException e) {}
         grb.TrackingType = HurricaneVR.Framework.Shared.HVRGrabTracking.None;
         try
         {
             module.gameObject.GetComponent<HVRGrabbable>().enabled = true;
-            Debug.Log("fuckthis7");
         }
-        catch (NullReferenceException e) { Debug.Log("fuckthis7.1"); }
+        catch (NullReferenceException e) {}
         Destroy(other.GetComponent<Rigidbody>());
-        Debug.Log("fuckthis8");
         try
         {
-            Debug.Log("fuckthis9");
-            Debug.Log(module.gameObject.name);
-            module.transform.position = new Vector3(0, 0, 0);
+            //module.transform.position = new Vector3(0, 0, 0);
             module.transform.localScale = new Vector3(0.212989f, 0.03221213f, 0.04259932f);
         }
-        catch (NullReferenceException e) { Debug.Log("fuckthis9.1"); }
-        Debug.Log("fuckthis10");
+        catch (NullReferenceException e) {}
         FindStockPlace();
         other.transform.SetParent(_stockPlace);
-        Debug.Log("fuckthis11");
         //other.transform.localPosition = new Vector3(0, 0, 0.125f);
-        Debug.Log("fuckthis12");
         _module = other.gameObject;
         try
         {
             module.GetComponent<Moduls>().AlreadyInGun = false;
         } catch (NullReferenceException e) { }
         _module.GetComponent<Moduls>().AlreadyInGun = true;
-        Debug.Log("fuckthis13");
         _module.transform.localRotation = new Quaternion(0f, 270f, 0f, 0f);
-        Debug.Log("fuckthis14");
         _module.transform.localScale = new Vector3(0.045f, 0.03f, 0.06f);
-        Debug.Log("fuckthis15");
         try
         {
             module.gameObject.AddComponent<Rigidbody>();
-            Debug.Log("fuckthis16");
             module.gameObject.GetComponent<HVRGrabbable>().Rigidbody = module.gameObject.GetComponent<Rigidbody>();
-            Debug.Log("fuckthis17");
             module.gameObject.GetComponent<HVRGrabbable>().enabled = true;
-            Debug.Log("fuckthis18");
-            module.TryGetComponent<HVRGrabbable>(out HVRGrabbable grbb);
-            Debug.Log("fuckthis19");
+            module.TryGetComponent(out HVRGrabbable grbb);
             grbb.TrackingType = HurricaneVR.Framework.Shared.HVRGrabTracking.ConfigurableJoint;
-            Debug.Log("fuckthis20");
         }
-        catch (NullReferenceException e) {
-            Debug.Log("fuckthis20.1");
-        }
-        Debug.Log("fuckthis21");
+        catch (NullReferenceException e) {}
     }
 
     public enum ModuleType
