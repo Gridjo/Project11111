@@ -13,10 +13,23 @@ using UnityEngine.Serialization;
 
 namespace HurricaneVR.Framework.Weapons.Guns
 {
+
+    public enum TypeGun
+    {
+        rifle,
+        pistol
+    }
+
     public class HVRGunBase : HVRDamageProvider
     {
 
         public HVRGrabbable Grabbable { get; private set; }
+
+        [Header("Additional Settings")]
+        public TypeGun TypeGun;
+        public int GameAmmo = 0;
+        public int GameMaxAmmo;
+        public int ShotAmmoTake;
 
         [Header("Settings")]
         public float TriggerPullThreshold = .7f;
@@ -689,12 +702,13 @@ namespace HurricaneVR.Framework.Weapons.Guns
 
         protected virtual bool CanFire()
         {
-            if (RequiresChamberedBullet)
-            {
-                return IsBulletChambered;
-            }
-
-            return !RequiresAmmo || Ammo && Ammo.HasAmmo;
+            if (ShotAmmoTake > GameAmmo)
+                return false;
+            if (GameAmmo <= 0)
+                return false;
+            
+            return true;
+            
         }
 
         protected virtual void PlaySFX()
@@ -874,6 +888,7 @@ namespace HurricaneVR.Framework.Weapons.Guns
 
         protected virtual void OnFire(Vector3 direction)
         {
+            GameAmmo--;
             FireBullet(direction);
             FireHaptics();
         }
@@ -943,7 +958,7 @@ namespace HurricaneVR.Framework.Weapons.Guns
 
         protected virtual void AfterFired()
         {
-
+            GameAmmo -= 1;
         }
 
         protected virtual void MuzzleFlash()
@@ -1101,9 +1116,10 @@ namespace HurricaneVR.Framework.Weapons.Guns
 
         }
 
-        private class HVRBulletTracker
+        public class HVRBulletTracker
         {
             public GameObject Bullet;
+            public float Damage;
             public float Elapsed;
             public float TimeToLive;
             public float Speed;

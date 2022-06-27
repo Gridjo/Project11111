@@ -11,6 +11,7 @@ public class SpawnEnemy : MonoBehaviour
     public GameObject enemyPoolMeles;
     public GameObject enemyPoolRanges;
     public GameObject enemyPoolNpc;
+    public GameObject GameManager;
     public wave[] waves;
     private int WaveNomber = 0;
     public bool canSpawnM = true, canSpawnR = true, canSpawnN = true;
@@ -62,6 +63,10 @@ public class SpawnEnemy : MonoBehaviour
                     canSpawnN = false;
             }
             timeToSpawn = timeToSpawnClone;
+            GameManager.GetComponent<GameManager>().ChSpawnModul();
+            GameManager.GetComponent<GameManager>().CountVis = 0;
+            Debug.Log("ffggg");
+
             WaveNomber++;
             canSpawnM = true;
             canSpawnR = true;

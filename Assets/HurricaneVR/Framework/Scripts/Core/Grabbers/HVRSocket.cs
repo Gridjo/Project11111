@@ -7,6 +7,7 @@ using HurricaneVR.Framework.Core.Bags;
 using HurricaneVR.Framework.Core.Sockets;
 using HurricaneVR.Framework.Core.Utils;
 using HurricaneVR.Framework.Shared;
+using HurricaneVR.Framework.Weapons.Guns;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
@@ -748,6 +749,10 @@ namespace HurricaneVR.Framework.Core.Grabbers
         {
             try
             {
+                /*if(grabbable.gameObject.GetComponent<Moduls>())
+                {
+                    grabbable.gameObject.GetComponent<moduls>().
+                }*/
                 _ignoreGrabSFX = ignoreGrabSound;
                 return base.TryGrab(grabbable, force);
             }

@@ -10,47 +10,49 @@ public class RecyclerOut : MonoBehaviour
     public GameObject prefabScrap;
     public RecyclerIn recIn;
 
+    public static RecyclerOut Instance;
+
+
+
     private void Awake()
     {
+        Instance = this;
         prefabScrap.GetComponent<HVRGrabbable>().StartingSocket = transform.GetComponentInParent<HVRSocket>();
         prefabScrap.GetComponent<HVRGrabbable>().LinkStartingSocket = true;
     }
     public void TakeScrap()
     {
         //Spawn of scrap
-        Debug.Log("fuck1");
         if (PlayerVariables.Instance.GetBagScrapsAmount() <= 0)
         {
             //20.06 upd
-            if (prefabScrap.activeInHierarchy)
+            if (prefabScrap)
                 prefabScrap.SetActive(false);
-            Debug.Log("fuck2");
-            //prefabScrap.GetComponent<Scrap>().AmountScrap = 0;
             return;
         }
         if (PlayerVariables.Instance.GetBagScrapsAmount() < prefabScrap.GetComponent<Scrap>().AmountScrap)
         {
             prefabScrap.GetComponent<Scrap>().AmountScrap = PlayerVariables.Instance.GetBagScrapsAmount();
-            Debug.Log("fuck3");
         }
-        //if (gameObject.TryGetComponent(out HVRSocket _socket))
-        //{
-            Debug.Log("fuck4");
+        if (gameObject.TryGetComponent(out HVRSocket _socket))
+        {
             if (prefabScrap.TryGetComponent(out Scrap _scrap))
             {
-                Debug.Log("fuck5");
                 _scrap.AmountScrap = 10;
-                /*
-                if (PlayerVariables.Instance.TakeScraps(_scrap))
-                {
-                    Instantiate(prefabScrap);
-                    //_socket.AutoSpawnPrefab = prefabScrap;
-                    //_socket.CheckAutoSpawn();
-                }
-                */
+                prefabScrap.transform.localPosition = _socket.gameObject.transform.localPosition;
                 prefabScrap.SetActive(true);
                 recIn.ShowBagScrapText();
             }
-        //} 
+        } 
+    }
+
+    private void FixedUpdate()
+    {
+        if (PlayerVariables.Instance.GetBagScrapsAmount() <= 0)
+        {
+            //20.06 upd
+            if (prefabScrap)
+                prefabScrap.SetActive(false);
+        }
     }
 }

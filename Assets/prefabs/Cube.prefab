@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 4796706488028073068}
   - component: {fileID: 4796706488028073069}
   - component: {fileID: 4796706488028073057}
+  - component: {fileID: 2181673352073838118}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Platforrm
@@ -156,6 +157,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HeetPoints: 100
   MaxHeetPoints: 100
+--- !u!54 &2181673352073838118
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4796706488028073066}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4796706488162608187
 GameObject:
   m_ObjectHideFlags: 0
