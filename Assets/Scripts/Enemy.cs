@@ -21,10 +21,10 @@ public class Enemy : MonoBehaviour
 
     void OnEnable()
     {
-        // Получение компонента агента
+        
         NavMeshAgent agent
             = GetComponent<NavMeshAgent>();
-        // Указаие точки назначения
+        
         agent.destination = goal.position;
         agent.speed = EnemySpeed;
         gameObject.GetComponent<Rigidbody>().isKinematic = true;

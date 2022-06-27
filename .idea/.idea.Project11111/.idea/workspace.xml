@@ -7,12 +7,28 @@
       <change beforePath="$PROJECT_DIR$/Assets/HurricaneVR/Framework/Integrations/HexaBodyVR_Integration.unitypackage.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HurricaneVR/Framework/Integrations/OculusIntegration.unitypackage.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HurricaneVR/Framework/Integrations/SteamVRIntegration.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HurricaneVR/Framework/Resources/HVREditorPreferences.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HurricaneVR/Framework/Resources/HVREditorPreferences.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Oculus/SampleFramework/Usage/SceneManager/Materials/Ceiling.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Oculus/SampleFramework/Usage/SceneManager/Materials/Ceiling.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/55555.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/55555.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BulletManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BulletManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyRange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyRange.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TurretBullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TurretBullet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shooting Turret/Scripts/GunT.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shooting Turret/Scripts/GunT.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shooting Turret/Scripts/ProjectileWithoutRigidbody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shooting Turret/Scripts/ProjectileWithoutRigidbody.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shooting Turret/Scripts/Turret.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shooting Turret/Scripts/Turret.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/baaang.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/baaang.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefabs/ProjectileWithoutRigidbody.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefabs/ProjectileWithoutRigidbody.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Shooting Turret/Scripts/LandMine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shooting Turret/Scripts/MineManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shooting Turret/Scripts/turretdirection.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -71,7 +87,18 @@
       <option name="presentableId" value="Default" />
       <updated>1654684917783</updated>
       <workItem from="1654684966047" duration="109000" />
-      <workItem from="1655724546061" duration="816000" />
+      <workItem from="1655724546061" duration="10545000" />
+      <workItem from="1655797149065" duration="1396000" />
+      <workItem from="1655801474095" duration="7418000" />
+      <workItem from="1655811271507" duration="6985000" />
+      <workItem from="1655824168876" duration="4010000" />
+      <workItem from="1655900303938" duration="7751000" />
+      <workItem from="1655977568451" duration="17149000" />
+      <workItem from="1656061810880" duration="629000" />
+      <workItem from="1656062709144" duration="21880000" />
+      <workItem from="1656150613577" duration="9225000" />
+      <workItem from="1656245700206" duration="2062000" />
+      <workItem from="1656316193040" duration="2364000" />
     </task>
     <servers />
   </component>

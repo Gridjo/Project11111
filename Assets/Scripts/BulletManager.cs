@@ -8,6 +8,9 @@ public class BulletManager : MonoBehaviour
     public List<GameObject> pooledObjects;
     public GameObject objectToPool;
     public int amountToPool;
+    private Collider Col;
+    public float timeToDestroy = 2f;
+    
     void Awake () 
     {
         SharedInstance = this;
@@ -24,6 +27,15 @@ public class BulletManager : MonoBehaviour
             pooledObjects.Add(tmp);
         }
     }
+     
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "ggwp" )  
+        {
+            GunT.bullet.SetActive(false);
+            transform.GetComponentInParent<Enemy>().GetDamage(10);
+        }
+    }
     
     public GameObject GetPooledObject()
     {
@@ -36,8 +48,14 @@ public class BulletManager : MonoBehaviour
         }
         return null;
     }
+
     void Update()
     {
-        
+        if (timeToDestroy <= 0)
+        {
+            GunT.bullet.SetActive(false);
+            timeToDestroy = 2f;
+        }
+        timeToDestroy -= Time.deltaTime;
     }
 }

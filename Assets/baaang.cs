@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class baaang : MonoBehaviour
 {
-    public int Pover = 100;
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
-
-    private void OnTriggerEnter(Collider other)
+  
+    public void OnTriggerEnter(Collider other)
     {
-        
-    
         if (other.gameObject.tag == "ggwp" )  
         {
-            Debug.Log("EnTER");
-            transform.GetComponentInParent<Enemy>().GetDamage(Pover);
+            GunT.bullet.SetActive(false);
+            transform.GetComponentInParent<Enemy>().GetDamage(10);
+        }
+        if (other.gameObject.tag == "exp")
+        {
+            transform.GetComponentInParent<Enemy>().GetDamage(10000);
+            Destroy(other.gameObject, 0.2f);
         }
     }
 }

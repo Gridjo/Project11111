@@ -25,12 +25,13 @@ public class EnemyRange : Enemy
             timeToAtack -= Time.deltaTime;
         }
         if (curHeetPoint <= 0)
-        {
-            if(!reachedAttackDistance)
+        { 
+            EnemyDeath();
+            /*if(!reachedAttackDistance)
                 GameManager1.transform.GetComponent<GameManager>().GetScore((int)(ScorePoint * 1.1));
             else
                 GameManager1.transform.GetComponent<GameManager>().GetScore((int)(ScorePoint));
-            EnemyDeath();
+            EnemyDeath();*/
         }
 
     }

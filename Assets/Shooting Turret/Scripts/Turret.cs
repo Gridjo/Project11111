@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,15 +6,17 @@ public class Turret : MonoBehaviour
 {
     [SerializeField] float turretRange = 13f;
     [SerializeField] float turretRotationSpeed = 5f;
-
     private Transform targetTransform;
     private GunT currentGun;
     private float fireRate;
     private float fireRateDelta;
+    private Transform turretTransform;
+    public int degrees;
 
-    private void Start()
+    public void Start()
     {
-        targetTransform = FindObjectOfType<PlayerController>().transform;
+        targetTransform = FindObjectOfType<Enemy>().transform;
+        turretTransform = FindObjectOfType<turretdirection>().transform;
         currentGun = GetComponentInChildren<GunT>();
         fireRate = currentGun.GetRateOfFire();
     }
@@ -22,9 +25,10 @@ public class Turret : MonoBehaviour
     {
         Vector3 playerGroundPos = new Vector3(targetTransform.position.x, 
             transform.position.y, targetTransform.position.z);
-
-        //Check if player is not in range, then do nothing
-        if(Vector3.Distance(transform.position, playerGroundPos) > turretRange)
+        
+        
+        if((Vector3.Distance(transform.position, playerGroundPos) > turretRange) 
+           || (Vector3.Angle(turretTransform.forward, (targetTransform.position - turretTransform.position))) > (degrees / 2))
         {
             return;
         }
@@ -46,6 +50,6 @@ public class Turret : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawWireSphere(transform.position, turretRange); //Show a gizmo when selected
+        Gizmos.DrawWireSphere(transform.position, turretRange);
     }
 }

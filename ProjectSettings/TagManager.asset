@@ -14,6 +14,9 @@ TagManager:
   - ggwp
   - Enemy
   - Slide
+  - turretbullet
+  - exp
+  - enemytrigger
   layers:
   - Default
   - TransparentFX

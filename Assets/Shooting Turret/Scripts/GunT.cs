@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,8 @@ public class GunT : MonoBehaviour
 {
     [SerializeField] float rateOfFire = 4f;
     [SerializeField] Transform gunPoint;
-    [SerializeField] private GameObject bullet;
+    public static GameObject bullet;
+    private LayerMask layer;
 
     private void Start()
     {

@@ -16,17 +16,4 @@ public class TurretBullet : MonoBehaviour {
         body.velocity = direction * bulletSpeed;
         transform.forward = direction;
     }
-	
-    void OnTriggerEnter(Collider other)
-    {
-        if(!other.isTrigger)
-        {
-            if(((1 << other.gameObject.layer) & layer) != 0)
-            {
-               // other.GetComponent<UnitHP>().Adjust(-damage);
-            }
-
-            Destroy(gameObject);
-        }
-    }
 }
