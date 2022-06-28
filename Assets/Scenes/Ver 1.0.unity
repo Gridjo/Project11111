@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18154603, g: 0.22718875, b: 0.30740646, a: 1}
+  m_IndirectSpecularColor: {r: 0.18154569, g: 0.22718826, b: 0.3074059, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5705,7 +5705,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6495610503811774679, guid: 7f894eec2c2317a43b50633ca92b6204, type: 3}
+    - target: {fileID: 0}
       propertyPath: scrap.amountScrap
       value: 15
       objectReference: {fileID: 0}
@@ -17498,7 +17498,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6495610503811774679, guid: 7f894eec2c2317a43b50633ca92b6204, type: 3}
+    - target: {fileID: 0}
       propertyPath: scrap.amountScrap
       value: 15
       objectReference: {fileID: 0}
@@ -17863,8 +17863,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Recycler In
       objectReference: {fileID: 0}
+    - target: {fileID: 1224040311354089649, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: ScaleOverride
+      value: 
+      objectReference: {fileID: 1996790760}
     - target: {fileID: 1224040311354089651, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224040311354089660, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224040311354089660, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1224040311354089661, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
@@ -17878,6 +17890,62 @@ PrefabInstance:
     - target: {fileID: 1224040311354089661, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: LinkStartingSocket
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224040311354089661, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224040311354089661, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: Released.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224040311354089661, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224040311354089661, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: Released.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224040311354089661, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 405487936}
+    - target: {fileID: 1224040311354089661, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: Released.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 405487936}
+    - target: {fileID: 1224040311354089661, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224040311354089661, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnsetUseGravityScrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224040311354089661, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: Released.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224040311354089661, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: Released.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetUseGravityScrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224040311354089661, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224040311354089661, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: Released.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224040311354089661, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224040311354089661, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: Released.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1415346620352971740, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_Enabled
@@ -19532,6 +19600,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b9429e7bdf93e94790e1a1711a6b093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1996790760 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 8488745767830794099, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+  m_PrefabInstance: {fileID: 1996790758}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1996790761 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2981188122345583403, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}

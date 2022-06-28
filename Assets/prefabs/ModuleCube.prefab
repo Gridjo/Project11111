@@ -11,11 +11,8 @@ GameObject:
   - component: {fileID: 6495610503811774678}
   - component: {fileID: 6495610503811774673}
   - component: {fileID: 6495610503811774672}
-  - component: {fileID: 6495610503811774675}
-  - component: {fileID: 6495610503811774674}
   - component: {fileID: 6495610503811774685}
   - component: {fileID: 6495610503811774684}
-  - component: {fileID: 6495610503811774679}
   m_Layer: 0
   m_Name: ModuleCube
   m_TagString: Untagged
@@ -165,44 +162,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &6495610503811774675
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6495610503811774687}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.19914, y: 0.19914, z: 0.19914}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6495610503811774674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6495610503811774687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1a0e712065e5ec4484d6ca15e0f4563, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OverrideCOM: 1
-  OverrideRotation: 0
-  OverrideTensor: 0
-  OverrideAngularSpeed: 1
-  OverrideMaxDepenetration: 0
-  CenterOfMass: {x: 0, y: 0, z: 0}
-  InertiaTensorRotation: {x: 0, y: 0, z: 0}
-  InertiaTensor: {x: 0, y: 0, z: 0}
-  MaxAngularVelocity: 30
-  MaxDepenetration: 0
-  COMGizmoSize: {x: 0.02, y: 0.02, z: 0.02}
-  LiveUpdate: 0
-  Rigidbody: {fileID: 0}
 --- !u!114 &6495610503811774685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,19 +199,6 @@ MonoBehaviour:
   Data: {fileID: 0}
   Force: 0
   Grabbable: {fileID: 0}
---- !u!114 &6495610503811774679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6495610503811774687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33b9a6fcedca3d047a6f8e48e0c1044c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RecyclerCost: 15
 --- !u!1 &6495610503817305542
 GameObject:
   m_ObjectHideFlags: 0

@@ -190,4 +190,22 @@ public class GameManager : MonoBehaviour
             hvrp.CanIsModificate = false;
         }
     }
+
+    public void SetUseGravityScrap(HVRGrabberBase hVRGrabberBase, HVRGrabbable hVRGrabbable)
+    {
+        if (hVRGrabbable.gameObject.TryGetComponent(out Rigidbody rbody))
+        {
+            rbody.isKinematic = false;
+            rbody.useGravity = true;
+        }
+    }
+
+    public void UnsetUseGravityScrap(HVRGrabberBase hVRGrabberBase, HVRGrabbable hVRGrabbable)
+    {
+        if (hVRGrabbable.gameObject.TryGetComponent(out Rigidbody rbody))
+        {
+            rbody.isKinematic = true;
+            rbody.useGravity = false;
+        }
+    }
 }
