@@ -60,5 +60,6 @@ public class EnemyRange : Enemy
             Debug.Log("EnTER");
             GetDamage(100);
         }
+
     }
 }

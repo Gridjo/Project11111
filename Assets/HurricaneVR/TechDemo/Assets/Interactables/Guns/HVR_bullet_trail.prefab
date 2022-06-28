@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70322fa13321b9e46b0c230461f3e2a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pover: 60
 --- !u!120 &5430346493058291989
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -65,7 +64,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5558b0176f7fde642b211fd08cf2b372, type: 2}
+  - {fileID: 2100000, guid: d73f8afe478afde498d6b36047a52c73, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,7 +95,7 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.010686398
+        time: 0.1241889
         value: 1
         inSlope: 0
         outSlope: 0
@@ -109,8 +108,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.5188679, g: 0.3147762, b: 0.04160734, a: 1}
-      key1: {r: 0.6226415, g: 0.27754542, b: 0.07929868, a: 1}
+      key0: {r: 1, g: 0, b: 0.25548172, a: 1}
+      key1: {r: 1, g: 0, b: 0.25548172, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}

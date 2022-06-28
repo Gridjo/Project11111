@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -2170148488723086792}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158,3 +158,6 @@ MonoBehaviour:
   goal: {fileID: 0}
   enemyPool: {fileID: 3076519245164628505, guid: 3cf96117b9afa2741a059a53095e162a, type: 3}
   reachedAttackDistance: 0
+  GameManager1: {fileID: 0}
+  ScorePoint: 10
+  mult: 0.1

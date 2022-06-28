@@ -100,6 +100,12 @@ public class Enemy : MonoBehaviour
         {
             Stop();
             reachedAttackDistance = true;
+
+        }
+        if (myCollision.gameObject.tag == "ggwp")
+        {
+            Debug.Log("EnTER");
+            GetDamage(100);
         }
     }
 }

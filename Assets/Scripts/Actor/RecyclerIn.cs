@@ -9,6 +9,7 @@ public class RecyclerIn : MonoBehaviour
 {
     public TextMeshPro ScrapText;
     public RecyclerOut recOut;
+    public GameObject ModPull;
 
     private bool scrapBeSpawned = false;
 
@@ -28,10 +29,7 @@ public class RecyclerIn : MonoBehaviour
     }
 
     //I have fun, you have fun, we have fun...
-    private void FuckLog(int num)
-    {
-        Debug.LogError($"FUCK {num}");
-    }
+    
 
     public void AddScrapToRecycle(HVRGrabberBase grabberBase, HVRGrabbable grabbable)
     {
@@ -42,7 +40,14 @@ public class RecyclerIn : MonoBehaviour
             if (item)
             {
                 PlayerVariables.Instance.AddScraps(costil);
-                Destroy(item.gameObject);
+                item.gameObject.SetActive(false);
+                item.transform.SetParent(ModPull.transform, false);
+                item.transform.position = new Vector3();
+                item.transform.localPosition = new Vector3();
+                
+            }
+            else {
+                Debug.Log("wkjerhfvi;uwgfiuweglfiyygweiufgwekygfoifhrlilwhfliwejfliwejfliw");
             }
         }
         else

@@ -101,7 +101,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!65 &2078645918425738210
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -158,6 +158,8 @@ MonoBehaviour:
   goal: {fileID: 0}
   enemyPool: {fileID: 4106967545854621110, guid: 07fe71e05d2bb004b88d6894a157438c, type: 3}
   reachedAttackDistance: 0
+  GameManager1: {fileID: 0}
+  ScorePoint: 10
 --- !u!1 &4941002399906988083
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,5 +217,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70322fa13321b9e46b0c230461f3e2a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Parent: {fileID: 4822132607784872466}
-  Pover: 100

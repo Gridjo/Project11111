@@ -1,3 +1,6 @@
+using HurricaneVR.Framework.Core;
+using HurricaneVR.Framework.Core.Grabbers;
+using HurricaneVR.Framework.Weapons.Guns;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +8,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public float Score = 0;
-    public float Energy = 0, MaxEnergy = 500;
+    public float Energy = 0, MaxEnergy = 200;
     public float EnergyMultiplier = 1, ScoreWaveMod = 0, CountVis = 0;
     private float TimeEner = 1f, TimeEnerOut = 1f;
     public GameObject ModulPool;
@@ -154,5 +157,37 @@ public class GameManager : MonoBehaviour
         Mod.transform.localPosition = new Vector3();
         Mod.SetActive(true);
         ChSpawnModul();
+    }
+
+    public void SetAlreadyInGun(HVRGrabberBase hVRGrabberBase, HVRGrabbable hVRGrabbable)
+    {
+        if (hVRGrabbable.gameObject.TryGetComponent(out Moduls moduls))
+        {
+            moduls.AlreadyInGun = true;
+        }
+    }
+
+    public void UnsetAlreadyInGun(HVRGrabberBase hVRGrabberBase, HVRGrabbable hVRGrabbable)
+    {
+        if (hVRGrabbable.gameObject.TryGetComponent(out Moduls moduls))
+        {
+            moduls.AlreadyInGun = false;
+        }
+    }
+
+    public void SetCanIsModificate(HVRGrabberBase hVRGrabberBase, HVRGrabbable hVRGrabbable)
+    {
+        if (hVRGrabbable.gameObject.TryGetComponent(out HVRPistol hvrp))
+        {
+            hvrp.CanIsModificate = true;
+        }
+    }
+
+    public void UnsetCanIsModificate(HVRGrabberBase hVRGrabberBase, HVRGrabbable hVRGrabbable)
+    {
+        if (hVRGrabbable.gameObject.TryGetComponent(out HVRPistol hvrp))
+        {
+            hvrp.CanIsModificate = false;
+        }
     }
 }

@@ -1,3 +1,5 @@
+using HurricaneVR.Framework.Core;
+using HurricaneVR.Framework.Core.Grabbers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +11,8 @@ public class Moduls : MonoBehaviour
     public float durCoef;
     public int junkPrice;
 }
+
+
 public enum Rarity
 {
     Common,

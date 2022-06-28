@@ -106,7 +106,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!65 &1878049393215337829
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -115,25 +115,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5342731118385530413}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.46, y: 2.61, z: 0.29}
-  m_Center: {x: 0, y: 1.19, z: 0}
---- !u!64 &7173095404325903026
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5342731118385530413}
-  m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.8742962, y: 2.6099997, z: 0.50608456}
+  m_Center: {x: -0.017253578, y: 1.19, z: 0.108042285}
 --- !u!114 &1516081223096343581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +165,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &8372627492388860646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5342731118385530413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70322fa13321b9e46b0c230461f3e2a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &6052602799883101646
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -187,8 +185,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5342731118385530451}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.37, y: 0.58, z: 2.35}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.37, y: 0.58, z: 2.4880402}
+  m_Center: {x: 0, y: 0, z: -0.06902015}

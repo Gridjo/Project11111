@@ -15,6 +15,7 @@ public class ModuleReplacement : MonoBehaviour
     private Transform _stockPlace;
     private bodyModul bodyModul;
     private HVRPistol hvrp;
+    public GameObject ModPoolSpawnPoint;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -88,37 +89,40 @@ public class ModuleReplacement : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        
+
         if (other.TryGetComponent<HVRGrabbable>(out HVRGrabbable grb))
         {
-            if (other.TryGetComponent<Moduls>(out Moduls modsInfo))
-                if(modsInfo.AlreadyInGun)
-                    return;
-            if (other.GetComponent<bodyModul>())
+            if (hvrp.CanIsModificate)
             {
-                if (this.moduleType == ModuleType.body)
+                if (other.TryGetComponent<Moduls>(out Moduls modsInfo))
+                    if (modsInfo.AlreadyInGun)
+                        return;
+                if (other.GetComponent<bodyModul>())
                 {
-                    Debug.Log("This Body");
-                    BodyReplace(grb, other);
+                    if (this.moduleType == ModuleType.body)
+                    {
+                        Debug.Log("This Body");
+                        BodyReplace(grb, other);
+                    }
                 }
-            }
-            else if (other.GetComponent<bareModul>())
-            {
-                if (this.moduleType == ModuleType.barrel)
+                else if (other.GetComponent<bareModul>())
                 {
-                    Debug.Log("This Barrel");
-                    BarrelReplace(grb, other);
+                    if (this.moduleType == ModuleType.barrel)
+                    {
+                        Debug.Log("This Barrel");
+                        BarrelReplace(grb, other);
+                    }
                 }
-            }
-            else if (other.GetComponent<ModulsInfo>())
-            {
-                if (this.moduleType == ModuleType.stock)
+                else if (other.GetComponent<ModulsInfo>())
                 {
-                    Debug.Log("This Stock");
-                    StockReplace(grb, other);
+                    if (this.moduleType == ModuleType.stock)
+                    {
+                        Debug.Log("This Stock");
+                        StockReplace(grb, other);
+                    }
                 }
+                hvrp.gameObject.GetComponent<ModulAllInGun>().ModulsFind();
             }
-            hvrp.gameObject.GetComponent<ModulAllInGun>().ModulsFind();
         }
 
     }
@@ -132,7 +136,7 @@ public class ModuleReplacement : MonoBehaviour
         grb.TrackingType = HurricaneVR.Framework.Shared.HVRGrabTracking.None;
         module.gameObject.GetComponent<HVRGrabbable>().enabled = true;
         Destroy(other.GetComponent<Rigidbody>());
-        module.transform.position = new Vector3(0, 0, 0);
+        module.transform.position = ModPoolSpawnPoint.transform.position;
         module.transform.localScale = new Vector3(0.212989f, 0.03221213f, 0.04259932f);
         other.transform.SetParent(pistol.transform);
         other.transform.localPosition = new Vector3(0, 1, 0);
@@ -141,11 +145,12 @@ public class ModuleReplacement : MonoBehaviour
         _module.GetComponent<Moduls>().AlreadyInGun = true;
         _module.transform.localRotation = new Quaternion(0f, 270f, 0f, 0f);
         _module.transform.localScale = new Vector3(0.04259932f, 0.03221213f, 0.212989f);
-        module.gameObject.AddComponent<Rigidbody>();
+        module.gameObject.AddComponent<Rigidbody>().isKinematic = true;
         module.gameObject.GetComponent<HVRGrabbable>().Rigidbody = module.gameObject.GetComponent<Rigidbody>();
         module.gameObject.GetComponent<HVRGrabbable>().enabled = true;
         module.TryGetComponent(out HVRGrabbable grbb);
         grbb.TrackingType = HurricaneVR.Framework.Shared.HVRGrabTracking.ConfigurableJoint;
+        module.gameObject.GetComponent<Rigidbody>().isKinematic = false;
     }
 
     void RifleBodyReplace(HVRGrabbable grb, Collider other)
@@ -157,7 +162,7 @@ public class ModuleReplacement : MonoBehaviour
         grb.TrackingType = HurricaneVR.Framework.Shared.HVRGrabTracking.None;
         module.gameObject.GetComponent<HVRGrabbable>().enabled = true;
         Destroy(other.GetComponent<Rigidbody>());
-        //module.transform.position = new Vector3(0, 0, 0);
+        module.transform.position = ModPoolSpawnPoint.transform.position;
         module.transform.localScale = new Vector3(0.212989f, 0.03221213f, 0.04259932f);
         other.transform.SetParent(pistol.transform);
         other.transform.localPosition = new Vector3(0, 1, 0);
@@ -166,11 +171,12 @@ public class ModuleReplacement : MonoBehaviour
         _module.GetComponent<Moduls>().AlreadyInGun = true;
         _module.transform.localRotation = new Quaternion(0f, 270f, 0f, 0f);
         _module.transform.localScale = new Vector3(0.04259932f, 0.03221213f, 0.212989f);
-        module.gameObject.AddComponent<Rigidbody>();
+        module.gameObject.AddComponent<Rigidbody>().isKinematic = true;
         module.gameObject.GetComponent<HVRGrabbable>().Rigidbody = module.gameObject.GetComponent<Rigidbody>();
         module.gameObject.GetComponent<HVRGrabbable>().enabled = true;
         module.TryGetComponent(out HVRGrabbable grbb);
         grbb.TrackingType = HurricaneVR.Framework.Shared.HVRGrabTracking.ConfigurableJoint;
+        module.gameObject.GetComponent<Rigidbody>().isKinematic = false;
     }
 
     void BodyReplace(HVRGrabbable grb, Collider other)
@@ -199,7 +205,7 @@ public class ModuleReplacement : MonoBehaviour
         grb.TrackingType = HurricaneVR.Framework.Shared.HVRGrabTracking.None;
         module.gameObject.GetComponent<HVRGrabbable>().enabled = true;
         Destroy(other.GetComponent<Rigidbody>());
-        module.transform.position = new Vector3(0, 0, 0);
+        module.transform.position = ModPoolSpawnPoint.transform.position;
         module.transform.localScale = new Vector3(0.212989f, 0.03221213f, 0.04259932f);
         other.transform.SetParent(pistol.transform);
         other.transform.localPosition = new Vector3(0, 1, 0);
@@ -208,11 +214,12 @@ public class ModuleReplacement : MonoBehaviour
         _module.GetComponent<Moduls>().AlreadyInGun = true;
         _module.transform.localRotation = new Quaternion(0f, 270f, 0f, 0f);
         _module.transform.localScale = new Vector3(0.04259932f, 0.03221213f, 0.212989f);
-        module.gameObject.AddComponent<Rigidbody>();
+        module.gameObject.AddComponent<Rigidbody>().isKinematic = true; 
         module.gameObject.GetComponent<HVRGrabbable>().Rigidbody = module.gameObject.GetComponent<Rigidbody>();
         module.gameObject.GetComponent<HVRGrabbable>().enabled = true;
         module.TryGetComponent(out HVRGrabbable grbb);
         grbb.TrackingType = HurricaneVR.Framework.Shared.HVRGrabTracking.ConfigurableJoint;
+        module.gameObject.GetComponent<Rigidbody>().isKinematic = false;
     }
 
     void StockReplace(HVRGrabbable grb, Collider other)
@@ -233,7 +240,7 @@ public class ModuleReplacement : MonoBehaviour
         Destroy(other.GetComponent<Rigidbody>());
         try
         {
-            //module.transform.position = new Vector3(0, 0, 0);
+            module.transform.position = ModPoolSpawnPoint.transform.position;
             module.transform.localScale = new Vector3(0.212989f, 0.03221213f, 0.04259932f);
         }
         catch (NullReferenceException e) {}
@@ -250,11 +257,12 @@ public class ModuleReplacement : MonoBehaviour
         _module.transform.localScale = new Vector3(0.045f, 0.03f, 0.06f);
         try
         {
-            module.gameObject.AddComponent<Rigidbody>();
+            module.gameObject.AddComponent<Rigidbody>().isKinematic = true;
             module.gameObject.GetComponent<HVRGrabbable>().Rigidbody = module.gameObject.GetComponent<Rigidbody>();
             module.gameObject.GetComponent<HVRGrabbable>().enabled = true;
             module.TryGetComponent(out HVRGrabbable grbb);
             grbb.TrackingType = HurricaneVR.Framework.Shared.HVRGrabTracking.ConfigurableJoint;
+            module.gameObject.GetComponent<Rigidbody>().isKinematic = false;
         }
         catch (NullReferenceException e) {}
     }

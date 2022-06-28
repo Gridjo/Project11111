@@ -991,7 +991,6 @@ GameObject:
   - component: {fileID: 3248615793624382743}
   - component: {fileID: 3248615793624382742}
   - component: {fileID: 3248615793624382741}
-  - component: {fileID: 3248615793624382736}
   - component: {fileID: 3248615793624382737}
   - component: {fileID: 4769986876958671843}
   m_Layer: 0
@@ -1080,43 +1079,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3248615793624382736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3248615793624382747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5b6a3a6b34cc6743b0fff4f3ee25c54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ForwardPosition: {x: 0, y: 0, z: 0}
-  BackwardPosition: {x: 0, y: -0, z: -0.0347}
-  ForwardSpeed: 10
-  Difficulty: 0.05
-  ImmediateReleaseWhenOpen: 1
-  LockBackOverride: 0
-  Type: 0
-  LocksForward: 0
-  TriggerUnlocks: 0
-  TriggerThreshold: 0.7
-  AccelerationThreshold: 2
-  Grabbable: {fileID: 0}
-  Bolt: {fileID: 0}
-  EjectPosition: {x: 0, y: 0, z: -0.0306}
-  ChamberRoundPosition: {x: 0, y: 0, z: -0.0291}
-  AnimatedParts: []
-  Released:
-    m_PersistentCalls:
-      m_Calls: []
-  EjectReached:
-    m_PersistentCalls:
-      m_Calls: []
-  ChamberRound:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &3248615793624382737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1978,6 +1940,7 @@ MonoBehaviour:
   Damage: 25
   Force: 10
   TypeGun: 1
+  CanIsModificate: 0
   GameAmmo: 0
   GameMaxAmmo: 0
   ShotAmmoTake: 0
@@ -2849,6 +2812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pistol: {fileID: 3248615794257314724}
   moduleType: 0
+  ModPoolSpawnPoint: {fileID: 0}
 --- !u!1001 &3248615793736055086
 PrefabInstance:
   m_ObjectHideFlags: 0

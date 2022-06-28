@@ -22,7 +22,8 @@ public class Platform : MonoBehaviour
         if (HeetPoints <= 0)
         {
             HeetPoints = MaxHeetPoints;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene("MainMenu");
         }
         
     }

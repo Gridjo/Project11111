@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1383749861068583864, guid: 80ee094f6e9bb9c4b82c31c78e90a6a4, type: 3}
       propertyPath: m_Name
-      value: Turret
+      value: TURRET
       objectReference: {fileID: 0}
     - target: {fileID: 1892975435607143907, guid: 80ee094f6e9bb9c4b82c31c78e90a6a4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -146,6 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretRange: 13
   turretRotationSpeed: 5
+  degrees: 90
 --- !u!114 &1354504370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +159,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d5d4a962583c2c478df12b037bc04e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 5371186658639755728, guid: 647a0035f91416c40b1db9be578415ec, type: 3}
   rateOfFire: 1
   gunPoint: {fileID: 5558512607173577985}

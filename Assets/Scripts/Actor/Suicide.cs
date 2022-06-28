@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class Suicide : MonoBehaviour
 {
 
-    private void OnCollisionEnter(Collision collision)
+   
+    private void OnTriggerEnter(Collider collision)
     {
 
         if (collision.gameObject.tag == "ggwp")
@@ -16,7 +17,7 @@ public class Suicide : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider collision)
     {
 
         if (collision.gameObject.tag == "ggwp")
@@ -26,7 +27,7 @@ public class Suicide : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerStay(Collider collision)
     {
 
         if (collision.gameObject.tag == "ggwp")

@@ -27,6 +27,7 @@ namespace HurricaneVR.Framework.Weapons.Guns
 
         [Header("Additional Settings")]
         public TypeGun TypeGun;
+        public bool CanIsModificate = false;
         public int GameAmmo = 0;
         public int GameMaxAmmo;
         public int ShotAmmoTake;

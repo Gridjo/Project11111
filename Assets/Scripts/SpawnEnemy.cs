@@ -63,7 +63,11 @@ public class SpawnEnemy : MonoBehaviour
                     canSpawnN = false;
             }
             timeToSpawn = timeToSpawnClone;
-            GameManager.GetComponent<GameManager>().ChSpawnModul();
+            try
+            {
+                GameManager.GetComponent<GameManager>().ChSpawnModul();
+            }
+            catch { }
             GameManager.GetComponent<GameManager>().CountVis = 0;
             Debug.Log("ffggg");
 

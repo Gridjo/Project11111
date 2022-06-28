@@ -32,7 +32,7 @@ public class Scrap : MonoBehaviour
     {
         if (PlayerVariables.Instance.TakeScraps(this, hvrp.TypeGun))
         {
-            //_grb.ForceRelease();
+            _grb.ForceRelease();
             Debug.Log("Reloading is success");
         }
         else

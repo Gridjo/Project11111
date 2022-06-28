@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Oculus.Interaction.Samples;
 using UnityEngine;
+using HurricaneVR.Framework.ControllerInput;
 
 public class MineManager : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class MineManager : MonoBehaviour
     private float z;
     private Vector3 OTPCoord;
     public Transform platformparent;
+    public GameObject PlayerController;
+    public GameObject Gm;
 
     void Start()
     {
@@ -24,11 +27,11 @@ public class MineManager : MonoBehaviour
         {
             tmp = Instantiate(objectToPool);
             reroll: ;
-            x = Random.Range(-3f, 3f);
-            z = Random.Range(-0.7f, 3f);
-            if (((x < 0.6f) && (z < 0.6f)) || ((x < -0.6f) && (z < 0.6f)) || (z < -0.3f))
+            x = Random.Range(0f, 3f);
+            z = Random.Range(-3f, 3f);
+            if (((x < 0.6f) && (z < 0.6f)) || ((x < 0.6f) && (z < -0.6f)) || (x < 0f))
             { goto reroll; }
-            OTPCoord = new Vector3(x, 0f, z);
+            OTPCoord = new Vector3(x, -0.03f, z);
             tmp.transform.SetParent(platformparent);
             tmp.transform.localPosition = OTPCoord;
             tmp.SetActive(false);
@@ -39,8 +42,9 @@ public class MineManager : MonoBehaviour
     void Update()
     {
         GameObject tmp;
-        if (Input.GetKeyDown(KeyCode.Space))// rework button
+        if ((PlayerController.GetComponent<HVRPlayerInputs>().IsCrouchActivated)&&(Gm.GetComponent<GameManager>().Energy >= 100))
         {
+            Gm.GetComponent<GameManager>().Energy -= 100;
             for (int j = 0; j < amountToPool; j++)
             {
                 pooledObjects[j].SetActive(false);
