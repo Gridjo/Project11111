@@ -2,11 +2,13 @@ using HurricaneVR.Framework.Core;
 using HurricaneVR.Framework.Core.Grabbers;
 using HurricaneVR.Framework.Weapons.Guns;
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public TextMesh Text;
     public float Score = 0;
     public float Energy = 0, MaxEnergy = 200;
     public float EnergyMultiplier = 1, ScoreWaveMod = 0, CountVis = 0;
@@ -43,10 +45,12 @@ public class GameManager : MonoBehaviour
     public void GetScore(int ScoreIn)
     {
         Score += ScoreIn;
+        Text.text = Convert.ToString(Score);
     }
     public void MinusScore(int ScoreIn)
     {
         Score -= ScoreIn;
+        Text.text = Convert.ToString(Score);
     }
     public void EnerMult(float mult)
     {
@@ -62,6 +66,7 @@ public class GameManager : MonoBehaviour
         float ScoreJunk = Score - ScoreWaveMod;
         if (ScoreWaveMod < 14f)
         {
+            ScoreWaveMod = 0;
             return;
         }
 
@@ -72,6 +77,7 @@ public class GameManager : MonoBehaviour
             costil.RecyclerCost = (int)ScoreJunk;
             PlayerVariables.Instance.AddScraps(costil);
             ScoreJunk = 0;
+            Text.text = Convert.ToString(Score);
         }
         CountVis++;
         
@@ -148,6 +154,7 @@ public class GameManager : MonoBehaviour
             }
               
         }
+        ScoreWaveMod = 0;
         ChSpawnModul();
 
     }

@@ -139,7 +139,7 @@ public class ModuleReplacement : MonoBehaviour
         module.transform.position = ModPoolSpawnPoint.transform.position;
         module.transform.localScale = new Vector3(0.212989f, 0.03221213f, 0.04259932f);
         other.transform.SetParent(pistol.transform);
-        other.transform.localPosition = new Vector3(0, 1, 0);
+        other.transform.localPosition = new Vector3(0, 0, 0);
         _module = other.gameObject;
         module.GetComponent<Moduls>().AlreadyInGun = false;
         _module.GetComponent<Moduls>().AlreadyInGun = true;
@@ -165,7 +165,7 @@ public class ModuleReplacement : MonoBehaviour
         module.transform.position = ModPoolSpawnPoint.transform.position;
         module.transform.localScale = new Vector3(0.212989f, 0.03221213f, 0.04259932f);
         other.transform.SetParent(pistol.transform);
-        other.transform.localPosition = new Vector3(0, 1, 0);
+        other.transform.localPosition = new Vector3(0, 0, 0);
         _module = other.gameObject;
         module.GetComponent<Moduls>().AlreadyInGun = false;
         _module.GetComponent<Moduls>().AlreadyInGun = true;

@@ -19,7 +19,7 @@ public class NpcArena : Enemy
 
         if (collision.gameObject.tag == "ggwp")
         {
-            GameManager1.transform.GetComponent<GameManager>().MinusScore((ScorePoint));
+            
             GetDamage(100);
             WasDamaget = true;
         }

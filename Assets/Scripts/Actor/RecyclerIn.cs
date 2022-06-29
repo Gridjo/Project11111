@@ -45,15 +45,11 @@ public class RecyclerIn : MonoBehaviour
                 GameObject t=Instantiate(item.gameObject, ModPull.transform.position, ModPull.transform.rotation, ModPull.transform);
                 t.SetActive(false);
                 Destroy(item.gameObject);
+                recOut.TakeScrap();
             }
             else {
                 Debug.Log("wkjerhfvi;uwgfiuweglfiyygweiufgwekygfoifhrlilwhfliwejfliwejfliw");
             }
         }
-        else
-        {
-            Debug.LogError("Nullable item. lol");
-        }
-        recOut.TakeScrap();
     }
 }

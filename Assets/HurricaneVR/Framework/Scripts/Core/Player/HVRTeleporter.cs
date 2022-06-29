@@ -11,6 +11,9 @@ namespace HurricaneVR.Framework.Core.Player
 {
     public class HVRTeleporter : MonoBehaviour
     {
+        public GameObject Gm;
+        public GameObject turretObj;
+
         [Header("Transforms / Components")]
         public Transform Camera;
         public Transform TeleportLineSourceLeft;
@@ -806,7 +809,12 @@ namespace HurricaneVR.Framework.Core.Player
 
             if (IsTeleportValid)
             {
-                TeleportMarker.transform.position = TeleportDestination;
+                //TeleportMarker.transform.position = TeleportDestination;
+                //if (GameObject.Find("GameManager").GetComponent<GameManager>().Energy >= 200)
+                {
+                    Instantiate(turretObj, TeleportMarker.transform.position, Quaternion.identity);
+                    //Gm.GetComponent<GameManager>().Energy -= 200;
+                }
             }
             else
             {

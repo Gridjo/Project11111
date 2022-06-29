@@ -20,6 +20,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 925743011797826529, guid: 80ee094f6e9bb9c4b82c31c78e90a6a4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 925743011797826529, guid: 80ee094f6e9bb9c4b82c31c78e90a6a4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 925743011797826529, guid: 80ee094f6e9bb9c4b82c31c78e90a6a4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 925743011797826529, guid: 80ee094f6e9bb9c4b82c31c78e90a6a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.21
       objectReference: {fileID: 0}
@@ -132,6 +144,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 906554775434741590, guid: 80ee094f6e9bb9c4b82c31c78e90a6a4, type: 3}
   m_PrefabInstance: {fileID: 4735384408526441047}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1354504370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2918651534098167829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d5d4a962583c2c478df12b037bc04e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rateOfFire: 1
+  gunPoint: {fileID: 5558512607173577985}
 --- !u!114 &700087402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,17 +173,3 @@ MonoBehaviour:
   turretRange: 13
   turretRotationSpeed: 5
   degrees: 90
---- !u!114 &1354504370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2918651534098167829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d5d4a962583c2c478df12b037bc04e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rateOfFire: 1
-  gunPoint: {fileID: 5558512607173577985}

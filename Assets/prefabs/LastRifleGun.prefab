@@ -499,6 +499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pistol: {fileID: 5398533708659377371}
   moduleType: 0
+  ModPoolSpawnPoint: {fileID: 0}
 --- !u!1 &3029227068502546171
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,6 +740,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pistol: {fileID: 6306693764572443111}
   moduleType: 1
+  ModPoolSpawnPoint: {fileID: 0}
 --- !u!1 &4801049443978056532
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,6 +800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pistol: {fileID: 5398533708659377371}
   moduleType: 0
+  ModPoolSpawnPoint: {fileID: 0}
 --- !u!1 &4805608306281274580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,6 +1357,18 @@ PrefabInstance:
       propertyPath: AlreadyInGun
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5162100992042758617, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162100992042758617, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162100992042758617, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5162100992116928008, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.502
@@ -1426,6 +1441,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5162100992467280427, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162100992467280427, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5162100992492930499, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
       propertyPath: Others.Array.data[0]
       value: 
@@ -1449,6 +1472,14 @@ PrefabInstance:
     - target: {fileID: 5162100992800573298, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.199
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162100992892873394, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162100992892873394, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5162100993017133232, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
       propertyPath: m_Name

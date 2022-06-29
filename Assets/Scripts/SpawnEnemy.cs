@@ -66,6 +66,7 @@ public class SpawnEnemy : MonoBehaviour
             try
             {
                 GameManager.GetComponent<GameManager>().ChSpawnModul();
+                GameManager.GetComponent<GameManager>().CountVis = 0;
             }
             catch { }
             GameManager.GetComponent<GameManager>().CountVis = 0;
