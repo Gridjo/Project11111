@@ -52,15 +52,20 @@ public class GameManager : MonoBehaviour
     {
         EnergyMultiplier += mult;
     }
+
     public void ChSpawnModul()
     {
+        
         Childs = new GameObject[ModulPool.transform.childCount];
         ModSp = null;
         ScoreWaveMod += Score * 0.8f;
         float ScoreJunk = Score - ScoreWaveMod;
-        
-        
-        if(CountVis == 0 && ScoreJunk > 0)
+        if (ScoreWaveMod < 14f)
+        {
+            return;
+        }
+
+        if (CountVis == 0 && ScoreJunk > 0)
         {
             Score = 0;
             RecyclerItem costil = new RecyclerItem();
@@ -69,16 +74,12 @@ public class GameManager : MonoBehaviour
             ScoreJunk = 0;
         }
         CountVis++;
-        if (ScoreWaveMod < 14f)
-        {
-            return;
-        }
+        
         
         for (int i = 0; i < ModulPool.transform.childCount;  i++)
         {
-            Debug.Log(ModulPool.transform.GetChild(i).gameObject.name);
-            Childs[i] = ModulPool.transform.GetChild(i).gameObject;
-            Debug.Log(Childs[i].name);
+            if (ModulPool.transform.GetChild(i).TryGetComponent(out Moduls tt));
+                Childs[i] = ModulPool.transform.GetChild(i).gameObject;
         }
         ModSp = new GameObject[Childs.Length];
         for (int i = 0, j=0; i < Childs.Length; i++)
@@ -147,7 +148,8 @@ public class GameManager : MonoBehaviour
             }
               
         }
-        
+        ChSpawnModul();
+
     }
     public void SpawnModul(GameObject Mod)
     {

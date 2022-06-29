@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18154569, g: 0.22718826, b: 0.3074059, a: 1}
+  m_IndirectSpecularColor: {r: 0.18154603, g: 0.22718875, b: 0.30740646, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3952,7 +3952,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4796706488028073057, guid: e1a4fd06475ae7b43bf41d1c1e0a6df2, type: 3}
       propertyPath: HeetPoints
-      value: 1000
+      value: 999999
       objectReference: {fileID: 0}
     - target: {fileID: 4796706488028073066, guid: e1a4fd06475ae7b43bf41d1c1e0a6df2, type: 3}
       propertyPath: m_Name
@@ -5704,10 +5704,6 @@ PrefabInstance:
     - target: {fileID: 6495610503811774678, guid: 7f894eec2c2317a43b50633ca92b6204, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: scrap.amountScrap
-      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6495610503811774687, guid: 7f894eec2c2317a43b50633ca92b6204, type: 3}
       propertyPath: m_Name
@@ -17498,10 +17494,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: scrap.amountScrap
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 6495610503811774687, guid: 7f894eec2c2317a43b50633ca92b6204, type: 3}
       propertyPath: m_Name
       value: ModuleCube
@@ -17772,6 +17764,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 614557948383910058, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: HoldType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 614557948383910058, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: HoverEnter.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -17805,7 +17801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 651806162921862477, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: Any
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 820895467460289751, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_RootOrder
@@ -17863,13 +17859,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Recycler In
       objectReference: {fileID: 0}
-    - target: {fileID: 1224040311354089649, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
-      propertyPath: ScaleOverride
-      value: 
-      objectReference: {fileID: 1996790760}
     - target: {fileID: 1224040311354089651, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1224040311354089660, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_UseGravity
@@ -17877,6 +17869,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1224040311354089660, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224040311354089661, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: HoldType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1224040311354089661, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
@@ -17904,6 +17900,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1224040311354089661, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224040311354089661, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: Released.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
@@ -17912,11 +17912,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 405487936}
     - target: {fileID: 1224040311354089661, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224040311354089661, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: Released.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 405487936}
     - target: {fileID: 1224040311354089661, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224040311354089661, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: Grabbed.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1224040311354089661, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
@@ -19029,7 +19037,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7072609256387735044, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: Any
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072609256387735044, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: Tags._data
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7304501981353368268, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: HandGrabActions.Array.data[0]
@@ -19468,6 +19480,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8878678843225312159, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: HoldType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878678843225312159, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: HoverEnter.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -19583,6 +19599,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9031354031545112162, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_Radius
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 9122977590740752628, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: bulletType
       value: 0
@@ -19600,11 +19620,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b9429e7bdf93e94790e1a1711a6b093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &1996790760 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 8488745767830794099, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
-  m_PrefabInstance: {fileID: 1996790758}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1996790761 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2981188122345583403, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}

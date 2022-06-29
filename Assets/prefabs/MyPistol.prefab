@@ -660,6 +660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa5fd02aca9a8874881c231f6307fd14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AlreadyInGun: 0
   Raryti: 0
   durCoef: 1
   junkPrice: 14
@@ -1581,6 +1582,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5162100993017133243}
   - component: {fileID: 5162100993017133240}
+  - component: {fileID: 5162100993017133242}
   - component: {fileID: 5162100993017133241}
   - component: {fileID: 5162100993017133246}
   - component: {fileID: 5162100993017133247}
@@ -1588,7 +1590,6 @@ GameObject:
   - component: {fileID: 5162100993017133245}
   - component: {fileID: 5162100993017133234}
   - component: {fileID: 5162100993017133235}
-  - component: {fileID: 5162100993017133242}
   m_Layer: 0
   m_Name: MyPistol
   m_TagString: Untagged
@@ -1725,6 +1726,22 @@ MonoBehaviour:
   HandGrabbers: []
   Stabbers: []
   Stabbable: {fileID: 0}
+--- !u!54 &5162100993017133242
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5162100993017133232}
+  serializedVersion: 2
+  m_Mass: 1.5
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &5162100993017133241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1740,6 +1757,10 @@ MonoBehaviour:
   Damage: 25
   Force: 10
   TypeGun: 0
+  CanIsModificate: 0
+  GameAmmo: 0
+  GameMaxAmmo: 0
+  ShotAmmoTake: 0
   TriggerPullThreshold: 0.7
   TriggerResetThreshold: 0.6
   Cooldown: 0.06666667
@@ -1893,22 +1914,6 @@ MonoBehaviour:
   Data: {fileID: 0}
   Force: 0
   Grabbable: {fileID: 0}
---- !u!54 &5162100993017133242
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5162100993017133232}
-  serializedVersion: 2
-  m_Mass: 1.5
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &5162100993064336822
 GameObject:
   m_ObjectHideFlags: 0

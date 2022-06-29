@@ -18,7 +18,8 @@ public class baaang : MonoBehaviour
     {
         if (other.gameObject.tag == "ggwp" )  
         {
-            GunT.bullet.SetActive(false);
+            if (GunT.bullet)
+                GunT.bullet.SetActive(false);
             transform.GetComponentInParent<Enemy>().GetDamage(10);
         }
         if (other.gameObject.tag == "exp")

@@ -17,9 +17,7 @@ public class RecyclerOut : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        prefabScrap.GetComponent<HVRGrabbable>().StartingSocket = transform.GetComponentInParent<HVRSocket>();
-        prefabScrap.GetComponent<HVRGrabbable>().LinkStartingSocket = true;
-        prefabScrap.TryGetComponent(out Rigidbody rb);
+
     }
     public void TakeScrap()
     {
@@ -29,28 +27,35 @@ public class RecyclerOut : MonoBehaviour
             //20.06 upd
             if (prefabScrap)
             {
-                prefabScrap.GetComponent<Rigidbody>().isKinematic = true;
-                prefabScrap.SetActive(false);
+                //prefabScrap.GetComponent<Rigidbody>().isKinematic = true;
+                //prefabScrap.SetActive(false);
+                if(gameObject.TryGetComponent(out HVRSocket _socket))
+                {
+                    _socket.CanInteract = false;
+                }
             }
-                
-            return;
         }
-        if (PlayerVariables.Instance.GetBagScrapsAmount() < prefabScrap.GetComponent<Scrap>().AmountScrap)
+        else
         {
-            prefabScrap.GetComponent<Scrap>().AmountScrap = PlayerVariables.Instance.GetBagScrapsAmount();
-        }
-        if (gameObject.TryGetComponent(out HVRSocket _socket))
-        {
-            if (prefabScrap.TryGetComponent(out Scrap _scrap))
+            if (PlayerVariables.Instance.GetBagScrapsAmount() < prefabScrap.GetComponent<Scrap>().AmountScrap)
             {
-                _scrap.AmountScrap = 10;
-                prefabScrap.transform.localPosition = _socket.gameObject.transform.localPosition;
-                prefabScrap.GetComponent<Rigidbody>().isKinematic = false;
-                prefabScrap.SetActive(true);
-                recIn.ShowBagScrapText();
+                prefabScrap.GetComponent<Scrap>().AmountScrap = PlayerVariables.Instance.GetBagScrapsAmount();
             }
+            if (gameObject.TryGetComponent(out HVRSocket _socket))
+            {
+                if (prefabScrap.TryGetComponent(out Scrap _scrap))
+                {
+                    _scrap.AmountScrap = 10;
+                    _socket.CanInteract = true;
+                    // prefabScrap.transform.localPosition = _socket.gameObject.transform.localPosition;
+                    //prefabScrap.GetComponent<Rigidbody>().isKinematic = false;
+                    //prefabScrap.SetActive(true);
+                    recIn.ShowBagScrapText();
+                    prefabScrap.transform.localPosition = new Vector3(0f, 0f, 0f);
+                }
+            }
+            
         }
-        prefabScrap.transform.localPosition = new Vector3(0f, 0f, 0f);
     }
 
     private void FixedUpdate()
@@ -60,10 +65,19 @@ public class RecyclerOut : MonoBehaviour
             //20.06 upd
             if (prefabScrap)
             {
-                prefabScrap.GetComponent<Rigidbody>().isKinematic = true;
-                prefabScrap.SetActive(false);
+                if (gameObject.TryGetComponent(out HVRSocket _socket))
+                {
+                    _socket.CanInteract = false;
+                }
             }
                 
+        }
+        else
+        {
+            if (gameObject.TryGetComponent(out HVRSocket _socket))
+            {
+                _socket.CanInteract = true;
+            }
         }
     }
 }
