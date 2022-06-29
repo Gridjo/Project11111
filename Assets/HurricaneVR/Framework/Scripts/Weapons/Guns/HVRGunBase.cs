@@ -31,6 +31,7 @@ namespace HurricaneVR.Framework.Weapons.Guns
         public int GameAmmo = 0;
         public int GameMaxAmmo;
         public int ShotAmmoTake;
+        public bool CriticalModuleIsBroken = false;
 
         [Header("Settings")]
         public float TriggerPullThreshold = .7f;
@@ -703,6 +704,8 @@ namespace HurricaneVR.Framework.Weapons.Guns
 
         protected virtual bool CanFire()
         {
+            if (CriticalModuleIsBroken)
+                return false;
             if (ShotAmmoTake > GameAmmo)
                 return false;
             if (GameAmmo <= 0)
