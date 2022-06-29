@@ -429,11 +429,11 @@ GameObject:
   - component: {fileID: 6884945149875892960}
   - component: {fileID: 6988990761705518686}
   - component: {fileID: -5306748185441100681}
-  - component: {fileID: 3795468893923446049}
   - component: {fileID: 4843908618713513957}
   - component: {fileID: 1967969692891563250}
   - component: {fileID: 4761026323151175559}
   - component: {fileID: 2561521798703293654}
+  - component: {fileID: 6221176344122186995}
   m_Layer: 0
   m_Name: SphereRange
   m_TagString: RangeEntity
@@ -599,22 +599,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70322fa13321b9e46b0c230461f3e2a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!208 &3795468893923446049
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6884945149875892990}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!65 &4843908618713513957
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -670,6 +654,19 @@ CapsuleCollider:
   m_Height: 6.009871
   m_Direction: 2
   m_Center: {x: 1.42, y: -0.73, z: -1.86}
+--- !u!65 &6221176344122186995
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6884945149875892990}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.1996603, y: 2.4724445, z: 6.7609887}
+  m_Center: {x: -0.122356415, y: 0.14441746, z: -1.473494}
 --- !u!1 &7374007520023194582
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,7 +735,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7374007520023194582}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.24
   m_Height: 2.82

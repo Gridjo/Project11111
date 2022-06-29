@@ -39,12 +39,12 @@ public class RecyclerIn : MonoBehaviour
             costil.RecyclerCost = item.junkPrice;
             if (item)
             {
+                gameObject.GetComponent<HVRSocket>().ForceRelease();
                 PlayerVariables.Instance.AddScraps(costil);
-                item.gameObject.SetActive(false);
-                item.transform.SetParent(ModPull.transform, false);
-                item.transform.position = new Vector3();
-                item.transform.localPosition = new Vector3();
-                
+                //item.gameObject.SetActive(false);
+                GameObject t=Instantiate(item.gameObject, ModPull.transform.position, ModPull.transform.rotation, ModPull.transform);
+                t.SetActive(false);
+                Destroy(item.gameObject);
             }
             else {
                 Debug.Log("wkjerhfvi;uwgfiuweglfiyygweiufgwekygfoifhrlilwhfliwejfliwejfliw");

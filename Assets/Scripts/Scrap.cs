@@ -12,7 +12,6 @@ public class Scrap : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Sssssssss");
         if (other.gameObject.tag == "gunn")
         {
             if (other.gameObject.TryGetComponent(out hvrp))

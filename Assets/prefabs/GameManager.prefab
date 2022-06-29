@@ -43,7 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81ebf0c33dd49a94eb1f26e203495fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Score: 0
+  Score: 100
   Energy: 0
-  MaxEnergy: 100
+  MaxEnergy: 200
   EnergyMultiplier: 1
+  ScoreWaveMod: 0
+  CountVis: 0
+  ModulPool: {fileID: 0}
+  Childs: []
+  ModSp: []
+  spawnPoint: {fileID: 0}

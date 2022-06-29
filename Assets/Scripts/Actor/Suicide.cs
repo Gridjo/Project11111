@@ -6,34 +6,33 @@ using UnityEngine.SceneManagement;
 public class Suicide : MonoBehaviour
 {
 
-   
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter(Collider other)
     {
-
-        if (collision.gameObject.tag == "ggwp")
+        Debug.Log("suicideeeeeee");
+        if (other.gameObject.tag == "ggwp")
         {
-            Debug.Log("EnTER");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Debug.Log("suicide is not an exit");
+            Platform.HeetPoints = 0;
         }
     }
 
-    private void OnTriggerExit(Collider collision)
+    private void OnTriggerExit(Collider other)
     {
-
-        if (collision.gameObject.tag == "ggwp")
+        Debug.Log("suicideeeeeee");
+        if (other.gameObject.tag == "ggwp")
         {
-            Debug.Log("EnTER");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Debug.Log("suicide is not an exit");
+            Platform.HeetPoints = 0;
         }
     }
 
-    private void OnTriggerStay(Collider collision)
+    private void OnTriggerStay(Collider other)
     {
-
-        if (collision.gameObject.tag == "ggwp")
+        Debug.Log("suicideeeeeee");
+        if (other.gameObject.tag == "ggwp")
         {
-            Debug.Log("EnTER");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Debug.Log("suicide is not an exit");
+            Platform.HeetPoints = 0;
         }
     }
 }

@@ -46,7 +46,10 @@ public class Enemy : MonoBehaviour
         }
         if (curHeetPoint <= 0)
         {
+            if (gameObject.TryGetComponent(out NpcArena tt) && tt.WasDamaget)
+                GameManager1.transform.GetComponent<GameManager>().MinusScore((ScorePoint));
             EnemyDeath();
+           
         }
 
     }

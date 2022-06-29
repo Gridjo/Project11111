@@ -5,11 +5,11 @@ using UnityEngine;
 public class NpcArena : Enemy
 {
     public float mult = 0.1f;
+    public bool WasDamaget = false;
     void OnTriggerEnter(Collider myCollision)
     {
         if (myCollision.gameObject.tag == "MeleDistance" && gameObject.activeSelf)
         {
-            Debug.Log("ВЫзов функции");
             GameManager1.transform.GetComponent<GameManager>().EnerMult(mult);
             EnemyDeath();
         }
@@ -20,8 +20,8 @@ public class NpcArena : Enemy
         if (collision.gameObject.tag == "ggwp")
         {
             GameManager1.transform.GetComponent<GameManager>().MinusScore((ScorePoint));
-            Debug.Log("EnTER");
             GetDamage(100);
+            WasDamaget = true;
         }
     }
 }
