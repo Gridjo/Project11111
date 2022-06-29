@@ -44,5 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CountPool: 11
-  prefab: {fileID: 0}
+  prefab: {fileID: 8730599976994491247, guid: 7e2e2f879f96bd34b9858507a79a1693, type: 3}
   plat: {fileID: 0}
+  GameManager11: {fileID: 0}
