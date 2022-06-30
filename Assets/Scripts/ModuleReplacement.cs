@@ -171,8 +171,8 @@ public class ModuleReplacement : MonoBehaviour
         {
             if (_mainPistol.GetComponent<HVRPistol>().GameAmmo > _module.GetComponent<bodyModul>().magCapacity)
             {
-                int ostatok = _mainPistol.GetComponent<HVRPistol>().GameAmmo - (module.GetComponent<bodyModul>().magCapacity - _module.GetComponent<bodyModul>().magCapacity);
-                _mainPistol.GetComponent<HVRPistol>().GameAmmo -= ostatok;
+                int ostatok = _mainPistol.GetComponent<HVRPistol>().GameAmmo;
+                _mainPistol.GetComponent<HVRPistol>().GameAmmo = 0;
                 Scrap sc = new Scrap();
                 sc.AmountScrap = ostatok;
                 PlayerVariables.Instance.AddScraps(sc);
