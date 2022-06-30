@@ -1,6 +1,7 @@
 using HurricaneVR.Framework.Core;
 using HurricaneVR.Framework.Core.Grabbers;
 using HurricaneVR.Framework.Weapons.Guns;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,9 +15,7 @@ public class Moduls : MonoBehaviour
     public float durability;
     public bool IsBroken() { return durability <= 0; }
 
-    [HideInInspector]
     public float junkPerShoot_barrel;
-    [HideInInspector]
     public float durCoef_stock;
     
 
@@ -71,26 +70,26 @@ public class Moduls : MonoBehaviour
 
     void Reconfigurator()
     {
-            if (pistolMain.GetComponent<HVRPistol>().TypeGun == TypeGun.rifle)
+        if (pistolMain.GetComponent<HVRPistol>().TypeGun == TypeGun.rifle)
+        {
+            if(script_barrel == null)
+                FindBarre().TryGetComponent(out script_barrel);
+            try 
             {
-                if(script_barrel == null)
-                    FindBarre().TryGetComponent(out script_barrel);
-                if (FindStock().TryGetComponent(out script_stock))
-                {
-                    durCoef_stock = script_stock.durCoef;
-                }
-                else
-                {
-                    durCoef_stock = 1f;
-                }
-                junkPerShoot_barrel = script_barrel.junkPerShot;
-
-                durability = junkPerShoot_barrel * durCoef * durCoef_stock;
+                FindStock().TryGetComponent(out script_stock);
+                durCoef_stock = script_stock.durCoef;
             }
-            else
+            catch (NullReferenceException e)
             {
-                durability = durCoef;
+                durCoef_stock = 1f;
             }
+            junkPerShoot_barrel = script_barrel.junkPerShot;
+            durability = junkPerShoot_barrel * durCoef * durCoef_stock;
+        }
+        else
+        {
+            durability = durCoef;
+        }
         
     }
 
