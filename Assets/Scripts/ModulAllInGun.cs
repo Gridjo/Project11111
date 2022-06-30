@@ -7,11 +7,11 @@ using UnityEngine;
     public class ModulAllInGun : MonoBehaviour
     {
         public float attSpeed;
-        public int magCapacity = 0;
+        public int magCapacity = 10;
         public float damage;
         public int recoilBaree;
         public BuletType bulletType;
-        public int junkPerShot = 0;
+        public int junkPerShot = 1;
         public TextMeshPro AmmoText;
         private int recoil;
         private int recoilStock;

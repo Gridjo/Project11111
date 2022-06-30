@@ -115,56 +115,58 @@ public class GameManager : MonoBehaviour
         int rr = UnityEngine.Random.Range(0, 100);
         for (int i = 0; i < ModSp.Length; i++)
         {
-            
-            if (rr < 50)
+            try
             {
-                if (ModSp[i].TryGetComponent(out Moduls ccc))
+                if (rr < 50)
                 {
-                    if (ccc.Raryti == Rarity.Common)
+                    if (ModSp[i].TryGetComponent(out Moduls ccc))
                     {
-                        ScoreWaveMod -= ccc.junkPrice;
-                        SpawnModul(ModSp[i]);
-                        return;
-                    } 
+                        if (ccc.Raryti == Rarity.Common)
+                        {
+                            ScoreWaveMod -= ccc.junkPrice;
+                            SpawnModul(ModSp[i]);
+                            return;
+                        }
+                    }
                 }
-            }
-            else if(rr < 80)
-            {
-                if (ModSp[i].TryGetComponent(out Moduls ccr))
+                else if (rr < 80)
                 {
-                    if (ccr.Raryti == Rarity.Rare)
+                    if (ModSp[i].TryGetComponent(out Moduls ccr))
                     {
-                        ScoreWaveMod -= ccr.junkPrice;
-                        SpawnModul(ModSp[i]);
-                        return;
+                        if (ccr.Raryti == Rarity.Rare)
+                        {
+                            ScoreWaveMod -= ccr.junkPrice;
+                            SpawnModul(ModSp[i]);
+                            return;
+                        }
+                    }
+                }
+                else if (rr < 95)
+                {
+                    if (ModSp[i].TryGetComponent(out Moduls cce))
+                    {
+                        if (cce.Raryti == Rarity.Epic)
+                        {
+                            ScoreWaveMod -= cce.junkPrice;
+                            SpawnModul(ModSp[i]);
+                            return;
+                        }
+                    }
+                }
+                else if (rr < 100)
+                {
+                    if (ModSp[i].TryGetComponent(out Moduls ccl))
+                    {
+                        if (ccl.Raryti == Rarity.Legendary)
+                        {
+                            ScoreWaveMod -= ccl.junkPrice;
+                            SpawnModul(ModSp[i]);
+                            return;
+                        }
                     }
                 }
             }
-            else if (rr < 95)
-            {
-                if (ModSp[i].TryGetComponent(out Moduls cce))
-                {
-                    if (cce.Raryti == Rarity.Epic)
-                    {
-                        ScoreWaveMod -= cce.junkPrice;
-                        SpawnModul(ModSp[i]);
-                        return;
-                    }
-                }
-            }
-            else if (rr < 100)
-            {
-                if (ModSp[i].TryGetComponent(out Moduls ccl))
-                {
-                    if (ccl.Raryti == Rarity.Legendary)
-                    {
-                        ScoreWaveMod -= ccl.junkPrice;
-                        SpawnModul(ModSp[i]);
-                        return;
-                    }
-                }
-            }
-            else
+            catch
             {
                 ChSpawnModul();
             }
