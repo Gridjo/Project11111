@@ -13,6 +13,11 @@ using UnityEngine;
         public BuletType bulletType;
         public int junkPerShot = 1;
         public TextMeshPro AmmoText;
+
+    public ModulsInfo stock;
+    public bareModul barrel;
+    public bodyModul body;
+
         private int recoil;
         private int recoilStock;
         private HVRPistol hvrp;
@@ -34,12 +39,16 @@ using UnityEngine;
 
         private void PostModulsFind()
         {
+            ReconfigDurability();
             SetMaxAmmo();
             SetTakeAmmo();
         }
 
         public void ReloadTextAmmo()
         {
+        if (hvrp.CriticalModuleIsBroken)
+            AmmoText.text = "X";
+        else
             AmmoText.text = $"{hvrp.GameAmmo}";
         }
 
@@ -51,6 +60,7 @@ using UnityEngine;
                 {
                     if (gameObject.transform.GetChild(x).GetChild(i).TryGetComponent<bodyModul>(out bodyModul bodm))
                     {
+                        body = bodm;
                         attSpeed = bodm.attSpeed;
                         magCapacity = bodm.magCapacity;
                         return;
@@ -66,6 +76,7 @@ using UnityEngine;
                 {
                     if (gameObject.transform.GetChild(x).GetChild(i).TryGetComponent<bareModul>(out bareModul barm))
                     {
+                        barrel = barm;
                         recoilBaree = barm.recoil;
                         recoil = recoilBaree;
                         damage = barm.damage;
@@ -84,6 +95,7 @@ using UnityEngine;
                 {
                     if (gameObject.transform.GetChild(x).GetChild(i).TryGetComponent<ModulsInfo>(out ModulsInfo stm))
                     {
+                        stock = stm;
                         recoilStock = stm.recoil;
                         recoil = recoilBaree + recoilStock;
                         return;
@@ -91,6 +103,14 @@ using UnityEngine;
                 }
             }
         }
+
+    public void ReconfigDurability()
+    {
+        stock.Reconfigurator();
+        barrel.Reconfigurator();
+        body.Reconfigurator();
+
+    }
 
         private void SetMaxAmmo()
         {

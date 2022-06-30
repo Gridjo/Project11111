@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18154603, g: 0.22718875, b: 0.30740646, a: 1}
+  m_IndirectSpecularColor: {r: 0.18154569, g: 0.22718826, b: 0.3074059, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -400,8 +400,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 128
   durability: 0
+  startDurability: 100
+  subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
+  act:
+    m_PersistentCalls:
+      m_Calls: []
   attSpeed: 7
   magCapacity: 50
   shootingType: 0
@@ -2690,8 +2695,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 128
   durability: 0
+  startDurability: 100
+  subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
+  act:
+    m_PersistentCalls:
+      m_Calls: []
   attSpeed: 7
   magCapacity: 50
   shootingType: 0
@@ -3076,8 +3086,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 14
   durability: 0
+  startDurability: 100
+  subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
+  act:
+    m_PersistentCalls:
+      m_Calls: []
   damage: 3
   recoil: 5
   bulletType: 0
@@ -4186,8 +4201,13 @@ MonoBehaviour:
   durCoef: 0.7
   junkPrice: 64
   durability: 0
+  startDurability: 100
+  subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
+  act:
+    m_PersistentCalls:
+      m_Calls: []
   recoil: -12
 --- !u!114 &560246134
 MonoBehaviour:
@@ -6183,8 +6203,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 152
   durability: 0
+  startDurability: 100
+  subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
+  act:
+    m_PersistentCalls:
+      m_Calls: []
   attSpeed: 7
   magCapacity: 50
   shootingType: 0
@@ -7221,8 +7246,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 14
   durability: 0
+  startDurability: 100
+  subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
+  act:
+    m_PersistentCalls:
+      m_Calls: []
   attSpeed: 2
   magCapacity: 10
   shootingType: 0
@@ -7479,9 +7509,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1017814862}
-  - component: {fileID: 1017814861}
-  - component: {fileID: 1017814860}
-  - component: {fileID: 1017814859}
   m_Layer: 0
   m_Name: ModPool
   m_TagString: Untagged
@@ -7489,71 +7516,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1017814859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1017814858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52c5de1920fb0fb4c899dc170bacf980, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AlreadyInGun: 0
-  Raryti: 0
-  durCoef: 0
-  junkPrice: 0
-  durability: 0
-  junkPerShoot_barrel: 0
-  durCoef_stock: 0
-  damage: 0
-  recoil: 0
-  bulletType: 0
-  junkPerShot: 0
---- !u!114 &1017814860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1017814858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa5fd02aca9a8874881c231f6307fd14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AlreadyInGun: 0
-  Raryti: 0
-  durCoef: 0
-  junkPrice: 0
-  durability: 0
-  junkPerShoot_barrel: 0
-  durCoef_stock: 0
-  attSpeed: 0
-  magCapacity: 0
-  shootingType: 0
---- !u!114 &1017814861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1017814858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98de3b269e8d9904692361bfb3ef5fa3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AlreadyInGun: 0
-  Raryti: 0
-  durCoef: 0
-  junkPrice: 0
-  durability: 0
-  junkPerShoot_barrel: 0
-  durCoef_stock: 0
-  recoil: 0
 --- !u!4 &1017814862
 Transform:
   m_ObjectHideFlags: 0
@@ -8018,8 +7980,13 @@ MonoBehaviour:
   durCoef: 0.7
   junkPrice: 36
   durability: 0
+  startDurability: 100
+  subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
+  act:
+    m_PersistentCalls:
+      m_Calls: []
   recoil: -6
 --- !u!114 &1084870496
 MonoBehaviour:
@@ -8339,8 +8306,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 64
   durability: 0
+  startDurability: 100
+  subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
+  act:
+    m_PersistentCalls:
+      m_Calls: []
   damage: 10
   recoil: 14
   bulletType: 0
@@ -8678,8 +8650,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 28
   durability: 0
+  startDurability: 100
+  subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
+  act:
+    m_PersistentCalls:
+      m_Calls: []
   attSpeed: 3.5
   magCapacity: 20
   shootingType: 0
@@ -8986,8 +8963,13 @@ MonoBehaviour:
   durCoef: 0.6
   junkPrice: 72
   durability: 0
+  startDurability: 100
+  subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
+  act:
+    m_PersistentCalls:
+      m_Calls: []
   recoil: -10
 --- !u!114 &1107769838
 MonoBehaviour:
@@ -9835,8 +9817,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 72
   durability: 0
+  startDurability: 100
+  subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
+  act:
+    m_PersistentCalls:
+      m_Calls: []
   attSpeed: 5
   magCapacity: 30
   shootingType: 0
@@ -10279,8 +10266,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 28
   durability: 0
+  startDurability: 100
+  subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
+  act:
+    m_PersistentCalls:
+      m_Calls: []
   attSpeed: 3.5
   magCapacity: 20
   shootingType: 0
@@ -10704,8 +10696,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 128
   durability: 0
+  startDurability: 100
+  subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
+  act:
+    m_PersistentCalls:
+      m_Calls: []
   damage: 15
   recoil: 19
   bulletType: 0
@@ -11549,8 +11546,13 @@ MonoBehaviour:
   durCoef: 0.4
   junkPrice: 152
   durability: 0
+  startDurability: 100
+  subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
+  act:
+    m_PersistentCalls:
+      m_Calls: []
   recoil: -14
 --- !u!114 &1405410581
 MonoBehaviour:
@@ -13216,8 +13218,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 64
   durability: 0
+  startDurability: 100
+  subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
+  act:
+    m_PersistentCalls:
+      m_Calls: []
   attSpeed: 5
   magCapacity: 30
   shootingType: 0
@@ -13524,8 +13531,13 @@ MonoBehaviour:
   durCoef: 0.9
   junkPrice: 14
   durability: 0
+  startDurability: 100
+  subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
+  act:
+    m_PersistentCalls:
+      m_Calls: []
   recoil: -3
 --- !u!114 &1703693276
 MonoBehaviour:
@@ -14033,8 +14045,13 @@ MonoBehaviour:
   durCoef: 0.8
   junkPrice: 28
   durability: 0
+  startDurability: 100
+  subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
+  act:
+    m_PersistentCalls:
+      m_Calls: []
   recoil: -7
 --- !u!114 &1732875420
 MonoBehaviour:
@@ -14450,8 +14467,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 64
   durability: 0
+  startDurability: 100
+  subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
+  act:
+    m_PersistentCalls:
+      m_Calls: []
   attSpeed: 5
   magCapacity: 30
   shootingType: 0
@@ -15233,8 +15255,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 36
   durability: 0
+  startDurability: 100
+  subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
+  act:
+    m_PersistentCalls:
+      m_Calls: []
   attSpeed: 3.5
   magCapacity: 20
   shootingType: 0
@@ -15556,8 +15583,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 14
   durability: 0
+  startDurability: 100
+  subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
+  act:
+    m_PersistentCalls:
+      m_Calls: []
   attSpeed: 2
   magCapacity: 10
   shootingType: 0
@@ -16897,8 +16929,13 @@ MonoBehaviour:
   durCoef: 0.5
   junkPrice: 128
   durability: 0
+  startDurability: 100
+  subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
+  act:
+    m_PersistentCalls:
+      m_Calls: []
   recoil: -17
 --- !u!114 &1950113530
 MonoBehaviour:
@@ -20726,8 +20763,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 28
   durability: 0
+  startDurability: 100
+  subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
+  act:
+    m_PersistentCalls:
+      m_Calls: []
   damage: 6
   recoil: 8
   bulletType: 0

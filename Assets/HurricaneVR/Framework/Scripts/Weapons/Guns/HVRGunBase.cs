@@ -892,7 +892,8 @@ namespace HurricaneVR.Framework.Weapons.Guns
 
         protected virtual void OnFire(Vector3 direction)
         {
-            GameAmmo--;
+            GameAmmo -= ShotAmmoTake;
+            
             FireBullet(direction);
             FireHaptics();
         }
@@ -962,7 +963,7 @@ namespace HurricaneVR.Framework.Weapons.Guns
 
         protected virtual void AfterFired()
         {
-            GameAmmo -= ShotAmmoTake;
+            
         }
 
         protected virtual void MuzzleFlash()

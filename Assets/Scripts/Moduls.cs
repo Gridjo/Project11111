@@ -5,6 +5,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Moduls : MonoBehaviour
 {
@@ -13,19 +14,28 @@ public class Moduls : MonoBehaviour
     public float durCoef;
     public int junkPrice;
     public float durability;
+    public float startDurability = 100f;
+    public float subDurability;
     public bool IsBroken() { return durability <= 0; }
 
     public float junkPerShoot_barrel;
     public float durCoef_stock;
-    
+
+    public UnityEvent act;
 
     private ModulsInfo script_stock;
     private bareModul script_barrel;
     private GameObject pistolMain;
     private bool ItCritical = false;
 
+    private void Awake()
+    {
+        durability = startDurability;
+    }
+
     void Start()
     {
+        Subscribe();
         Init();
     }
 
@@ -61,22 +71,20 @@ public class Moduls : MonoBehaviour
     {
         if (AlreadyInGun)
         {
-            if (ItCritical)
-            {
-                pistolMain.GetComponent<HVRPistol>().CriticalModuleIsBroken = IsBroken();
-            }
+            if (IsBroken())
+                Destroy();
         }
     }
 
-    void Reconfigurator()
+    public void Reconfigurator()
     {
         if (pistolMain.GetComponent<HVRPistol>().TypeGun == TypeGun.rifle)
         {
-            if(script_barrel == null)
-                FindBarre().TryGetComponent(out script_barrel);
+            if (script_barrel == null)
+                script_barrel = FindParentPistol().GetComponent<ModulAllInGun>().barrel;
             try 
             {
-                FindStock().TryGetComponent(out script_stock);
+                script_stock = FindParentPistol().GetComponent<ModulAllInGun>().stock;
                 durCoef_stock = script_stock.durCoef;
             }
             catch (NullReferenceException e)
@@ -84,55 +92,48 @@ public class Moduls : MonoBehaviour
                 durCoef_stock = 1f;
             }
             junkPerShoot_barrel = script_barrel.junkPerShot;
-            durability = junkPerShoot_barrel * durCoef * durCoef_stock;
+            subDurability = junkPerShoot_barrel * durCoef * durCoef_stock;
         }
         else
         {
-            durability = durCoef;
+            subDurability = durCoef;
         }
         
     }
 
-    GameObject FindBarre()
-    {
-        for (int x = 0; x < pistolMain.gameObject.transform.childCount; x++)
-        {
-            for (int i = 0; i < pistolMain.gameObject.transform.GetChild(x).childCount; i++)
-            {
-                if (pistolMain.transform.GetChild(x).GetChild(i).TryGetComponent<bareModul>(out bareModul barm))
-                {
-                    return barm.gameObject;
-                }
-            }
-        }
-        return null;
-    }
-    GameObject FindStock()
-    {
-        for (int x = 0; x < pistolMain.gameObject.transform.childCount; x++)
-        {
-            for (int i = 0; i < pistolMain.gameObject.transform.GetChild(x).childCount; i++)
-            {
-                if (pistolMain.transform.GetChild(x).GetChild(i).TryGetComponent<ModulsInfo>(out ModulsInfo stm))
-                {
-                    return stm.gameObject;
-                }
-            }
-        }
-        return null;
-    }
-
     GameObject FindParentPistol()
     {
-        GameObject gO = transform.parent.parent.gameObject;
-        return gO;
+        return transform.parent.parent.gameObject;
+    }
+
+    public Action a;
+
+    public void Subscribe()
+    {
+        act = pistolMain.GetComponent<HVRPistol>().Fired;
+        act.AddListener(DurabilitySub);
+    }
+
+    public void DurabilitySub()
+    {
+        durability -= subDurability;
+    }
+
+    public void Destroy()
+    {
+        act.RemoveListener(DurabilitySub);
+        if (ItCritical)
+        {
+            pistolMain.GetComponent<HVRPistol>().CriticalModuleIsBroken = IsBroken();
+        }
+        
     }
 }
 
 public enum Rarity
 {
-    Common,
-    Rare,
-    Epic,
-    Legendary
+    Common = 5,
+    Rare = 10,
+    Epic = 20,
+    Legendary = 45
 }
