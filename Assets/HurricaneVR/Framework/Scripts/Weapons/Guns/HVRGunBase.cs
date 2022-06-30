@@ -962,7 +962,7 @@ namespace HurricaneVR.Framework.Weapons.Guns
 
         protected virtual void AfterFired()
         {
-            GameAmmo -= 1;
+            GameAmmo -= ShotAmmoTake;
         }
 
         protected virtual void MuzzleFlash()

@@ -12,37 +12,69 @@ public class Moduls : MonoBehaviour
     public float durCoef;
     public int junkPrice;
     public float durability;
-    public float junkPerShoot_barrel;
-    public float durCoef_stock;
     public bool IsBroken() { return durability <= 0; }
+
+    [HideInInspector]
+    public float junkPerShoot_barrel;
+    [HideInInspector]
+    public float durCoef_stock;
+    
 
     private ModulsInfo script_stock;
     private bareModul script_barrel;
+    private GameObject pistolMain;
     private bool ItCritical = false;
 
     void Start()
     {
+        Init();
+    }
+
+    public void Init()
+    {
         if (gameObject.GetComponent<bareModul>())
+        {
+            script_barrel = gameObject.GetComponent<bareModul>();
             ItCritical = true;
+        }
+        if (gameObject.GetComponent<ModulsInfo>())
+        {
+            script_stock = gameObject.GetComponent<ModulsInfo>();
+            ItCritical = false;
+        }
         if (gameObject.GetComponent<bodyModul>())
             ItCritical = true;
         if (AlreadyInGun)
         {
+            pistolMain = FindParentPistol();
             Reconfigurator();
+        }
+        else
+        {
+            if (pistolMain != null)
+            {
+                pistolMain = null;
+            }
         }
     }
 
     private void FixedUpdate()
     {
-        if (ItCritical)
-            FindParentPistol().GetComponent<HVRPistol>().CriticalModuleIsBroken = IsBroken();
+        if (AlreadyInGun)
+        {
+            if (ItCritical)
+            {
+                pistolMain.GetComponent<HVRPistol>().CriticalModuleIsBroken = IsBroken();
+            }
+        }
     }
 
     void Reconfigurator()
     {
-            if (FindParentPistol().GetComponent<HVRPistol>().TypeGun == TypeGun.rifle)
+            if (pistolMain.GetComponent<HVRPistol>().TypeGun == TypeGun.rifle)
             {
-                FindBarre().TryGetComponent(out script_barrel);
+                if(script_barrel == null)
+                    FindBarre().TryGetComponent(out script_barrel);
                 if (FindStock().TryGetComponent(out script_stock))
                 {
                     durCoef_stock = script_stock.durCoef;
@@ -64,11 +96,11 @@ public class Moduls : MonoBehaviour
 
     GameObject FindBarre()
     {
-        for (int x = 0; x < FindParentPistol().gameObject.transform.childCount; x++)
+        for (int x = 0; x < pistolMain.gameObject.transform.childCount; x++)
         {
-            for (int i = 0; i < FindParentPistol().gameObject.transform.GetChild(x).childCount; i++)
+            for (int i = 0; i < pistolMain.gameObject.transform.GetChild(x).childCount; i++)
             {
-                if (FindParentPistol().transform.GetChild(x).GetChild(i).TryGetComponent<bareModul>(out bareModul barm))
+                if (pistolMain.transform.GetChild(x).GetChild(i).TryGetComponent<bareModul>(out bareModul barm))
                 {
                     return barm.gameObject;
                 }
@@ -78,11 +110,11 @@ public class Moduls : MonoBehaviour
     }
     GameObject FindStock()
     {
-        for (int x = 0; x < FindParentPistol().gameObject.transform.childCount; x++)
+        for (int x = 0; x < pistolMain.gameObject.transform.childCount; x++)
         {
-            for (int i = 0; i < FindParentPistol().gameObject.transform.GetChild(x).childCount; i++)
+            for (int i = 0; i < pistolMain.gameObject.transform.GetChild(x).childCount; i++)
             {
-                if (FindParentPistol().transform.GetChild(x).GetChild(i).TryGetComponent<ModulsInfo>(out ModulsInfo stm))
+                if (pistolMain.transform.GetChild(x).GetChild(i).TryGetComponent<ModulsInfo>(out ModulsInfo stm))
                 {
                     return stm.gameObject;
                 }
