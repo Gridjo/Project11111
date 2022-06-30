@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public float Energy = 0, MaxEnergy = 200;
     public float EnergyMultiplier = 1, ScoreWaveMod = 0, CountVis = 0;
     private float TimeEner = 1f, TimeEnerOut = 1f;
+    private int hhj;
     public GameObject ModulPool;
     public GameObject[] Childs;
     public GameObject[] ModSp;
@@ -59,12 +60,12 @@ public class GameManager : MonoBehaviour
 
     public void ChSpawnModul()
     {
-        
+        hhj = 0;
         Childs = new GameObject[ModulPool.transform.childCount];
         ModSp = null;
         ScoreWaveMod += Score * 0.8f;
         float ScoreJunk = Score - ScoreWaveMod;
-        if (ScoreWaveMod < 14f)
+        if (ScoreWaveMod < 15f)
         {
             ScoreWaveMod = 0;
             return;
@@ -87,14 +88,29 @@ public class GameManager : MonoBehaviour
             if (ModulPool.transform.GetChild(i).TryGetComponent(out Moduls tt));
                 Childs[i] = ModulPool.transform.GetChild(i).gameObject;
         }
-        ModSp = new GameObject[Childs.Length];
+        
         for (int i = 0, j=0; i < Childs.Length; i++)
         {
-            if (ScoreWaveMod > Childs[i].GetComponent<Moduls>().junkPrice)
+            if(Childs[i].TryGetComponent(out Moduls tt))
+            if (ScoreWaveMod > tt.junkPrice)
             {
-                ModSp[j] = Childs[i];
-                j++;
+                hhj++;
             }
+        }
+
+        if (hhj > 0)
+        {
+            ModSp = new GameObject[hhj];
+        }
+
+        for (int i = 0, j = 0; i < Childs.Length; i++)
+        {
+            if (Childs[i].TryGetComponent(out Moduls tt))
+                if (ScoreWaveMod > tt.junkPrice)
+                {
+                    ModSp[j] = Childs[i];
+                    j++;
+                }
         }
         int rr = UnityEngine.Random.Range(0, 100);
         for (int i = 0; i < ModSp.Length; i++)
