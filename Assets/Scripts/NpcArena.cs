@@ -13,6 +13,12 @@ public class NpcArena : Enemy
             GameManager1.transform.GetComponent<GameManager>().EnerMult(mult);
             EnemyDeath();
         }
+        if (myCollision.gameObject.tag == "ggwp")
+        {
+
+            GetDamage(100);
+            WasDamaget = true;
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {

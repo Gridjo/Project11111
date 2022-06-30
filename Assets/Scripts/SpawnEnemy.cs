@@ -68,8 +68,11 @@ public class SpawnEnemy : MonoBehaviour
                 GameManager.GetComponent<GameManager>().ChSpawnModul();
                 GameManager.GetComponent<GameManager>().CountVis = 0;
             }
-            catch { }
-            GameManager.GetComponent<GameManager>().CountVis = 0;
+            catch {
+                GameManager.GetComponent<GameManager>().ChSpawnModul();
+                GameManager.GetComponent<GameManager>().CountVis = 0;
+            }
+            
             Debug.Log("ffggg");
 
             WaveNomber++;
