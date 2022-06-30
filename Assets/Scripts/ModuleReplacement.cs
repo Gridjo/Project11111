@@ -167,6 +167,17 @@ public class ModuleReplacement : MonoBehaviour
         other.transform.SetParent(pistol.transform);
         other.transform.localPosition = new Vector3(0, 0, 0);
         _module = other.gameObject;
+        if (module.GetComponent<bodyModul>().magCapacity > _module.GetComponent<bodyModul>().magCapacity)
+        {
+            if (_mainPistol.GetComponent<HVRPistol>().GameAmmo > _module.GetComponent<bodyModul>().magCapacity)
+            {
+                int ostatok = _mainPistol.GetComponent<HVRPistol>().GameAmmo - (module.GetComponent<bodyModul>().magCapacity - _module.GetComponent<bodyModul>().magCapacity);
+                _mainPistol.GetComponent<HVRPistol>().GameAmmo -= ostatok;
+                Scrap sc = new Scrap();
+                sc.AmountScrap = ostatok;
+                PlayerVariables.Instance.AddScraps(sc);
+            }
+        }
         module.GetComponent<Moduls>().AlreadyInGun = false;
         _module.GetComponent<Moduls>().AlreadyInGun = true;
         _module.transform.localRotation = new Quaternion(0f, 270f, 0f, 0f);
