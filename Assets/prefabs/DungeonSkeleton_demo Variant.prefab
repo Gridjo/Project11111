@@ -132,11 +132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9447dd1501b24741b141ed0e2554ae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curHeetPoint: 100
-  maxHeetPoint: 100
-  ScorePoint: 10
   AttackDamage: 1
-  EnemySpeed: 12.25
+  EnemySpeed: 3.5
   timeToAtack: 1
   timeToAtackClone: 1
   curHeetPoint: 100
@@ -146,6 +143,19 @@ MonoBehaviour:
   reachedAttackDistance: 0
   GameManager1: {fileID: 5688493640717583194, guid: e5a8e811cf84de147aa355c0ee8be380, type: 3}
   ScorePoint: 10
+  SpawnManager: {fileID: 0}
+  hp:
+  - 15
+  - 21
+  - 28
+  - 34
+  - 41
+  - 48
+  - 54
+  - 61
+  - 67
+  - 74
+  sc: 0c00000014000000190000001e00000023000000280000002f00000034000000390000003e000000
 --- !u!195 &3604338333886961606
 NavMeshAgent:
   m_ObjectHideFlags: 0

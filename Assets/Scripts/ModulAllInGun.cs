@@ -113,20 +113,39 @@ using UnityEngine;
 
     public void ReconfigDurability()
     {
-        body.Reconfigurator();
+        body.SubInit();
         if (hvrp.TypeGun == TypeGun.rifle)
         {
-            barrel.Reconfigurator();
+            barrel.SubInit();
             try
             {
-                stock.Reconfigurator();
+                stock.SubInit();
             } catch (NullReferenceException e)
             {
 
             }
         }
-
+        CheckFixedModules();
     }
+
+    private void CheckFixedModules()
+    {
+        if (body.IsBroken())
+            return;  
+        if (hvrp.TypeGun == TypeGun.rifle)
+        {
+            try
+            {
+                if (barrel.IsBroken())
+                    return;
+            }
+            catch (NullReferenceException e)
+            {
+                
+            }
+        }
+        hvrp.GetComponent<HVRPistol>().CriticalModuleIsBroken = false;
+    }    
 
         private void SetMaxAmmo()
         {

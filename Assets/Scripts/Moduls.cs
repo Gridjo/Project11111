@@ -21,8 +21,6 @@ public class Moduls : MonoBehaviour
     public float junkPerShoot_barrel;
     public float durCoef_stock;
 
-    public UnityEvent act;
-
     private ModulsInfo script_stock;
     private bareModul script_barrel;
     private GameObject pistolMain;
@@ -34,10 +32,16 @@ public class Moduls : MonoBehaviour
         PreInit();
     }
 
-    public void PreInit()
+    private void PreInit()
     {
         Subscribe();
         Init();
+    }
+
+    public void SubInit()
+    {
+        PreInit();
+        Reconfigurator();
     }
 
     public void Init()
@@ -107,25 +111,35 @@ public class Moduls : MonoBehaviour
        return transform.parent.parent.gameObject;
     }
 
-    public Action a;
-
     public void Subscribe()
     {
         if (AlreadyInGun)
         {
-            act = FindParentPistol().GetComponent<HVRPistol>().Fired;
-            act.AddListener(DurabilitySub);
+            Debug.Log("Sub");
+            /*
+            var fir = FindParentPistol().GetComponent<HVRPistol>().Fired;
+            fir.AddListener(DurabilitySub);
+            Debug.Log($"{fir.GetPersistentEventCount()}");
+            */
+
+
+            FindParentPistol().GetComponent<HVRPistol>().aFired.AddListener(DurabilitySub);
+            Debug.Log($"{FindParentPistol().GetComponent<HVRPistol>().aFired.GetPersistentEventCount()}");
         }
     }
 
     public void DurabilitySub()
     {
+        Debug.Log("DuSub");
         durability -= subDurability;
     }
 
     public void Destroy()
     {
-        act.RemoveListener(DurabilitySub);
+        Debug.Log("DeSub");
+        //act.RemoveListener(DurabilitySub);
+        pistolMain.GetComponent<HVRPistol>().aFired.RemoveListener(DurabilitySub);
+        gameObject.SetActive(false);
         if (ItCritical)
         {
             pistolMain.GetComponent<HVRPistol>().CriticalModuleIsBroken = IsBroken();

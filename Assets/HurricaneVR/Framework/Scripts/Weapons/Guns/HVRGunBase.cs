@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using HurricaneVR.Framework.Components;
@@ -32,6 +33,7 @@ namespace HurricaneVR.Framework.Weapons.Guns
         public int GameMaxAmmo;
         public int ShotAmmoTake;
         public bool CriticalModuleIsBroken = false;
+        public UnityEvent aFired;
 
         [Header("Settings")]
         public float TriggerPullThreshold = .7f;
@@ -759,6 +761,7 @@ namespace HurricaneVR.Framework.Weapons.Guns
 
             PlayAnimator();
             Fired.Invoke();
+            aFired.Invoke();
         }
 
         protected virtual void Animate()
@@ -893,9 +896,8 @@ namespace HurricaneVR.Framework.Weapons.Guns
         protected virtual void OnFire(Vector3 direction)
         {
             GameAmmo -= ShotAmmoTake;
-            
             FireBullet(direction);
-            FireHaptics();
+        //    FireHaptics();
         }
 
         protected virtual void FireHaptics()

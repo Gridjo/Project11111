@@ -809,12 +809,9 @@ namespace HurricaneVR.Framework.Core.Player
 
             if (IsTeleportValid)
             {
-                //TeleportMarker.transform.position = TeleportDestination;
-                //if (GameObject.Find("GameManager").GetComponent<GameManager>().Energy >= 200)
-                {
-                    Instantiate(turretObj, TeleportMarker.transform.position, Quaternion.identity);
-                    //Gm.GetComponent<GameManager>().Energy -= 200;
-                }
+                TeleportMarker.transform.position = TeleportDestination;
+                Instantiate(turretObj, transform.position + 20f * Forward, Quaternion.identity);
+
             }
             else
             {
@@ -862,10 +859,10 @@ namespace HurricaneVR.Framework.Core.Player
         {
             if (TeleportMarker)
             {
-                var target = transform.position + 20f * Forward;
-                target.y = TeleportMarker.transform.position.y;
-                TeleportMarker.transform.LookAt(target);
-
+                //var target = transform.position + 20f * Forward;
+                //target.y = TeleportMarker.transform.position.y;
+                //TeleportMarker.transform.LookAt(target);
+                Instantiate(turretObj, transform.position + 20f * Forward, Quaternion.identity);
                 TeleportMarker.UpdateState(isTeleportValid);
 
                 if (DisableMarkerWhenInvalid)
