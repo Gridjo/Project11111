@@ -41,7 +41,7 @@ public class RecyclerIn : MonoBehaviour
             {
                 gameObject.GetComponent<HVRSocket>().ForceRelease();
                 PlayerVariables.Instance.AddScraps(costil);
-                //item.gameObject.SetActive(false);
+                // item.gameObject.SetActive(false);
                 GameObject t=Instantiate(item.gameObject, ModPull.transform.position, ModPull.transform.rotation, ModPull.transform);
                 t.SetActive(false);
                 Destroy(item.gameObject);
