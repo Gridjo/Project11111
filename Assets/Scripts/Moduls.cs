@@ -31,9 +31,10 @@ public class Moduls : MonoBehaviour
     private void Awake()
     {
         durability = startDurability;
+        PreInit();
     }
 
-    void Start()
+    public void PreInit()
     {
         Subscribe();
         Init();
@@ -56,7 +57,6 @@ public class Moduls : MonoBehaviour
         if (AlreadyInGun)
         {
             pistolMain = FindParentPistol();
-            Reconfigurator();
         }
         else
         {
@@ -78,10 +78,15 @@ public class Moduls : MonoBehaviour
 
     public void Reconfigurator()
     {
-        if (pistolMain.GetComponent<HVRPistol>().TypeGun == TypeGun.rifle)
-        {
-            if (script_barrel == null)
+            try
+            {
                 script_barrel = FindParentPistol().GetComponent<ModulAllInGun>().barrel;
+                junkPerShoot_barrel = script_barrel.junkPerShot;
+            }
+            catch (NullReferenceException z)
+            {
+                junkPerShoot_barrel = 1;
+            }
             try 
             {
                 script_stock = FindParentPistol().GetComponent<ModulAllInGun>().stock;
@@ -91,27 +96,26 @@ public class Moduls : MonoBehaviour
             {
                 durCoef_stock = 1f;
             }
-            junkPerShoot_barrel = script_barrel.junkPerShot;
+            
             subDurability = junkPerShoot_barrel * durCoef * durCoef_stock;
-        }
-        else
-        {
-            subDurability = durCoef;
-        }
+        
         
     }
 
     GameObject FindParentPistol()
     {
-        return transform.parent.parent.gameObject;
+       return transform.parent.parent.gameObject;
     }
 
     public Action a;
 
     public void Subscribe()
     {
-        act = pistolMain.GetComponent<HVRPistol>().Fired;
-        act.AddListener(DurabilitySub);
+        if (AlreadyInGun)
+        {
+            act = FindParentPistol().GetComponent<HVRPistol>().Fired;
+            act.AddListener(DurabilitySub);
+        }
     }
 
     public void DurabilitySub()

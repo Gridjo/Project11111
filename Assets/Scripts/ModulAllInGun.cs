@@ -1,4 +1,5 @@
 using HurricaneVR.Framework.Weapons.Guns;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -14,9 +15,9 @@ using UnityEngine;
         public int junkPerShot = 1;
         public TextMeshPro AmmoText;
 
-    public ModulsInfo stock;
-    public bareModul barrel;
-    public bodyModul body;
+        public ModulsInfo stock;
+        public bareModul barrel;
+        public bodyModul body;
 
         private int recoil;
         private int recoilStock;
@@ -25,11 +26,16 @@ using UnityEngine;
         // Start is called before the first frame update
         void Awake()
         {
-        hvrp = gameObject.GetComponent<HVRPistol>();
-        ModulsFind();
+            hvrp = gameObject.GetComponent<HVRPistol>();
+            //ModulsFind();
         }
 
-        public void ModulsFind()
+    private void Start()
+    {
+        ModulsFind();
+    }
+
+    public void ModulsFind()
         {
             FindBody();
             FindBarre();
@@ -39,13 +45,14 @@ using UnityEngine;
 
         private void PostModulsFind()
         {
-            ReconfigDurability();
             SetMaxAmmo();
             SetTakeAmmo();
+            ReconfigDurability();
         }
 
         public void ReloadTextAmmo()
         {
+        
         if (hvrp.CriticalModuleIsBroken)
             AmmoText.text = "X";
         else
@@ -106,9 +113,18 @@ using UnityEngine;
 
     public void ReconfigDurability()
     {
-        stock.Reconfigurator();
-        barrel.Reconfigurator();
         body.Reconfigurator();
+        if (hvrp.TypeGun == TypeGun.rifle)
+        {
+            barrel.Reconfigurator();
+            try
+            {
+                stock.Reconfigurator();
+            } catch (NullReferenceException e)
+            {
+
+            }
+        }
 
     }
 
