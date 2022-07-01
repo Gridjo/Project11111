@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     public bool reachedAttackDistance = false;
     public GameObject GameManager1;
     public int ScorePoint = 10;
-
+    public GameObject SpawnManager;
 
     void OnEnable()
     {

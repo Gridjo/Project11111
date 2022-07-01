@@ -13,10 +13,10 @@ public class SpawnEnemy : MonoBehaviour
     public GameObject enemyPoolNpc;
     public GameObject GameManager;
     public wave[] waves;
-    private int WaveNomber = 0;
+    public int WaveNomber = 0;
     public bool canSpawnM = true, canSpawnR = true, canSpawnN = true;
     public bool endOfWaveAndCanSpawnModuls = false;
-
+    
 
 
 
@@ -33,6 +33,7 @@ public class SpawnEnemy : MonoBehaviour
         var curEnemy = enemyPoolMeles.transform.GetChild(0);
         curEnemy.SetParent(spawnPoint[UnityEngine.Random.Range(0, spawnPoint.Length)].transform, false);
         gameObject.transform.localPosition = new Vector3();
+        curEnemy.gameObject.GetComponent<Enemy>().SpawnManager = gameObject;
         curEnemy.gameObject.SetActive(true);
     }
     

@@ -181,6 +181,9 @@ MonoBehaviour:
   Raryti: 0
   durCoef: 0.9
   junkPrice: 14
+  durability: 0
+  junkPerShoot_barrel: 0
+  durCoef_stock: 0
   recoil: -3
 --- !u!114 &32250905
 MonoBehaviour:
@@ -696,9 +699,9 @@ MonoBehaviour:
   enemyPoolNpc: {fileID: 1941298404}
   GameManager: {fileID: 357845948}
   waves:
-  - meles: 0
+  - meles: 3
     ranges: 0
-    Npc: 6
+    Npc: 0
   - meles: 0
     ranges: 0
     Npc: 0
@@ -1615,6 +1618,9 @@ MonoBehaviour:
   Raryti: 1
   durCoef: 1
   junkPrice: 36
+  durability: 0
+  junkPerShoot_barrel: 0
+  durCoef_stock: 0
   attSpeed: 3.5
   magCapacity: 20
   shootingType: 2
@@ -2025,6 +2031,9 @@ MonoBehaviour:
   Raryti: 0
   durCoef: 0
   junkPrice: 0
+  durability: 0
+  junkPerShoot_barrel: 0
+  durCoef_stock: 0
   recoil: 0
 --- !u!114 &1573229819
 MonoBehaviour:
@@ -2042,6 +2051,9 @@ MonoBehaviour:
   Raryti: 0
   durCoef: 0
   junkPrice: 0
+  durability: 0
+  junkPerShoot_barrel: 0
+  durCoef_stock: 0
   damage: 0
   recoil: 0
   bulletType: 0
@@ -2062,6 +2074,9 @@ MonoBehaviour:
   Raryti: 0
   durCoef: 0
   junkPrice: 0
+  durability: 0
+  junkPerShoot_barrel: 0
+  durCoef_stock: 0
   attSpeed: 0
   magCapacity: 0
   shootingType: 0
@@ -3310,6 +3325,9 @@ MonoBehaviour:
   Raryti: 2
   durCoef: 1
   junkPrice: 64
+  durability: 0
+  junkPerShoot_barrel: 0
+  durCoef_stock: 0
   damage: 200
   recoil: 14
   bulletType: 0
@@ -3922,64 +3940,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5a8e811cf84de147aa355c0ee8be380, type: 3}
---- !u!1001 &8730599976930527182
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6597465845914467945, guid: 7e2e2f879f96bd34b9858507a79a1693, type: 3}
-      propertyPath: m_Height
-      value: 2.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8730599976994491247, guid: 7e2e2f879f96bd34b9858507a79a1693, type: 3}
-      propertyPath: m_Name
-      value: BlueSuitFree01
-      objectReference: {fileID: 0}
-    - target: {fileID: 8730599976994682429, guid: 7e2e2f879f96bd34b9858507a79a1693, type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8730599976994682429, guid: 7e2e2f879f96bd34b9858507a79a1693, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.04936993
-      objectReference: {fileID: 0}
-    - target: {fileID: 8730599976994682429, guid: 7e2e2f879f96bd34b9858507a79a1693, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.321
-      objectReference: {fileID: 0}
-    - target: {fileID: 8730599976994682429, guid: 7e2e2f879f96bd34b9858507a79a1693, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.1356226
-      objectReference: {fileID: 0}
-    - target: {fileID: 8730599976994682429, guid: 7e2e2f879f96bd34b9858507a79a1693, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8730599976994682429, guid: 7e2e2f879f96bd34b9858507a79a1693, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8730599976994682429, guid: 7e2e2f879f96bd34b9858507a79a1693, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8730599976994682429, guid: 7e2e2f879f96bd34b9858507a79a1693, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8730599976994682429, guid: 7e2e2f879f96bd34b9858507a79a1693, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8730599976994682429, guid: 7e2e2f879f96bd34b9858507a79a1693, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8730599976994682429, guid: 7e2e2f879f96bd34b9858507a79a1693, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7e2e2f879f96bd34b9858507a79a1693, type: 3}

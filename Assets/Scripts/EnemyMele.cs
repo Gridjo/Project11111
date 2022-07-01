@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class EnemyMele : Enemy
 {
+    public float[] hp = { 15f, 21f, 28f, 34f, 41f, 48f, 54f, 61f, 67f, 74f };
+    public int[] sc = { 12, 20, 25, 30, 35, 40, 47, 52, 57, 62 };
 
     void OnTriggerEnter(Collider myCollision)
     {
@@ -34,6 +36,9 @@ public class EnemyMele : Enemy
         curHeetPoint = maxHeetPoint;
         gameObject.GetComponent<Animator>().SetInteger("State", 0);
         reachedAttackDistance = false;
+        maxHeetPoint = hp[SpawnManager.GetComponent<SpawnEnemy>().WaveNomber];
+        curHeetPoint = maxHeetPoint;
+        ScorePoint = sc[SpawnManager.GetComponent<SpawnEnemy>().WaveNomber];
     }
     void Update()
     {

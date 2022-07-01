@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] Childs;
     public GameObject[] ModSp;
     public GameObject spawnPoint;
+    public float ScoreReiting = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,6 +74,7 @@ public class GameManager : MonoBehaviour
 
         if (CountVis == 0 && ScoreJunk > 0)
         {
+            ScoreReiting += Score;
             Score = 0;
             RecyclerItem costil = new RecyclerItem();
             costil.RecyclerCost = (int)ScoreJunk;

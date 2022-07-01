@@ -9,8 +9,24 @@ public class EnemyRange : Enemy
 
     public Transform Pivot;
 
+    public float[] hp = { 9f, 13f, 17f, 21f, 25f, 29f, 33f, 37f, 41f, 45f };
+    public int[] sc = { 7, 12, 15, 17, 22, 25, 27, 32, 35, 37 };
 
+    void OnEnable()
+    {
 
+        NavMeshAgent agent
+            = GetComponent<NavMeshAgent>();
+
+        agent.destination = goal.position;
+        agent.speed = EnemySpeed;
+        gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        curHeetPoint = maxHeetPoint;
+        reachedAttackDistance = false;
+        maxHeetPoint = hp[SpawnManager.GetComponent<SpawnEnemy>().WaveNomber];
+        curHeetPoint = maxHeetPoint;
+        ScorePoint = sc[SpawnManager.GetComponent<SpawnEnemy>().WaveNomber];
+    }
     void Update()
     {
         if (reachedAttackDistance)
