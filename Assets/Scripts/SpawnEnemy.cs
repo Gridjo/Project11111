@@ -64,16 +64,9 @@ public class SpawnEnemy : MonoBehaviour
                     canSpawnN = false;
             }
             timeToSpawn = timeToSpawnClone;
-            try
-            {
-                GameManager.GetComponent<GameManager>().ChSpawnModul();
-                GameManager.GetComponent<GameManager>().CountVis = 0;
-            }
-            catch {
-                GameManager.GetComponent<GameManager>().ChSpawnModul();
-                GameManager.GetComponent<GameManager>().CountVis = 0;
-            }
-            
+            SPVD();
+
+
             Debug.Log("ffggg");
 
             WaveNomber++;
@@ -83,6 +76,18 @@ public class SpawnEnemy : MonoBehaviour
             endOfWaveAndCanSpawnModuls = true;
         }
         timeToSpawn -= Time.deltaTime;
+    }
+    void SPVD()
+    { 
+        try
+        {
+            GameManager.GetComponent<GameManager>().ChSpawnModul();
+            GameManager.GetComponent<GameManager>().CountVis = 0;
+        }
+        catch (NullReferenceException e)
+        {
+            SPVD();
+        }
     }
 
     [Serializable]

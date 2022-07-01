@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Text.text = Convert.ToString(Score);
     }
 
     // Update is called once per frame
