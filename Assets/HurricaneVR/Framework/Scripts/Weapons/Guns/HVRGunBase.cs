@@ -258,7 +258,7 @@ namespace HurricaneVR.Framework.Weapons.Guns
 
         protected virtual void SetupPooledBullets()
         {
-            for (int i = 0; i < MaxPooledBullets; i++)
+            for (int i = 0; i < MaxPooledBullets && _objects.Count < MaxPooledBullets; i++)
             {
                 _objects.Add(new HVRBulletTracker());
                 
@@ -288,6 +288,7 @@ namespace HurricaneVR.Framework.Weapons.Guns
             UpdateTrackedBullets();
             UpdateTriggerAnimation();
             UpdateShooting();
+            SetupPooledBullets();
         }
 
         protected virtual void CheckTriggerHaptics()
