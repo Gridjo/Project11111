@@ -70,22 +70,35 @@ public class PlayerVariables : MonoBehaviour
 
     private void Awake()
     {
+        Core.AsyncInitialize();
         Instance = this;
         GetUserName();
-        Debug.LogWarning(username);
     }
 
     private void GetUserName()
     {
-        username = OVRManager.profile.userName;
+        Users.GetLoggedInUser().OnComplete(getLoggedInUserComplete);
     }
 
-    private void GetLoggedInUserCallback(Message msg)
+    void getLoggedInUserComplete(Message msg)
     {
-        if (!msg.IsError)
+        if (msg.IsError)
         {
-            User user = msg.GetUser();
-            username = user.DisplayName;
+            Debug.LogError("Could not get Oculus user name!");
+        }
+        else
+        {
+            Debug.Log("GetLoggedInUser success! " + msg + "; message type: " + msg.Type);
+            if (msg.Type == Message.MessageType.User_GetLoggedInUser)
+            {
+                Debug.Log("Oculus GetLoggedInUser success! Setting user name in game manager: " + msg.GetUser().OculusID);
+                username = msg.GetUser().OculusID;
+
+                Debug.Log(msg.GetUser().DisplayName);
+                Debug.Log(msg.GetUser().ID);
+                Debug.Log(msg.GetUser().OculusID);
+                Debug.Log(msg.GetUser().ToString());
+            }
         }
     }
 
