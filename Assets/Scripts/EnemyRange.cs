@@ -75,6 +75,7 @@ public class EnemyRange : Enemy
         {
             Debug.Log("EnTER");
             GetDamage(100);
+            Destroy(collision.gameObject);
         }
 
     }

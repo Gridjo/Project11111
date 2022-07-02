@@ -19,8 +19,10 @@ public class EnemyMele : Enemy
 
         if (collision.gameObject.tag == "ggwp")
         {
+            
             Debug.Log("EnTER");
             GetDamage(100);
+            Destroy(collision.gameObject);
         }
     }
 
