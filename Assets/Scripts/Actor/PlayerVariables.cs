@@ -73,17 +73,6 @@ public class PlayerVariables : MonoBehaviour
         return scrapsBagHave;
     }
 
-    public void AddAmmoScraps(Scrap scrap)
-    {
-        if (scrap.AmountScrap > 0)
-        {
-            
-            Debug.Log(scrapsBagHave);
-        }
-        else
-            Debug.LogError($"{scrap.gameObject.name} has cost is {scrap.AmountScrap}");
-    }
-
     public bool TakeScraps(Scrap scrap, TypeGun typeGun)
     {
         if (scrap.AmountScrap > 0)
@@ -117,7 +106,7 @@ public class PlayerVariables : MonoBehaviour
         if (item.RecyclerCost > 0)
         {
             scrapsBagHave += item.RecyclerCost;
-            RecyclerOut.Instance.TakeScrap();
+            //RecyclerOut.Instance.TakeScrap();
             Debug.Log(scrapsBagHave);
         }
         else

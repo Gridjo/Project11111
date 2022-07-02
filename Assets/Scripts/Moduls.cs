@@ -80,6 +80,19 @@ public class Moduls : MonoBehaviour
         }
     }
 
+    private void ChangeAmmoSocketGun()
+    {
+        if(gameObject.GetComponent<bodyModul>().IsBroken())
+        {
+            if(pistolMain.GetComponent<HVRPistol>().GameAmmo > 0)
+            {
+                Scrap s = new Scrap();
+                s.AmountScrap = pistolMain.GetComponent<HVRPistol>().GameAmmo;
+                PlayerVariables.Instance.AddScraps(s);
+            }
+        }
+    }
+
     public void Reconfigurator()
     {
             try
@@ -138,6 +151,8 @@ public class Moduls : MonoBehaviour
     {
         Debug.Log("DeSub");
         //act.RemoveListener(DurabilitySub);
+        ChangeAmmoSocketGun();
+        pistolMain.GetComponent<HVRPistol>().CanReload = false;
         pistolMain.GetComponent<HVRPistol>().aFired.RemoveListener(DurabilitySub);
         gameObject.SetActive(false);
         if (ItCritical)
@@ -145,6 +160,23 @@ public class Moduls : MonoBehaviour
             pistolMain.GetComponent<HVRPistol>().CriticalModuleIsBroken = IsBroken();
         }
         
+    }
+
+    public static int GetRarityValue(Rarity r)
+    {
+        switch (r)
+        {
+            case Rarity.Common:
+                return 5;
+            case Rarity.Rare:
+                return 10;
+            case Rarity.Epic:
+                return 20;
+            case Rarity.Legendary:
+                return 45;
+            default:
+                return Int32.MinValue;
+        }
     }
 }
 

@@ -167,7 +167,7 @@ public class ModuleReplacement : MonoBehaviour
         other.transform.SetParent(pistol.transform);
         other.transform.localPosition = new Vector3(0, 0, 0);
         _module = other.gameObject;
-        if (module.GetComponent<bodyModul>().magCapacity > _module.GetComponent<bodyModul>().magCapacity)
+        if (module.GetComponent<bodyModul>().magCapacity < _module.GetComponent<bodyModul>().magCapacity)
         {
             if (_mainPistol.GetComponent<HVRPistol>().GameAmmo > _module.GetComponent<bodyModul>().magCapacity)
             {

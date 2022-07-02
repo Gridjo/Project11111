@@ -36,10 +36,10 @@ public class RecyclerIn : MonoBehaviour
         if (grabbable.TryGetComponent(out Moduls item))
         {
             RecyclerItem costil = new RecyclerItem();
-            costil.RecyclerCost = item.junkPrice;
+            costil.RecyclerCost = (int)(1 /item.startDurability * item.durability * item.junkPrice + Moduls.GetRarityValue(item.Raryti));
             if (item)
             {
-                gameObject.GetComponent<HVRSocket>().ForceRelease();
+                //gameObject.GetComponent<HVRSocket>().ForceRelease();
                 PlayerVariables.Instance.AddScraps(costil);
                 // item.gameObject.SetActive(false);
                 GameObject t=Instantiate(item.gameObject, ModPull.transform.position, ModPull.transform.rotation, ModPull.transform);

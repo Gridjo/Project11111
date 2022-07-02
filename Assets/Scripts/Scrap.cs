@@ -17,10 +17,13 @@ public class Scrap : MonoBehaviour
             if (other.gameObject.TryGetComponent(out hvrp))
             {
                 Debug.Log("Scrap_0");
-                if (gameObject.TryGetComponent(out grb))
+                if (hvrp.CanReload)
                 {
-                    Debug.Log("Scrap_1");
-                    ToInputScrapToAmmo(gameObject.GetComponent<HVRGrabbable>());
+                    if (gameObject.TryGetComponent(out grb))
+                    {
+                        Debug.Log("Scrap_1");
+                        ToInputScrapToAmmo(gameObject.GetComponent<HVRGrabbable>());
+                    }
                 }
             }
         }
