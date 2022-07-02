@@ -1,12 +1,17 @@
 using HurricaneVR.Framework.Core;
 using HurricaneVR.Framework.Core.Grabbers;
 using HurricaneVR.Framework.Weapons.Guns;
+using Oculus.Platform;
+using Oculus.Platform.Models;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerVariables : MonoBehaviour
 {
+    [Header("Player Data")]
+    public static string username;
+
     [Header("Player Controller")]
     private int scrapsBagHave;
     public static PlayerVariables Instance;
@@ -66,6 +71,22 @@ public class PlayerVariables : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        GetUserName();
+        Debug.LogWarning(username);
+    }
+
+    private void GetUserName()
+    {
+        Users.GetLoggedInUser().OnComplete(GetLoggedInUserCallback);
+    }
+
+    private void GetLoggedInUserCallback(Message msg)
+    {
+        if (!msg.IsError)
+        {
+            User user = msg.GetUser();
+            username = user.DisplayName;
+        }
     }
 
     public int GetBagScrapsAmount()
