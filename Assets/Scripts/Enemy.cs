@@ -94,7 +94,6 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("EnTER");
             GetDamage(100);
-            Destroy(myCollision.gameObject);
         }
     }
 
@@ -110,7 +109,6 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("EnTER");
             GetDamage(100);
-            Destroy(myCollision.gameObject);
         }
     }
 }

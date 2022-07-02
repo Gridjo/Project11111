@@ -810,8 +810,6 @@ namespace HurricaneVR.Framework.Core.Player
             if (IsTeleportValid)
             {
                 TeleportMarker.transform.position = TeleportDestination;
-                Instantiate(turretObj, transform.position + 20f * Forward, Quaternion.identity);
-
             }
             else
             {

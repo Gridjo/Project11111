@@ -288,7 +288,6 @@ namespace HurricaneVR.Framework.Weapons.Guns
             UpdateTrackedBullets();
             UpdateTriggerAnimation();
             UpdateShooting();
-            SetupPooledBullets();
         }
 
         protected virtual void CheckTriggerHaptics()

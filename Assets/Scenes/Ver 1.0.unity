@@ -1337,6 +1337,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8730599976994491247, guid: 7e2e2f879f96bd34b9858507a79a1693, type: 3}
     - target: {fileID: -492323522463136213, guid: 3cf96117b9afa2741a059a53095e162a, type: 3}
+      propertyPath: CountPool
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -492323522463136213, guid: 3cf96117b9afa2741a059a53095e162a, type: 3}
       propertyPath: GameManager11
       value: 
       objectReference: {fileID: 405487935}
@@ -6924,9 +6928,9 @@ MonoBehaviour:
   enemyPoolNpc: {fileID: 173539890}
   GameManager: {fileID: 405487935}
   waves:
-  - meles: 2
-    ranges: 2
-    Npc: 2
+  - meles: 10
+    ranges: 5
+    Npc: 5
   - meles: 3
     ranges: 1
     Npc: 3
@@ -16034,6 +16038,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 550794001}
     - target: {fileID: 3523271792038204241, guid: b3e836ec1f40b6841bfd5d375d716beb, type: 3}
+      propertyPath: CountPool
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3523271792038204241, guid: b3e836ec1f40b6841bfd5d375d716beb, type: 3}
       propertyPath: GameManager11
       value: 
       objectReference: {fileID: 405487935}
@@ -16554,6 +16562,10 @@ PrefabInstance:
       propertyPath: prefab
       value: 
       objectReference: {fileID: 5342731118385530413, guid: 0fd3c5f1a99f02b428eddcea5f42baa5, type: 3}
+    - target: {fileID: 4106967545854621108, guid: 07fe71e05d2bb004b88d6894a157438c, type: 3}
+      propertyPath: CountPool
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4106967545854621108, guid: 07fe71e05d2bb004b88d6894a157438c, type: 3}
       propertyPath: GameManager11
       value: 
@@ -18308,6 +18320,10 @@ PrefabInstance:
       propertyPath: BulletSpeed
       value: 75
       objectReference: {fileID: 0}
+    - target: {fileID: 1415346621781259468, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: MaxPooledBullets
+      value: 9999
+      objectReference: {fileID: 0}
     - target: {fileID: 1415346621781259469, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: StartingSocket
       value: 
@@ -19968,7 +19984,8 @@ PrefabInstance:
       propertyPath: bulletType
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9031354031545112162, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
 --- !u!114 &1996790759 stripped
 MonoBehaviour:

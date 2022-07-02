@@ -22,7 +22,6 @@ public class EnemyMele : Enemy
             
             Debug.Log("EnTER");
             GetDamage(100);
-            Destroy(collision.gameObject);
         }
     }
 

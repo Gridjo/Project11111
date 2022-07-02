@@ -181,11 +181,8 @@ public class GameManager : MonoBehaviour
     public void SpawnModul(GameObject Mod)
     {
 
-        Mod.transform.SetParent(spawnPoint.transform, false);
-        Mod.transform.position = new Vector3();
-        Mod.transform.localPosition = new Vector3();
-        Mod.SetActive(true);
-        ChSpawnModul();
+        StartCoroutine(Spp(Mod));
+        
     }
 
     public void SetAlreadyInGun(HVRGrabberBase hVRGrabberBase, HVRGrabbable hVRGrabbable)
@@ -236,5 +233,14 @@ public class GameManager : MonoBehaviour
             rbody.isKinematic = true;
             rbody.useGravity = false;
         }
+    }
+    IEnumerator Spp(GameObject Mod)
+    {
+        yield return new WaitForSeconds(1f);
+        Mod.transform.SetParent(spawnPoint.transform, false);
+        Mod.transform.position = new Vector3();
+        Mod.transform.localPosition = new Vector3();
+        Mod.SetActive(true);
+        ChSpawnModul();
     }
 }
