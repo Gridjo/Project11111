@@ -77,7 +77,7 @@ public class PlayerVariables : MonoBehaviour
 
     private void GetUserName()
     {
-        Users.GetLoggedInUser().OnComplete(GetLoggedInUserCallback);
+        username = OVRManager.profile.userName;
     }
 
     private void GetLoggedInUserCallback(Message msg)
