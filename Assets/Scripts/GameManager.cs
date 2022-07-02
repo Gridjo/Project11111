@@ -180,7 +180,7 @@ public class GameManager : MonoBehaviour
     }
     public void SpawnModul(GameObject Mod)
     {
-
+        Mod.transform.GetComponent<HVRGrabbable>().enabled = false;
         StartCoroutine(Spp(Mod));
         
     }
@@ -240,7 +240,14 @@ public class GameManager : MonoBehaviour
         Mod.transform.SetParent(spawnPoint.transform, false);
         Mod.transform.position = new Vector3();
         Mod.transform.localPosition = new Vector3();
-        Mod.SetActive(true);
+        StartCoroutine(Acct(Mod));
         ChSpawnModul();
+    }
+    IEnumerator Acct(GameObject Mod)
+    {
+        yield return new WaitForSeconds(10f);
+        
+        Mod.SetActive(true);
+        Mod.transform.GetComponent<HVRGrabbable>().enabled = true;
     }
 }
