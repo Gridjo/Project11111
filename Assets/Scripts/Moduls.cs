@@ -190,6 +190,55 @@ public class Moduls : MonoBehaviour
                 return Int32.MinValue;
         }
     }
+
+    public static string GetRarityName(Rarity r)
+    {
+        switch (r)
+        {
+            case Rarity.Common:
+                return "Common";
+            case Rarity.Rare:
+                return "Rare";
+            case Rarity.Epic:
+                return "Epic";
+            case Rarity.Legendary:
+                return "Legendary";
+            default:
+                return "None";
+        }
+    }
+
+    public static string GetTypeShotName(ModuleType mT)
+    {
+        switch (mT)
+        {
+            case ModuleType.body:
+                return "Body";
+            case ModuleType.barrel:
+                return "Barrel";
+            case ModuleType.stock:
+                return "Stock";
+            default:
+                return "None";
+        }
+    }
+
+    public static string GetTypeBulletName(BuletType bT)
+    {
+        switch (bT)
+        {
+            case BuletType.single:
+                return "Single";
+            case BuletType.grenade:
+                return "Grenade";
+            case BuletType.shotgun:
+                return "Shotgun";
+            case BuletType.rocket:
+                return "Rocket";
+            default:
+                return "None";
+        }
+    }
 }
 
 public enum Rarity
