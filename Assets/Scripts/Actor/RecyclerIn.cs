@@ -40,12 +40,19 @@ public class RecyclerIn : MonoBehaviour
             if (item)
             {
                 grabbable.ForceRelease();
+                grabbable.Grabbers.Clear();
+                grabbable.HandGrabbers.Clear();
+                grabbable.GrabPointsMeta.Clear();
+                Destroy(item.gameObject.GetComponent<ConfigurableJoint>());
+                
                 gameObject.GetComponent<HVRSocket>().TryGrab(grabbable);
                 gameObject.GetComponent<HVRSocket>().ForceRelease();
                 PlayerVariables.Instance.AddScraps(costil);
                 // item.gameObject.SetActive(false);
                 GameObject t=Instantiate(item.gameObject, ModPull.transform.position, ModPull.transform.rotation, ModPull.transform);
+                t.GetComponent<Rigidbody>().useGravity = true;
                 t.SetActive(false);
+                Destroy(t.GetComponent<ConfigurableJoint>());
                 Destroy(item.gameObject);
                 recOut.TakeScrap();
             }
