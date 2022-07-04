@@ -27,8 +27,6 @@ public class RecyclerOut : MonoBehaviour
             //20.06 upd
             if (prefabScrap)
             {
-                //prefabScrap.GetComponent<Rigidbody>().isKinematic = true;
-                //prefabScrap.SetActive(false);
                 if(gameObject.TryGetComponent(out HVRSocket _socket))
                 {
                     _socket.CanInteract = false;
@@ -47,9 +45,6 @@ public class RecyclerOut : MonoBehaviour
                 {
                     _scrap.AmountScrap = 10;
                     _socket.CanInteract = true;
-                    // prefabScrap.transform.localPosition = _socket.gameObject.transform.localPosition;
-                    //prefabScrap.GetComponent<Rigidbody>().isKinematic = false;
-                    //prefabScrap.SetActive(true);
                     recIn.ShowBagScrapText();
                     prefabScrap.transform.localPosition = new Vector3(0f, 0f, 0f);
                 }

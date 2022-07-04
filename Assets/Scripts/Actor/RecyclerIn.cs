@@ -39,7 +39,9 @@ public class RecyclerIn : MonoBehaviour
             costil.RecyclerCost = (int)(1 /item.startDurability * item.durability * item.junkPrice + Moduls.GetRarityValue(item.Raryti));
             if (item)
             {
-                //gameObject.GetComponent<HVRSocket>().ForceRelease();
+                grabbable.ForceRelease();
+                gameObject.GetComponent<HVRSocket>().TryGrab(grabbable);
+                gameObject.GetComponent<HVRSocket>().ForceRelease();
                 PlayerVariables.Instance.AddScraps(costil);
                 // item.gameObject.SetActive(false);
                 GameObject t=Instantiate(item.gameObject, ModPull.transform.position, ModPull.transform.rotation, ModPull.transform);

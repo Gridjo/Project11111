@@ -70,14 +70,14 @@ public class PlayerVariables : MonoBehaviour
 
     private void Awake()
     {
-        Core.AsyncInitialize();
+        //Core.AsyncInitialize();
         Instance = this;
         GetUserName();
     }
 
     private void GetUserName()
     {
-        Users.GetLoggedInUser().OnComplete(getLoggedInUserComplete);
+        //Users.GetLoggedInUser().OnComplete(getLoggedInUserComplete);
     }
 
     void getLoggedInUserComplete(Message msg)

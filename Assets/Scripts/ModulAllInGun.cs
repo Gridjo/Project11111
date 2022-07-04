@@ -144,6 +144,7 @@ using UnityEngine;
                 
             }
         }
+        hvrp.GetComponent<HVRPistol>().CanReload = true;
         hvrp.GetComponent<HVRPistol>().CriticalModuleIsBroken = false;
     }    
 

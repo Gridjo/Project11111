@@ -64,23 +64,28 @@ public class GameManager : MonoBehaviour
         hhj = 0;
         Childs = new GameObject[ModulPool.transform.childCount];
         ModSp = null;
-        ScoreWaveMod += Score * 0.8f;
-        float ScoreJunk = Score - ScoreWaveMod;
-        if (ScoreWaveMod < 15f)
+        
+        float ScoreJunk = Score * 0.2f;
+        if (ScoreWaveMod < 15f && CountVis>0)
         {
+            Fixxx();
             ScoreWaveMod = 0;
             return;
         }
 
         if (CountVis == 0 && ScoreJunk > 0)
         {
+            Fixxx();
             ScoreReiting += Score;
+            ScoreWaveMod += Score * 0.8f;
             Score = 0;
+
             RecyclerItem costil = new RecyclerItem();
             costil.RecyclerCost = (int)ScoreJunk;
             PlayerVariables.Instance.AddScraps(costil);
             ScoreJunk = 0;
             Text.text = Convert.ToString(Score);
+            
         }
         CountVis++;
         
@@ -180,7 +185,10 @@ public class GameManager : MonoBehaviour
     }
     public void SpawnModul(GameObject Mod)
     {
-        Mod.transform.GetComponent<HVRGrabbable>().enabled = false;
+        
+        Mod.transform.SetParent(spawnPoint.transform, false);
+        Mod.transform.position = new Vector3();
+        Mod.transform.localPosition = new Vector3();
         StartCoroutine(Spp(Mod));
         
     }
@@ -236,18 +244,32 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator Spp(GameObject Mod)
     {
-        yield return new WaitForSeconds(1f);
-        Mod.transform.SetParent(spawnPoint.transform, false);
-        Mod.transform.position = new Vector3();
-        Mod.transform.localPosition = new Vector3();
-        StartCoroutine(Acct(Mod));
-        ChSpawnModul();
-    }
-    IEnumerator Acct(GameObject Mod)
-    {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(0.5f);
         
         Mod.SetActive(true);
-        Mod.transform.GetComponent<HVRGrabbable>().enabled = true;
+        
+        ChSpawnModul();
+    }
+    
+    void Fixxx()
+    {
+        for (int i = 0; i < ModulPool.transform.childCount; i++)
+        {
+            if (ModulPool.transform.GetChild(i).gameObject.name == "GrabTracker")
+            {
+                Destroy(ModulPool.transform.GetChild(i).gameObject);
+            }
+        }
+        for (int i = 0; i < spawnPoint.transform.childCount; i++)
+        {
+            if (spawnPoint.transform.GetChild(i).gameObject.name == "GrabTracker")
+            {
+                Destroy(spawnPoint.transform.GetChild(i).gameObject);
+            }
+        }
+    }
+    private void FixedUpdate()
+    {
+        Fixxx();
     }
 }
