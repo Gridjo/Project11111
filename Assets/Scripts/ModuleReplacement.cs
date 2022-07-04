@@ -16,27 +16,21 @@ public class ModuleReplacement : MonoBehaviour
     private bodyModul bodyModul;
     private HVRPistol hvrp;
     public GameObject ModPoolSpawnPoint;
-    // Start is called before the first frame update
+
     private void Awake()
     {
         _mainPistol = gameObject.transform.parent.parent.parent;
         hvrp = _mainPistol.GetComponent<HVRPistol>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        /*if(_slider)
-        {
-            
 
-        }*/
     }
 
 
     void FindBody()
     {
-        //_mainPistol = gameObject.transform.parent.parent;
         for(int x = 0; x < pistol.transform.childCount; x++)
         {
             if(pistol.transform.GetChild(x).GetComponent<bodyModul>())
@@ -49,7 +43,6 @@ public class ModuleReplacement : MonoBehaviour
 
     void FindBarrel()
     {
-        //_mainPistol = gameObject.transform.parent.parent;
         for (int x = 0; x < pistol.transform.childCount; x++)
         {
             if (pistol.transform.GetChild(x).GetComponent<bareModul>())
@@ -62,7 +55,6 @@ public class ModuleReplacement : MonoBehaviour
 
     void FindStock()
     {
-        //_mainPistol = gameObject.transform.parent.parent;
         for (int x = 0; x < pistol.transform.childCount; x++)
         {
             if (pistol.transform.GetChild(x).GetComponent<ModulsInfo>())
@@ -75,7 +67,6 @@ public class ModuleReplacement : MonoBehaviour
 
     void FindStockPlace()
     {
-        //_mainPistol = gameObject.transform.parent.parent;
         for (int x = 0; x < pistol.transform.childCount; x++)
         {
             if (pistol.transform.GetChild(x).name == "stock")

@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9447dd1501b24741b141ed0e2554ae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackDamage: 1
+  AttackDamage: 5
   EnemySpeed: 3.5
   timeToAtack: 1
   timeToAtackClone: 1
@@ -160,6 +160,22 @@ MonoBehaviour:
   reachedAttackDistance: 0
   GameManager1: {fileID: 0}
   ScorePoint: 10
+  SpawnManager: {fileID: 0}
+  BarCenter: {fileID: 3533157329660121647, guid: a634305e9ce00ff45a1cd876004cb3bc, type: 3}
+  BarLeft: {fileID: 8245562323467374054, guid: 39157ddf68d21b248b5052a9129a4679, type: 3}
+  BarRight: {fileID: 4380372391996802367, guid: cb51cd45fb690b04fb3aa2c02af4eaf3, type: 3}
+  hp:
+  - 15
+  - 21
+  - 28
+  - 34
+  - 41
+  - 48
+  - 54
+  - 61
+  - 67
+  - 74
+  sc: 0c00000014000000190000001e00000023000000280000002f00000034000000390000003e000000
 --- !u!1 &4941002399906988083
 GameObject:
   m_ObjectHideFlags: 0

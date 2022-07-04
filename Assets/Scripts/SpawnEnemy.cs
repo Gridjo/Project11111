@@ -16,7 +16,9 @@ public class SpawnEnemy : MonoBehaviour
     public int WaveNomber = 0;
     public bool canSpawnM = true, canSpawnR = true, canSpawnN = true;
     public bool endOfWaveAndCanSpawnModuls = false;
-    
+    public GameObject BarCenter;
+       public GameObject BarLeft;
+        public GameObject BarRight;
 
 
 
@@ -34,6 +36,9 @@ public class SpawnEnemy : MonoBehaviour
         curEnemy.SetParent(spawnPoint[UnityEngine.Random.Range(0, spawnPoint.Length)].transform, false);
         gameObject.transform.localPosition = new Vector3();
         curEnemy.gameObject.GetComponent<Enemy>().SpawnManager = gameObject;
+        curEnemy.gameObject.GetComponent<Enemy>().BarCenter = BarCenter;
+        curEnemy.gameObject.GetComponent<Enemy>().BarRight = BarRight;
+        curEnemy.gameObject.GetComponent<Enemy>().BarLeft = BarLeft;
         curEnemy.gameObject.SetActive(true);
     }
     

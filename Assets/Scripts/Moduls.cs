@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using static ModuleReplacement;
 
 public class Moduls : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class Moduls : MonoBehaviour
     public float durability;
     public float startDurability = 100f;
     public float subDurability;
+    public int recCost;
+
+    public ModuleType mType;
     public bool IsBroken() { return durability <= 0; }
 
     public float junkPerShoot_barrel;
@@ -50,14 +54,19 @@ public class Moduls : MonoBehaviour
         {
             script_barrel = gameObject.GetComponent<bareModul>();
             ItCritical = true;
+            mType = ModuleType.barrel;
         }
         if (gameObject.GetComponent<ModulsInfo>())
         {
             script_stock = gameObject.GetComponent<ModulsInfo>();
             ItCritical = false;
+            mType = ModuleType.stock;
         }
         if (gameObject.GetComponent<bodyModul>())
+        {
             ItCritical = true;
+            mType = ModuleType.body;
+        }
         if (AlreadyInGun)
         {
             pistolMain = FindParentPistol();
@@ -89,6 +98,7 @@ public class Moduls : MonoBehaviour
                 Scrap s = new Scrap();
                 s.AmountScrap = pistolMain.GetComponent<HVRPistol>().GameAmmo;
                 PlayerVariables.Instance.AddScraps(s);
+                pistolMain.GetComponent<HVRPistol>().CanReload = false;
             }
         }
     }
@@ -115,8 +125,8 @@ public class Moduls : MonoBehaviour
             }
             
             subDurability = junkPerShoot_barrel * durCoef * durCoef_stock;
-        
-        
+            recCost = (int)(1 / startDurability * durability / 3 * junkPrice + Moduls.GetRarityValue(Raryti));
+
     }
 
     GameObject FindParentPistol()
@@ -150,11 +160,13 @@ public class Moduls : MonoBehaviour
     public void Destroy()
     {
         Debug.Log("DeSub");
-        //act.RemoveListener(DurabilitySub);
-        ChangeAmmoSocketGun();
-        pistolMain.GetComponent<HVRPistol>().CanReload = false;
+        if (TryGetComponent(out bodyModul body))
+        {
+            ChangeAmmoSocketGun();
+        }
         pistolMain.GetComponent<HVRPistol>().aFired.RemoveListener(DurabilitySub);
         gameObject.SetActive(false);
+
         if (ItCritical)
         {
             pistolMain.GetComponent<HVRPistol>().CriticalModuleIsBroken = IsBroken();

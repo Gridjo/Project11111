@@ -584,9 +584,25 @@ MonoBehaviour:
   reachedAttackDistance: 0
   GameManager1: {fileID: 0}
   ScorePoint: 10
+  SpawnManager: {fileID: 0}
+  BarCenter: {fileID: 3533157329660121647, guid: a634305e9ce00ff45a1cd876004cb3bc, type: 3}
+  BarLeft: {fileID: 8245562323467374054, guid: 39157ddf68d21b248b5052a9129a4679, type: 3}
+  BarRight: {fileID: 4380372391996802367, guid: cb51cd45fb690b04fb3aa2c02af4eaf3, type: 3}
   bullet: {fileID: 1416612301078285262, guid: 3ed8c00874f08e143926957c67766de6, type: 3}
   BuletSpeed: 10000
   Pivot: {fileID: 0}
+  hp:
+  - 9
+  - 13
+  - 17
+  - 21
+  - 25
+  - 29
+  - 33
+  - 37
+  - 41
+  - 45
+  sc: 070000000c0000000f0000001100000016000000190000001b000000200000002300000025000000
 --- !u!114 &-5306748185441100681
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -400,7 +400,7 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 128
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -1159,13 +1159,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 152
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
   attSpeed: 7
   magCapacity: 50
-  shootingType: 0
+  shootingType: 2
 --- !u!54 &60192384
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2318,7 +2318,7 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 14
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -3395,13 +3395,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 28
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
   attSpeed: 3.5
   magCapacity: 20
-  shootingType: 0
+  shootingType: 1
 --- !u!54 &155069670
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4652,7 +4652,7 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 14
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -6094,7 +6094,7 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 64
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -6419,13 +6419,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 152
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
   attSpeed: 7
   magCapacity: 50
-  shootingType: 0
+  shootingType: 2
 --- !u!54 &251813888
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8331,13 +8331,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 128
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
   attSpeed: 7
   magCapacity: 50
-  shootingType: 0
+  shootingType: 1
 --- !u!54 &324292990
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8881,7 +8881,7 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 14
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -9689,7 +9689,7 @@ MonoBehaviour:
   durCoef: 0.9
   junkPrice: 14
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -10212,7 +10212,7 @@ PrefabInstance:
       objectReference: {fileID: 518938112}
     - target: {fileID: 5688493640717583195, guid: e5a8e811cf84de147aa355c0ee8be380, type: 3}
       propertyPath: Score
-      value: 200
+      value: 2009
       objectReference: {fileID: 0}
     - target: {fileID: 5688493640717583195, guid: e5a8e811cf84de147aa355c0ee8be380, type: 3}
       propertyPath: Energy
@@ -11661,7 +11661,7 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 28
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -12818,6 +12818,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3199294901928723615, guid: e1a4fd06475ae7b43bf41d1c1e0a6df2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4573880277987737540, guid: e1a4fd06475ae7b43bf41d1c1e0a6df2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4796706487923724797, guid: e1a4fd06475ae7b43bf41d1c1e0a6df2, type: 3}
       propertyPath: m_Radius
       value: 2.96
@@ -12886,6 +12894,10 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.91
       objectReference: {fileID: 0}
+    - target: {fileID: 5444557659461263132, guid: e1a4fd06475ae7b43bf41d1c1e0a6df2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1a4fd06475ae7b43bf41d1c1e0a6df2, type: 3}
 --- !u!1 &550794001 stripped
@@ -12912,7 +12924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooledObjects: []
   objectToPool: {fileID: 3478750895147902797, guid: b55c9dae0eb6ec743be34dcb42c79eca, type: 3}
-  amountToPool: 10
+  amountToPool: 4
   platformparent: {fileID: 550794007}
   PlayerController: {fileID: 1506825481}
   Gm: {fileID: 405487935}
@@ -13065,7 +13077,7 @@ MonoBehaviour:
   durCoef: 0.7
   junkPrice: 64
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -13717,13 +13729,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 128
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
   attSpeed: 7
   magCapacity: 50
-  shootingType: 0
+  shootingType: 1
 --- !u!54 &584717457
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14042,13 +14054,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 72
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
   attSpeed: 5
   magCapacity: 30
-  shootingType: 0
+  shootingType: 2
 --- !u!54 &595668816
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14742,7 +14754,7 @@ MonoBehaviour:
   durCoef: 0.6
   junkPrice: 72
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -15662,7 +15674,7 @@ MonoBehaviour:
   durCoef: 0.7
   junkPrice: 36
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -16212,7 +16224,7 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 28
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -16943,7 +16955,7 @@ MonoBehaviour:
   durCoef: 0.8
   junkPrice: 28
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -17833,13 +17845,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 36
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
   attSpeed: 3.5
   magCapacity: 20
-  shootingType: 0
+  shootingType: 2
 --- !u!54 &735797866
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18984,7 +18996,7 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 128
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -20036,13 +20048,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 36
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
   attSpeed: 3.5
   magCapacity: 20
-  shootingType: 0
+  shootingType: 2
 --- !u!54 &830159645
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20287,6 +20299,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830159641}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &832915307 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5444557659461263132, guid: e1a4fd06475ae7b43bf41d1c1e0a6df2, type: 3}
+  m_PrefabInstance: {fileID: 550794000}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &836483544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20424,7 +20441,7 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 128
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -20755,7 +20772,7 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 64
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -21355,13 +21372,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 152
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
   attSpeed: 7
   magCapacity: 50
-  shootingType: 0
+  shootingType: 2
 --- !u!54 &870814806
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21746,7 +21763,7 @@ MonoBehaviour:
   durCoef: 0.6
   junkPrice: 72
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -22802,6 +22819,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1801401786172886063, guid: 52bf3cf5802c7cd4b8985dd28e5a40c8, type: 3}
   m_PrefabInstance: {fileID: 1886071208}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &926137439 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3199294901928723615, guid: e1a4fd06475ae7b43bf41d1c1e0a6df2, type: 3}
+  m_PrefabInstance: {fileID: 550794000}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &932242244
 GameObject:
   m_ObjectHideFlags: 0
@@ -23157,6 +23179,9 @@ MonoBehaviour:
   canSpawnR: 1
   canSpawnN: 1
   endOfWaveAndCanSpawnModuls: 0
+  BarCenter: {fileID: 926137439}
+  BarLeft: {fileID: 832915307}
+  BarRight: {fileID: 1414057547}
 --- !u!4 &934300599
 Transform:
   m_ObjectHideFlags: 0
@@ -23253,7 +23278,7 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 64
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -24255,7 +24280,7 @@ MonoBehaviour:
   durCoef: 0.7
   junkPrice: 64
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -24811,7 +24836,7 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 14
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -26333,6 +26358,108 @@ MonoBehaviour:
   Blends: []
   ReferencePose: {fileID: 0}
   MirrorAxis: 0
+--- !u!1001 &1065337447
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 550794007}
+    m_Modifications:
+    - target: {fileID: 7516989854395125638, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516989854395125638, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516989854395125638, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71788
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516989854395125638, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516989854395125638, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516989854395125638, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.47441
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516989854395125638, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.391
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516989854395125638, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516989854395125638, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516989854395125638, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516989854395125638, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516989854395125638, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516989854395125638, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516989854395125638, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516989854395125640, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
+      propertyPath: m_Name
+      value: BigRedButton
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
+--- !u!1 &1065337448 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7516989854395125640, guid: d2d6934a666a18d46b8b7a3864dc9f63, type: 3}
+  m_PrefabInstance: {fileID: 1065337447}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1065337449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065337448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c2a91ba883c03943b1435c36c2112fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BarCenter: {fileID: 926137439}
+  BarLeft: {fileID: 832915307}
+  BarRight: {fileID: 1414057547}
+--- !u!65 &1065337450
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065337448}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.115347914, y: 0.2826866, z: 0.10217488}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1073066608
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26660,7 +26787,7 @@ MonoBehaviour:
   durCoef: 0.7
   junkPrice: 36
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -26983,7 +27110,7 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 64
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -27405,7 +27532,7 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 28
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -27760,7 +27887,7 @@ MonoBehaviour:
   durCoef: 0.6
   junkPrice: 72
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -28521,7 +28648,7 @@ MonoBehaviour:
   durCoef: 0.7
   junkPrice: 36
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -29084,7 +29211,7 @@ MonoBehaviour:
   durCoef: 0.4
   junkPrice: 152
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -30133,13 +30260,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 72
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
   attSpeed: 5
   magCapacity: 30
-  shootingType: 0
+  shootingType: 2
 --- !u!54 &1170125923
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -30458,7 +30585,7 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 28
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -30949,7 +31076,7 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 14
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -31472,13 +31599,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 64
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
   attSpeed: 5
   magCapacity: 30
-  shootingType: 0
+  shootingType: 1
 --- !u!54 &1237793568
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -31875,13 +32002,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 28
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
   attSpeed: 3.5
   magCapacity: 20
-  shootingType: 0
+  shootingType: 1
 --- !u!54 &1242960662
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -32383,7 +32510,7 @@ MonoBehaviour:
   durCoef: 0.4
   junkPrice: 152
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -32868,7 +32995,7 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 128
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -34298,7 +34425,7 @@ MonoBehaviour:
   durCoef: 0.5
   junkPrice: 128
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -34860,7 +34987,7 @@ MonoBehaviour:
   durCoef: 0.4
   junkPrice: 152
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -35241,6 +35368,11 @@ MonoBehaviour:
   Blends: []
   ReferencePose: {fileID: 0}
   MirrorAxis: 0
+--- !u!1 &1414057547 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4573880277987737540, guid: e1a4fd06475ae7b43bf41d1c1e0a6df2, type: 3}
+  m_PrefabInstance: {fileID: 550794000}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1421534056
 GameObject:
   m_ObjectHideFlags: 0
@@ -36068,13 +36200,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 72
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
   attSpeed: 5
   magCapacity: 30
-  shootingType: 0
+  shootingType: 2
 --- !u!54 &1458730892
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -37614,13 +37746,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 14
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
   attSpeed: 2
   magCapacity: 10
-  shootingType: 0
+  shootingType: 1
 --- !u!54 &1583637974
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -38600,13 +38732,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 128
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
   attSpeed: 7
   magCapacity: 50
-  shootingType: 0
+  shootingType: 1
 --- !u!54 &1619673507
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -39396,7 +39528,7 @@ MonoBehaviour:
   durCoef: 0.5
   junkPrice: 128
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -39734,7 +39866,7 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 64
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -40044,7 +40176,7 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 64
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -40443,7 +40575,7 @@ MonoBehaviour:
   durCoef: 0.8
   junkPrice: 28
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -41384,7 +41516,7 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 128
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -41709,7 +41841,7 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 64
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -42019,7 +42151,7 @@ MonoBehaviour:
   durCoef: 0.9
   junkPrice: 14
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -42530,7 +42662,7 @@ MonoBehaviour:
   durCoef: 0.8
   junkPrice: 28
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -43072,13 +43204,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 64
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
   attSpeed: 5
   magCapacity: 30
-  shootingType: 0
+  shootingType: 1
 --- !u!54 &1757282052
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -43740,13 +43872,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 14
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
   attSpeed: 2
   magCapacity: 10
-  shootingType: 0
+  shootingType: 2
 --- !u!54 &1790954758
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -44227,13 +44359,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 36
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
   attSpeed: 3.5
   magCapacity: 20
-  shootingType: 0
+  shootingType: 2
 --- !u!54 &1820091664
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -44714,13 +44846,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 14
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
   attSpeed: 2
   magCapacity: 10
-  shootingType: 0
+  shootingType: 1
 --- !u!54 &1844266063
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -45039,13 +45171,13 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 28
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
   attSpeed: 3.5
   magCapacity: 20
-  shootingType: 0
+  shootingType: 1
 --- !u!54 &1856138176
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -45744,7 +45876,7 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 14
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -47386,7 +47518,7 @@ MonoBehaviour:
   durCoef: 0.5
   junkPrice: 128
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -48912,6 +49044,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 33858803288490679, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 60480231254834194, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: recOut
       value: 
@@ -48987,6 +49123,14 @@ PrefabInstance:
     - target: {fileID: 96350873803767382, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_Name
       value: TechDemoXRRig
+      objectReference: {fileID: 0}
+    - target: {fileID: 116566641983339451, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 116566641983339451, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 163985259729858019, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_RootOrder
@@ -49404,6 +49548,10 @@ PrefabInstance:
       propertyPath: StartingSocket
       value: 
       objectReference: {fileID: 1996790768}
+    - target: {fileID: 1603266157712538029, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1648969962300917356, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -49479,6 +49627,46 @@ PrefabInstance:
     - target: {fileID: 2380306047704902724, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: Transforms.Array.data[2]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407640702311929114, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407640702311929114, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407640702311929114, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0399
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407640702311929114, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407640702311929114, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407640702311929114, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407640702311929114, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407640702311929114, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407640702311929114, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407640702311929114, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2418137726146830510, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_Radius
@@ -49715,6 +49903,10 @@ PrefabInstance:
     - target: {fileID: 3029227068502546164, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.0007789731
+      objectReference: {fileID: 0}
+    - target: {fileID: 3181444889761432707, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3224311453684633191, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_fontAsset
@@ -49970,7 +50162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4036413264452388312, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4036413264452388312, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: turretObj
@@ -50408,6 +50600,54 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5794603477105437254, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5794603477105437254, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5794603477105437254, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 5794603477105437254, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5794603477105437254, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5794603477105437254, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5794603477105437254, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5794603477105437254, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5794603477105437254, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5794603477105437254, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885514478501493631, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885514478501493631, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6194363364933355899, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -50495,6 +50735,10 @@ PrefabInstance:
     - target: {fileID: 7072609256387735044, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: Tags._data
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7129553831157122926, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: shootingType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7304501981353368268, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: HandGrabActions.Array.data[0]
@@ -50603,6 +50847,46 @@ PrefabInstance:
     - target: {fileID: 7398772197310486863, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.15730608
+      objectReference: {fileID: 0}
+    - target: {fileID: 7532042705245195090, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7532042705245195090, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7532042705245195090, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7532042705245195090, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7532042705245195090, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7532042705245195090, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7532042705245195090, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7532042705245195090, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7532042705245195090, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7532042705245195090, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7597933031840416435, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -50768,6 +51052,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8237642144412694600, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8284385787961086690, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5
@@ -50931,6 +51219,14 @@ PrefabInstance:
     - target: {fileID: 8841355934763415555, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_enableVertexGradient
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864519894779528214, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864519894779528214, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8878678843225312159, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: HoldType
@@ -51420,7 +51716,7 @@ MonoBehaviour:
   durCoef: 0.7
   junkPrice: 64
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -53392,7 +53688,7 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 128
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -53775,7 +54071,7 @@ MonoBehaviour:
   durCoef: 0.9
   junkPrice: 14
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0
@@ -54260,7 +54556,7 @@ MonoBehaviour:
   durCoef: 1
   junkPrice: 28
   durability: 0
-  startDurability: 100
+  startDurability: 300
   subDurability: 0
   junkPerShoot_barrel: 0
   durCoef_stock: 0

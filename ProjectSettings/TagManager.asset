@@ -18,6 +18,8 @@ TagManager:
   - exp
   - enemytrigger
   - NPC
+  - gunn
+  - barcentbut
   layers:
   - Default
   - TransparentFX

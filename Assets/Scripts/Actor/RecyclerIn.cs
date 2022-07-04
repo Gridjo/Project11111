@@ -36,7 +36,7 @@ public class RecyclerIn : MonoBehaviour
         if (grabbable.TryGetComponent(out Moduls item))
         {
             RecyclerItem costil = new RecyclerItem();
-            costil.RecyclerCost = (int)(1 /item.startDurability * item.durability * item.junkPrice + Moduls.GetRarityValue(item.Raryti));
+            costil.RecyclerCost = item.recCost;
             if (item)
             {
                 grabbable.ForceRelease();
@@ -51,6 +51,7 @@ public class RecyclerIn : MonoBehaviour
                 // item.gameObject.SetActive(false);
                 GameObject t=Instantiate(item.gameObject, ModPull.transform.position, ModPull.transform.rotation, ModPull.transform);
                 t.GetComponent<Rigidbody>().useGravity = true;
+                t.GetComponent<Moduls>().durability = t.GetComponent<Moduls>().startDurability;
                 t.SetActive(false);
                 Destroy(t.GetComponent<ConfigurableJoint>());
                 Destroy(item.gameObject);

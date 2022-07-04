@@ -18,6 +18,9 @@ public class Enemy : MonoBehaviour
     public GameObject GameManager1;
     public int ScorePoint = 10;
     public GameObject SpawnManager;
+    public GameObject BarCenter;
+    public GameObject BarLeft;
+    public GameObject BarRight;
 
     void OnEnable()
     {
@@ -68,8 +71,22 @@ public class Enemy : MonoBehaviour
 
     public void GiveDamage(Transform target)
     {
+        if(BarCenter.activeSelf)
+        {
+            BarCenter.gameObject.GetComponent<Barrier>().GetDamage(AttackDamage);
+            return;
+        }
+        if (BarLeft.activeSelf)
+        {
+            BarLeft.gameObject.GetComponent<Barrier>().GetDamage(AttackDamage);
+            return;
+        }
+        if (BarRight.activeSelf)
+        {
+            BarRight.gameObject.GetComponent<Barrier>().GetDamage(AttackDamage);
+            return;
+        }
         goal.gameObject.GetComponent<Platform>().GetDamage(AttackDamage);
-
     }
     public void GetDamage(int Damage)
     {
@@ -103,7 +120,6 @@ public class Enemy : MonoBehaviour
         {
             Stop();
             reachedAttackDistance = true;
-
         }
         if (myCollision.gameObject.tag == "ggwp")
         {
