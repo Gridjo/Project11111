@@ -37,29 +37,25 @@ public class RecyclerIn : MonoBehaviour
         {
             RecyclerItem costil = new RecyclerItem();
             costil.RecyclerCost = item.recCost;
-            if (item)
-            {
-                grabbable.ForceRelease();
-                grabbable.Grabbers.Clear();
-                grabbable.HandGrabbers.Clear();
-                grabbable.GrabPointsMeta.Clear();
-                Destroy(item.gameObject.GetComponent<ConfigurableJoint>());
+            PlayerVariables.Instance.AddScraps(costil);
+            grabbable.ForceRelease();
+            //grabbable.Grabbers.Clear();
+            //grabbable.HandGrabbers.Clear();
+            //grabbable.GrabPointsMeta.Clear();
+            Destroy(item.gameObject.GetComponent<ConfigurableJoint>());
                 
-                gameObject.GetComponent<HVRSocket>().TryGrab(grabbable);
-                gameObject.GetComponent<HVRSocket>().ForceRelease();
-                PlayerVariables.Instance.AddScraps(costil);
-                // item.gameObject.SetActive(false);
-                GameObject t=Instantiate(item.gameObject, ModPull.transform.position, ModPull.transform.rotation, ModPull.transform);
-                t.GetComponent<Rigidbody>().useGravity = true;
-                t.GetComponent<Moduls>().durability = t.GetComponent<Moduls>().startDurability;
-                t.SetActive(false);
-                Destroy(t.GetComponent<ConfigurableJoint>());
-                Destroy(item.gameObject);
-                recOut.TakeScrap();
-            }
-            else {
-                Debug.Log("wkjerhfvi;uwgfiuweglfiyygweiufgwekygfoifhrlilwhfliwejfliwejfliw");
-            }
+            gameObject.GetComponent<HVRSocket>().TryGrab(grabbable);
+            gameObject.GetComponent<HVRSocket>().ForceRelease();
+                
+            // item.gameObject.SetActive(false);
+            GameObject t=Instantiate(item.gameObject, ModPull.transform.position, ModPull.transform.rotation, ModPull.transform);
+            t.GetComponent<Rigidbody>().useGravity = true;
+            t.GetComponent<Moduls>().durability = t.GetComponent<Moduls>().startDurability;
+            t.SetActive(false);
+            Destroy(t.GetComponent<ConfigurableJoint>());
+            Destroy(item.gameObject);
+            recOut.TakeScrap();
+            
         }
     }
 }

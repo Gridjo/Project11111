@@ -36,6 +36,8 @@ public class ModuleReplacement : MonoBehaviour
             if(pistol.transform.GetChild(x).GetComponent<bodyModul>())
             {
                 this.module = pistol.transform.GetChild(x).gameObject;
+                module.TryGetComponent(out Moduls m);
+                m.DeSub();
                 Debug.Log("Body found");
             }
         }
@@ -48,6 +50,8 @@ public class ModuleReplacement : MonoBehaviour
             if (pistol.transform.GetChild(x).GetComponent<bareModul>())
             {
                 this.module = pistol.transform.GetChild(x).gameObject;
+                module.TryGetComponent(out Moduls m);
+                m.DeSub();
                 Debug.Log("Barrel found");
             }
         }
@@ -60,6 +64,8 @@ public class ModuleReplacement : MonoBehaviour
             if (pistol.transform.GetChild(x).GetComponent<ModulsInfo>())
             {
                 this.module = pistol.transform.GetChild(x).gameObject;
+                module.TryGetComponent(out Moduls m);
+                m.DeSub();
                 Debug.Log("Stock found");
             }
         }

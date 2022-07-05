@@ -12,23 +12,34 @@ public class Turret : MonoBehaviour
     private float fireRateDelta;
     private Transform turretTransform;
     public int degrees;
+    public float turretLifetime;
+    public GameObject turretObj;
 
     public void Start()
     {
-        targetTransform = FindObjectOfType<Enemy>().transform;
-        turretTransform = FindObjectOfType<turretdirection>().transform;
+        targetTransform = FindObjectOfType<EnemyMele>().transform;
+        //targetTransform = FindObjectOfType<EnemyRange>().transform;
+        turretTransform = FindObjectOfType<Platform>().transform;
         currentGun = GetComponentInChildren<GunT>();
         fireRate = currentGun.GetRateOfFire();
+        turretLifetime = 120f;
     }
 
     private void Update()
     {
+        targetTransform = FindObjectOfType<EnemyMele>().transform;
+        turretLifetime -= Time.deltaTime;
+        if(turretLifetime <= 0)
+        {
+            turretObj.SetActive(false);
+            turretLifetime = 120f;
+        }
         Vector3 playerGroundPos = new Vector3(targetTransform.position.x, 
             transform.position.y, targetTransform.position.z);
         
         
-        if((Vector3.Distance(transform.position, playerGroundPos) > turretRange) 
-           || (Vector3.Angle(turretTransform.forward, (targetTransform.position - turretTransform.position))) > (degrees / 2))
+        if((Vector3.Distance(transform.position, playerGroundPos) > turretRange))
+           //|| (Vector3.Angle(turretTransform.forward, (targetTransform.position - turretTransform.position))) > (degrees / 2))
         {
             return;
         }

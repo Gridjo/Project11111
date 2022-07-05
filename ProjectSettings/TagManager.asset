@@ -20,6 +20,8 @@ TagManager:
   - NPC
   - gunn
   - barcentbut
+  - barleftbut
+  - barrightbut
   layers:
   - Default
   - TransparentFX

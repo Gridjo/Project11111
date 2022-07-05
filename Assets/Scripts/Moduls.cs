@@ -32,7 +32,6 @@ public class Moduls : MonoBehaviour
 
     private void Awake()
     {
-        durability = startDurability;
         PreInit();
     }
 
@@ -40,6 +39,7 @@ public class Moduls : MonoBehaviour
     {
         Subscribe();
         Init();
+
     }
 
     public void SubInit()
@@ -50,6 +50,7 @@ public class Moduls : MonoBehaviour
 
     public void Init()
     {
+        RepairSetter();
         if (gameObject.GetComponent<bareModul>())
         {
             script_barrel = gameObject.GetComponent<bareModul>();
@@ -78,6 +79,8 @@ public class Moduls : MonoBehaviour
                 pistolMain = null;
             }
         }
+        CostSetter();
+        DurabilitySetter();
     }
 
     private void FixedUpdate()
@@ -87,6 +90,21 @@ public class Moduls : MonoBehaviour
             if (IsBroken())
                 Destroy();
         }
+    }
+
+    private void RepairSetter()
+    {
+        durability = startDurability;
+    }
+
+    private void CostSetter()
+    {
+        recCost = (int)(1 / startDurability * durability / 3 * junkPrice + Moduls.GetRarityValue(Raryti));
+    }
+
+    private void DurabilitySetter()
+    {
+        subDurability = junkPerShoot_barrel * durCoef * durCoef_stock;
     }
 
     private void ChangeAmmoSocketGun()
@@ -105,28 +123,26 @@ public class Moduls : MonoBehaviour
 
     public void Reconfigurator()
     {
-            try
-            {
-                script_barrel = FindParentPistol().GetComponent<ModulAllInGun>().barrel;
-                junkPerShoot_barrel = script_barrel.junkPerShot;
-            }
-            catch (NullReferenceException z)
-            {
-                junkPerShoot_barrel = 1;
-            }
-            try 
-            {
-                script_stock = FindParentPistol().GetComponent<ModulAllInGun>().stock;
-                durCoef_stock = script_stock.durCoef;
-            }
-            catch (NullReferenceException e)
-            {
-                durCoef_stock = 1f;
-            }
-            
-            subDurability = junkPerShoot_barrel * durCoef * durCoef_stock;
-            recCost = (int)(1 / startDurability * durability / 3 * junkPrice + Moduls.GetRarityValue(Raryti));
-
+        try
+        {
+            script_barrel = FindParentPistol().GetComponent<ModulAllInGun>().barrel;
+            junkPerShoot_barrel = script_barrel.junkPerShot;
+        }
+        catch (NullReferenceException z)
+        {
+            junkPerShoot_barrel = 1;
+        }
+        try 
+        {
+            script_stock = FindParentPistol().GetComponent<ModulAllInGun>().stock;
+            durCoef_stock = script_stock.durCoef;
+        }
+        catch (NullReferenceException e)
+        {
+            durCoef_stock = 1f;
+        }
+        CostSetter();
+        DurabilitySetter();
     }
 
     GameObject FindParentPistol()
@@ -146,15 +162,20 @@ public class Moduls : MonoBehaviour
             */
 
 
-            FindParentPistol().GetComponent<HVRPistol>().aFired.AddListener(DurabilitySub);
-            Debug.Log($"{FindParentPistol().GetComponent<HVRPistol>().aFired.GetPersistentEventCount()}");
+            pistolMain.GetComponent<HVRPistol>().aFired.AddListener(DurabilitySub);
+            Debug.Log($"{pistolMain.GetComponent<HVRPistol>().aFired.GetPersistentEventCount()}");
         }
     }
 
     public void DurabilitySub()
     {
         Debug.Log("DuSub");
-        durability -= subDurability;
+        durability -= subDurability/2;
+    }
+
+    public void DeSub()
+    {
+        pistolMain.GetComponent<HVRPistol>().aFired.RemoveListener(DurabilitySub);
     }
 
     public void Destroy()
@@ -164,7 +185,7 @@ public class Moduls : MonoBehaviour
         {
             ChangeAmmoSocketGun();
         }
-        pistolMain.GetComponent<HVRPistol>().aFired.RemoveListener(DurabilitySub);
+        DeSub();
         gameObject.SetActive(false);
 
         if (ItCritical)

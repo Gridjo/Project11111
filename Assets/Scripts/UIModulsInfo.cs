@@ -5,17 +5,25 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class UIModulsIInfo : MonoBehaviour
+public class UIModulsInfo : MonoBehaviour
 {
 
     //public static UIModulsIInfo Instance;
     public GameObject prefabInfoPanel;
-    public TextMeshPro typeValue, rarityValue, shotCostValue, damageValue, durValue, durStartValue, durCoefValue, shotTypeValue, recCostValue, magCapacity, typeBullet;
-    public string StypeValue, SrarityValue, SshotCostValue, SdamageValue, SdurValue, SdurStartValue, SdurCoefValue, SshotTypeValue, SrecCostValue, SmagCapacity, StypeBullet;
+    private InfoModulsTextValues InfoPanel;
+    private string StypeValue, SrarityValue, SshotCostValue, SdamageValue, SdurValue, SdurStartValue, SdurCoefValue, SshotTypeValue, SrecCostValue, SmagCapacity, StypeBullet;
     private GameObject InitedPanel;
+    private HVRGrabbable hvrg;
     private void Awake()
     {
-        //Instance = this;
+        Sub();
+    }
+
+    private void Sub()
+    {
+        hvrg = gameObject.GetComponentInParent<HVRGrabbable>();
+        hvrg.HandGrabbed.AddListener(ShowInfo);
+        hvrg.HandReleased.AddListener(HideInfo);
     }
 
     private void ParseModuleInfo(Moduls item)
@@ -50,22 +58,26 @@ public class UIModulsIInfo : MonoBehaviour
 
     private void SetterModuleInfo()
     {
-        typeValue.text = StypeValue;
-        rarityValue.text = SrarityValue;
-        shotCostValue.text = SshotCostValue;
-        damageValue.text = SdamageValue;
-        durValue.text = SdurValue;
-        durStartValue.text = SdurStartValue;
-        durCoefValue.text = SdurCoefValue;
-        shotTypeValue.text = SshotTypeValue;
-        recCostValue.text = SrecCostValue;
-        magCapacity.text = SmagCapacity;
-        typeBullet.text = StypeBullet;
+        InfoPanel = prefabInfoPanel.GetComponent<InfoModulsTextValues>();
+        InfoPanel.typeValue.text = StypeValue;
+        InfoPanel.rarityValue.text = SrarityValue;
+        InfoPanel.shotCostValue.text = SshotCostValue;
+        InfoPanel.damageValue.text = SdamageValue;
+        InfoPanel.durValue.text = SdurValue;
+        InfoPanel.durStartValue.text = SdurStartValue;
+        InfoPanel.durCoefValue.text = SdurCoefValue;
+        InfoPanel.shotTypeValue.text = SshotTypeValue;
+        InfoPanel.recCostValue.text = SrecCostValue;
+        InfoPanel.magCapacity.text = SmagCapacity;
+        InfoPanel.typeBullet.text = StypeBullet;
     }
 
     private void ShowInfoPanel(GameObject module)
     {
-        InitedPanel = Instantiate(prefabInfoPanel, new Vector3(0, 0.23f, 0), prefabInfoPanel.transform.rotation, module.transform);
+        prefabInfoPanel.transform.localPosition = new Vector3(0f, 0.25f, 0f);
+        prefabInfoPanel.transform.localRotation = new Quaternion(0f, 0f, 180f, 1f);
+        InitedPanel = Instantiate(prefabInfoPanel, module.transform);
+        
     }
     
     public void ShowInfo(HVRGrabberBase hVRGrabberBase, HVRGrabbable hVRGrabbable)
