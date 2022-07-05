@@ -1,8 +1,7 @@
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
 public class SpawnEnemy : MonoBehaviour
 {
@@ -13,12 +12,14 @@ public class SpawnEnemy : MonoBehaviour
     public GameObject enemyPoolNpc;
     public GameObject GameManager;
     public wave[] waves;
+    public seconds[] second;
     public int WaveNomber = 0;
     public bool canSpawnM = true, canSpawnR = true, canSpawnN = true;
     public bool endOfWaveAndCanSpawnModuls = false;
     public GameObject BarCenter;
-       public GameObject BarLeft;
-        public GameObject BarRight;
+    public GameObject BarLeft;
+    public GameObject BarRight;
+    public float timeSp = 0f;
 
 
 
@@ -30,8 +31,10 @@ public class SpawnEnemy : MonoBehaviour
     }
 
     // Update is called once per frame
+
     public void SpawnM(GameObject[] spawnPoint, GameObject enemyPoolMeles)
     {
+        
         var curEnemy = enemyPoolMeles.transform.GetChild(0);
         curEnemy.SetParent(spawnPoint[UnityEngine.Random.Range(0, spawnPoint.Length)].transform, false);
         gameObject.transform.localPosition = new Vector3();
@@ -45,34 +48,49 @@ public class SpawnEnemy : MonoBehaviour
     void Update()
     {
 
-        if (timeToSpawn <= 0 && waves.Length - 1 >= WaveNomber)
+        if (timeToSpawn <= 0 && waves.Length - 1 >= WaveNomber/* && timeSp <= 10f*/)
         {
 
-            for (int i = 1; waves[WaveNomber].meles >= i && canSpawnM; i++)
+            if (true)
             {
-                SpawnM(spawnPoint, enemyPoolMeles);
-                if (waves[WaveNomber].meles <= i)
-                    canSpawnM = false;
-            }
+                for (int i = 1; waves[WaveNomber].meles >= i && canSpawnM /*&& second[(int)timeSp].meles >= i*/; )
+                {
+                    if (timeSp >=1f) {
+                        SpawnM(spawnPoint, enemyPoolMeles);
+                        i++;
+                        if (waves[WaveNomber].meles <= i)
+                            canSpawnM = false;
+                    }
+                }
 
-            for (int i = 1; waves[WaveNomber].ranges >= i && canSpawnR; i++)
-            {
-                SpawnM(spawnPoint, enemyPoolRanges);
-                if (waves[WaveNomber].ranges <= i)
-                    canSpawnR = false;
-            }
+                for (int i = 1; waves[WaveNomber].ranges >= i && canSpawnR /*&& second[(int)timeSp].ranges >= i*/; )
+                {
+                    if (timeSp >= 1f)
+                    {
+                        SpawnM(spawnPoint, enemyPoolRanges);
+                        i++;
+                        if (waves[WaveNomber].ranges <= i)
+                            canSpawnR = false;
+                    }
+                }
 
-            for (int i = 1; waves[WaveNomber].Npc >= i && canSpawnN; i++)
-            {
-                SpawnM(spawnPoint, enemyPoolNpc);
-                if (waves[WaveNomber].Npc <= i)
-                    canSpawnN = false;
+                for (int i = 1; waves[WaveNomber].Npc >= i && canSpawnN /*&& second[(int)timeSp].Npc >= i*/; )
+                {
+                        if (timeSp >= 1f)
+                        {
+                            SpawnM(spawnPoint, enemyPoolNpc);
+                            i++;
+                            if (waves[WaveNomber].Npc <= i)
+                                canSpawnN = false;
+                        }
+                } 
             }
+            
             timeToSpawn = timeToSpawnClone;
             SPVD();
+            if (timeSp >= 1.1f)
+                timeSp = 0;
 
-
-            Debug.Log("ffggg");
 
             WaveNomber++;
             canSpawnM = true;
@@ -81,6 +99,10 @@ public class SpawnEnemy : MonoBehaviour
             endOfWaveAndCanSpawnModuls = true;
         }
         timeToSpawn -= Time.deltaTime;
+        /*timeSp += Time.deltaTime;*/
+        /*timeSp += Time.deltaTime;
+        if (timeSp >= 11f)
+            timeSp = 0;*/
     }
     void SPVD()
     { 
@@ -98,6 +120,15 @@ public class SpawnEnemy : MonoBehaviour
     [Serializable]
     public struct wave
     {
+        public int meles;
+        public int ranges;
+        public int Npc;
+    }
+    [Serializable]
+    public struct seconds
+    {
+        public float time;
+        
         public int meles;
         public int ranges;
         public int Npc;
