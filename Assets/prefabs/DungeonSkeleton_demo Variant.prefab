@@ -10,14 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2681758341026478877}
   - component: {fileID: 4237546119448309373}
-  - component: {fileID: 1732659736349519574}
   m_Layer: 0
   m_Name: StepSound (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2681758341026478877
 Transform:
   m_ObjectHideFlags: 0
@@ -39,7 +38,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131233045691271170}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
@@ -62,20 +61,6 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
---- !u!114 &1732659736349519574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 131233045691271170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 299c6c80df9749348af9a7af214103db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 1516081223096343581}
-  emitter: {fileID: 4237546119448309373}
 --- !u!1 &4967926515332614583
 GameObject:
   m_ObjectHideFlags: 0
@@ -86,7 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4459370313641484430}
   - component: {fileID: 6447110063032225029}
-  - component: {fileID: 1970767921094649467}
+  - component: {fileID: 5210281582672418079}
   m_Layer: 0
   m_Name: StepSound
   m_TagString: Untagged
@@ -138,7 +123,7 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
---- !u!114 &1970767921094649467
+--- !u!114 &5210281582672418079
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,6 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 1516081223096343581}
   emitter: {fileID: 6447110063032225029}
+  gg: {fileID: 131233045691271170}
 --- !u!1001 &5342731118385430771
 PrefabInstance:
   m_ObjectHideFlags: 0

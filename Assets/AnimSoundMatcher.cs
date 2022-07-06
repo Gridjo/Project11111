@@ -7,7 +7,9 @@ public class AnimSoundMatcher : MonoBehaviour
 {
     public Enemy enemy;
 
-    public StudioEventEmitter emitter;
+    public StudioEventEmitter emitter; 
+
+    public GameObject gg;
 
 
     // Start is called before the first frame update
@@ -22,7 +24,7 @@ public class AnimSoundMatcher : MonoBehaviour
         if(enemy.reachedAttackDistance == true && emitter.IsPlaying())
         {
             emitter.Stop();
-            emitter.enabled = true;
+            gg.SetActive(true);
         }
     }
 }
