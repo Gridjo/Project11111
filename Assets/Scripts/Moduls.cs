@@ -175,7 +175,7 @@ public class Moduls : MonoBehaviour
 
     public void DeSub()
     {
-       // pistolMain.GetComponent<HVRPistol>().aFired.RemoveListener(DurabilitySub);
+       //7 pistolMain.GetComponent<HVRPistol>().aFired.RemoveListener(DurabilitySub);
     }
 
     public void Destroy()

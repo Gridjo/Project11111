@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4459370313641484430}
   - component: {fileID: 6447110063032225029}
-  - component: {fileID: 83834357545768215}
+  - component: {fileID: 1970767921094649467}
   m_Layer: 0
   m_Name: StepSound
   m_TagString: Untagged
@@ -62,7 +62,7 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
---- !u!114 &83834357545768215
+--- !u!114 &1970767921094649467
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71,7 +71,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4967926515332614583}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a006a3878bbb8ba439bee7644734f471, type: 3}
+  m_Script: {fileID: 11500000, guid: 299c6c80df9749348af9a7af214103db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1516081223096343581}
@@ -224,6 +224,9 @@ MonoBehaviour:
   GameManager1: {fileID: 5688493640717583194, guid: e5a8e811cf84de147aa355c0ee8be380, type: 3}
   ScorePoint: 10
   SpawnManager: {fileID: 0}
+  BarCenter: {fileID: 0}
+  BarLeft: {fileID: 0}
+  BarRight: {fileID: 0}
   hp:
   - 15
   - 21
