@@ -10,6 +10,7 @@ public class HPTEXT : MonoBehaviour
     public float hp;
     public float energy;
     public float score;
+    private int en;
     public GameObject Pl;
     public GameObject Gm;
 
@@ -28,8 +29,9 @@ public class HPTEXT : MonoBehaviour
         hp = Pl.GetComponent<Platform>().HeetPoints;
         energy = Gm.GetComponent<GameManager>().Energy;
         score = Gm.GetComponent<GameManager>().ScoreReiting;
+        en = (int)energy;
         texthp.text = "HP : " + hp;
-        textenergy.text = "ENERGY : " + energy;
+        textenergy.text = "ENERGY : " + en;
         textscore.text = "SCORE : " + score;
     }
 }

@@ -11003,11 +11003,11 @@ PrefabInstance:
       objectReference: {fileID: 518938112}
     - target: {fileID: 5688493640717583195, guid: e5a8e811cf84de147aa355c0ee8be380, type: 3}
       propertyPath: Score
-      value: 2009
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5688493640717583195, guid: e5a8e811cf84de147aa355c0ee8be380, type: 3}
       propertyPath: Energy
-      value: 99999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5688493640717583195, guid: e5a8e811cf84de147aa355c0ee8be380, type: 3}
       propertyPath: MaxEnergy
@@ -13211,9 +13211,9 @@ MonoBehaviour:
   BarRight: {fileID: 1414057547}
   button: {fileID: 496653881}
   Gm: {fileID: 405487935}
-  centerBut: {fileID: 0}
-  leftBut: {fileID: 0}
-  rightBut: {fileID: 0}
+  centerBut: {fileID: 1065337448}
+  leftBut: {fileID: 496653881}
+  rightBut: {fileID: 511822847}
 --- !u!65 &496653883
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13384,9 +13384,9 @@ MonoBehaviour:
   BarRight: {fileID: 1414057547}
   button: {fileID: 511822847}
   Gm: {fileID: 405487935}
-  centerBut: {fileID: 0}
-  leftBut: {fileID: 0}
-  rightBut: {fileID: 0}
+  centerBut: {fileID: 1065337448}
+  leftBut: {fileID: 496653881}
+  rightBut: {fileID: 511822847}
 --- !u!65 &511822849
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22100,7 +22100,7 @@ MonoBehaviour:
   energy: 0
   score: 0
   Pl: {fileID: 550794001}
-  Gm: {fileID: 0}
+  Gm: {fileID: 405487935}
 --- !u!1 &827196281
 GameObject:
   m_ObjectHideFlags: 0
@@ -25632,6 +25632,12 @@ MonoBehaviour:
   canSpawnM: 1
   canSpawnR: 1
   canSpawnN: 1
+  canSpawnMA: 1
+  canSpawnRA: 1
+  canSpawnNA: 1
+  canSpawnAM: 0
+  canSpawnAR: 0
+  canSpawnAN: 0
   endOfWaveAndCanSpawnModuls: 0
   BarCenter: {fileID: 926137439}
   BarLeft: {fileID: 832915307}
@@ -29226,9 +29232,9 @@ MonoBehaviour:
   BarRight: {fileID: 1414057547}
   button: {fileID: 1065337448}
   Gm: {fileID: 405487935}
-  centerBut: {fileID: 0}
-  leftBut: {fileID: 0}
-  rightBut: {fileID: 0}
+  centerBut: {fileID: 1065337448}
+  leftBut: {fileID: 496653881}
+  rightBut: {fileID: 511822847}
 --- !u!65 &1065337451
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38817,7 +38823,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 315, y: 195}
+  m_AnchoredPosition: {x: 300, y: 195}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1423099766
@@ -54936,7 +54942,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3610750481041122721, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_TagString
-      value: righthand
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3771730221232462015, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: prefabInfoPanel
@@ -55884,7 +55890,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8151958136501310027, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_TagString
-      value: lefthand
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8176678554214971580, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: ModPoolSpawnPoint
