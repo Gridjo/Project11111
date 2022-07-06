@@ -22,6 +22,8 @@ TagManager:
   - barcentbut
   - barleftbut
   - barrightbut
+  - righthand
+  - lefthand
   layers:
   - Default
   - TransparentFX

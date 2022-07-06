@@ -17,9 +17,9 @@ public class TurretManager : MonoBehaviour
 
     void Update()
     {
-        if ((PlayerController.GetComponent<HVRPlayerInputs>().IsCrouchActivated) && (Gm.GetComponent<GameManager>().Energy >= 150))
+        if ((PlayerController.GetComponent<HVRPlayerInputs>().IsCrouchActivated) && (Gm.GetComponent<GameManager>().Energy >= 200))
         {
-            Gm.GetComponent<GameManager>().Energy -= 150;
+            Gm.GetComponent<GameManager>().Energy -= 200;
             int tmp;
             tmp = Random.Range(1, 4);
             if (tmp == 1)

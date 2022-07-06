@@ -7,7 +7,10 @@ public class Barrier : MonoBehaviour
     public float barrierHitPoints;
     public float maxbarrierHitPoints = 100f;
     public GameObject barrierObj;
-    
+    public GameObject centerBut;
+    public GameObject leftBut;
+    public GameObject rightBut;
+
 
     void Start()
     {
@@ -22,6 +25,9 @@ public class Barrier : MonoBehaviour
         if(barrierHitPoints <= 0)
         {
             barrierObj.SetActive(false);
+            centerBut.SetActive(true);
+            leftBut.SetActive(true);
+            rightBut.SetActive(true);
             barrierHitPoints = maxbarrierHitPoints;
         }
     }
