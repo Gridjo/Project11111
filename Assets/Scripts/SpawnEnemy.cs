@@ -13,8 +13,8 @@ public class SpawnEnemy : MonoBehaviour
     public GameObject GameManager;
     public wave[] waves;
     public int WaveNomber = 0;
-    public bool canSpawnM = true, canSpawnR = true, canSpawnN = true;
-    public bool canSpawnMA = true, canSpawnRA = true, canSpawnNA = true;
+    public bool canSpawnM = true, canSpawnR = true, canSpawnN = true;/*
+    public bool canSpawnMA = true, canSpawnRA = true, canSpawnNA = true;*/
     public bool canSpawnAM = false, canSpawnAR = false, canSpawnAN = false;
     public bool endOfWaveAndCanSpawnModuls = false;
     public GameObject BarCenter;
@@ -23,6 +23,7 @@ public class SpawnEnemy : MonoBehaviour
     private int iM = 1;
     private int iR = 1;
     private int iN = 1;
+    private bool Stoop = false;
 
 
 
@@ -34,7 +35,11 @@ public class SpawnEnemy : MonoBehaviour
     }
 
     // Update is called once per frame
-
+    IEnumerator Stoppp()
+    {
+        yield return new WaitForSeconds(1f);
+        StopAllCoroutines();
+    }
     IEnumerator SpawnM(GameObject[] spawnPoint, GameObject enemyPoolMeles)
     {
 
@@ -56,7 +61,10 @@ public class SpawnEnemy : MonoBehaviour
         canSpawnM = true;
         canSpawnR = true;
         canSpawnN = true;
-        Sppp();
+        if (!Stoop)
+        {
+            Sppp(); 
+        }
 
     }
     public void Sppp()
@@ -68,8 +76,8 @@ public class SpawnEnemy : MonoBehaviour
                 StartCoroutine(SpawnM(spawnPoint, enemyPoolNpc));
 
                 if (waves[WaveNomber].Npc <= iN)
-                {
-                    canSpawnNA = false;
+                {/*
+                    canSpawnNA = false;*/
                     canSpawnAN = true;
                 }
 
@@ -79,8 +87,8 @@ public class SpawnEnemy : MonoBehaviour
                 StartCoroutine(SpawnM(spawnPoint, enemyPoolMeles));
 
                 if (waves[WaveNomber].meles <= iM)
-                {
-                    canSpawnMA = false;
+                {/*
+                    canSpawnMA = false;*/
                     canSpawnAM = true;
                 }
             }
@@ -90,8 +98,8 @@ public class SpawnEnemy : MonoBehaviour
                 StartCoroutine(SpawnM(spawnPoint, enemyPoolRanges));
 
                 if (waves[WaveNomber].ranges <= iR)
-                {
-                    canSpawnRA = false;
+                {/*
+                    canSpawnRA = false;*/
                     canSpawnAR = true;
                 }
             }
@@ -100,19 +108,28 @@ public class SpawnEnemy : MonoBehaviour
 
             if (canSpawnAM && canSpawnAN && canSpawnAR)
             {
+                StartCoroutine(Stoppp());
+                Stoop = true;
                 timeToSpawn = timeToSpawnClone;
                 WaveNomber++;
-                canSpawnM = false;
-                canSpawnR = false;
-                canSpawnN = false;
+                canSpawnM = true;
+                canSpawnR = true;
+                canSpawnN = true;
+                canSpawnAM = false;
+                canSpawnAR = false;
+                canSpawnAN = false;
+
                 iN = 1;
                 iR = 1;
                 iM = 1;
+                
+                /*StopAllCoroutines();*/
+                return;
             }
-            if (!canSpawnMA && !canSpawnNA && !canSpawnRA)
+            /*if (!canSpawnMA && !canSpawnNA && !canSpawnRA)
             {
 
-            }
+            }*/
             SPVD();
         }
 

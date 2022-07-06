@@ -25592,7 +25592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToSpawn: 2
-  timeToSpawnClone: 50.35
+  timeToSpawnClone: 25
   spawnPoint:
   - {fileID: 1463420572}
   - {fileID: 573630371}
@@ -25607,34 +25607,31 @@ MonoBehaviour:
   enemyPoolNpc: {fileID: 173539890}
   GameManager: {fileID: 405487935}
   waves:
-  - meles: 10
-    ranges: 5
-    Npc: 5
-  - meles: 6
+  - meles: 5
     ranges: 6
     Npc: 3
-  - meles: 9
-    ranges: 4
-    Npc: 4
-  - meles: 3
-    ranges: 9
-    Npc: 3
   - meles: 7
+    ranges: 8
+    Npc: 9
+  - meles: 4
+    ranges: 5
+    Npc: 6
+  - meles: 8
     ranges: 7
-    Npc: 2
-  - meles: 3
-    ranges: 9
-    Npc: 3
+    Npc: 9
+  - meles: 5
+    ranges: 3
+    Npc: 1
+  - meles: 7
+    ranges: 3
+    Npc: 4
   - meles: 7
     ranges: 4
-    Npc: 4
+    Npc: 3
   WaveNomber: 0
   canSpawnM: 1
   canSpawnR: 1
   canSpawnN: 1
-  canSpawnMA: 1
-  canSpawnRA: 1
-  canSpawnNA: 1
   canSpawnAM: 0
   canSpawnAR: 0
   canSpawnAN: 0
@@ -40852,7 +40849,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1551136512
 RectTransform:
   m_ObjectHideFlags: 0
@@ -54225,6 +54222,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1996790764}
     - target: {fileID: 1050401994032420651, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050401994032420651, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: ShowBoundingBox
       value: 0
       objectReference: {fileID: 0}
@@ -55104,6 +55105,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4206652540505282642, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4442842565604253679, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.42
@@ -55567,6 +55572,10 @@ PrefabInstance:
     - target: {fileID: 6826673029296757547, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6885156892988667269, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6961486947685945751, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: m_LocalPosition.x
