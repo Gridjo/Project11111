@@ -51,11 +51,14 @@ public class BulletManager : MonoBehaviour
 
     void Update()
     {
-        if (timeToDestroy <= 0)
+       /* if (Turret.tmp == 1)
         {
-            GunT.bullet.SetActive(false);
-            timeToDestroy = 2f;
-        }
-        timeToDestroy -= Time.deltaTime;
+            if (timeToDestroy <= 0)
+            {
+                GunT.bullet.SetActive(false);
+                timeToDestroy = 1f;
+            }
+            timeToDestroy -= Time.deltaTime;
+        }*/
     }
 }

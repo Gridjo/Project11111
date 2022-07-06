@@ -109,3 +109,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpeed: 13
+  timetodestr: 2.5
+  BULLET: {fileID: 5371186658639755728}

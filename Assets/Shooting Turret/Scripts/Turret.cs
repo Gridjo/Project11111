@@ -14,48 +14,90 @@ public class Turret : MonoBehaviour
     public int degrees;
     public float turretLifetime;
     public GameObject turretObj;
-
+    public static int tmp = 0;
+    Vector3 playerGroundPos;
+    public Collider col;
     public void Start()
     {
-        targetTransform = FindObjectOfType<EnemyMele>().transform;
-        //targetTransform = FindObjectOfType<EnemyRange>().transform;
-        turretTransform = FindObjectOfType<Platform>().transform;
+        turretTransform = FindObjectOfType<turretdirection>().transform;
         currentGun = GetComponentInChildren<GunT>();
         fireRate = currentGun.GetRateOfFire();
         turretLifetime = 120f;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag =="MeleEntity")
+        {
+            targetTransform = FindObjectOfType<EnemyMele>().transform;
+            tmp = 1;
+            return;
+        }
+        if (other.gameObject.tag == "RangeEntity")
+        {
+            targetTransform = FindObjectOfType<EnemyRange>().transform;
+            tmp = 1;
+            return;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.tag == "MeleEntity")
+        {
+            tmp = 0;
+            col.enabled = false;
+            col.enabled = true;
+            return;
+        }
+        if (other.gameObject.tag == "RangeEntity")
+        {
+            tmp = 0;
+            col.enabled = false;
+            col.enabled = true;
+            return;
+        }
+    }
+
     private void Update()
     {
-        targetTransform = FindObjectOfType<EnemyMele>().transform;
+        if (!targetTransform.gameObject.activeSelf)
+        {
+            tmp = 0;
+        }
         turretLifetime -= Time.deltaTime;
         if(turretLifetime <= 0)
         {
             turretObj.SetActive(false);
             turretLifetime = 120f;
         }
-        Vector3 playerGroundPos = new Vector3(targetTransform.position.x, 
-            transform.position.y, targetTransform.position.z);
-        
-        
-        if((Vector3.Distance(transform.position, playerGroundPos) > turretRange))
-           //|| (Vector3.Angle(turretTransform.forward, (targetTransform.position - turretTransform.position))) > (degrees / 2))
+        if (tmp == 1)
         {
-            return;
+            playerGroundPos = new Vector3(targetTransform.position.x, transform.position.y, targetTransform.position.z);
         }
-        
-        Vector3 playerDirection = playerGroundPos - transform.position;
-        float turretRotationStep = turretRotationSpeed * Time.deltaTime;
-        Vector3 newLookDirection = Vector3.RotateTowards(transform.forward, playerDirection,
-                                   turretRotationStep, 0f);
-        transform.rotation = Quaternion.LookRotation(newLookDirection);
 
-        fireRateDelta -= Time.deltaTime;
-        if(fireRateDelta <= 0)
+        if (tmp == 0)
         {
-            currentGun.Fire();
-            fireRateDelta = fireRate;
+            if ((Vector3.Distance(transform.position, playerGroundPos) > turretRange))
+            //|| (Vector3.Angle(turretTransform.forward, (targetTransform.position - turretTransform.position))) > (degrees / 2))
+            {
+                return;
+            }
         }
+            Vector3 playerDirection = playerGroundPos - transform.position;
+            float turretRotationStep = turretRotationSpeed * Time.deltaTime;
+            Vector3 newLookDirection = Vector3.RotateTowards(transform.forward, playerDirection,
+                                       turretRotationStep, 0f);
+            transform.rotation = Quaternion.LookRotation(newLookDirection);
+
+            fireRateDelta -= Time.deltaTime;
+            if (fireRateDelta <= 0)
+            {
+                if (tmp == 1)
+                {
+                    currentGun.Fire();
+                }
+                fireRateDelta = fireRate;
+            }
         
     }
 
