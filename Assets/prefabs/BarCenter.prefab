@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6015738537823714081
 Transform:
   m_ObjectHideFlags: 0
@@ -111,3 +111,6 @@ MonoBehaviour:
   barrierHitPoints: 0
   maxbarrierHitPoints: 100
   barrierObj: {fileID: 3533157329660121647}
+  centerBut: {fileID: 0}
+  leftBut: {fileID: 0}
+  rightBut: {fileID: 0}

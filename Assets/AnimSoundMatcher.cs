@@ -7,13 +7,13 @@ public class AnimSoundMatcher : MonoBehaviour
 {
     public Enemy enemy;
 
-    private StudioEventEmitter emitter;
+    public StudioEventEmitter emitter;
 
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
-        emitter = GetComponent<StudioEventEmitter>();
+
     }
 
     // Update is called once per frame
@@ -22,6 +22,7 @@ public class AnimSoundMatcher : MonoBehaviour
         if(enemy.reachedAttackDistance == true && emitter.IsPlaying())
         {
             emitter.Stop();
+            emitter.enabled = true;
         }
     }
 }
