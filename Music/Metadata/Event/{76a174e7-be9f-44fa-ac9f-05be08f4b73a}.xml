@@ -315,7 +315,7 @@
 	</object>
 	<object class="SingleSound" id="{ead20c46-b3c6-4a7e-bd2a-b91877f54606}">
 		<property name="startOffset">
-			<value>15.5</value>
+			<value>15</value>
 		</property>
 		<property name="pitch">
 			<value>-3</value>
@@ -326,7 +326,7 @@
 	</object>
 	<object class="SingleSound" id="{612c26fd-d52e-4805-912f-d273a7bd9d57}">
 		<property name="startOffset">
-			<value>16</value>
+			<value>15</value>
 		</property>
 		<property name="volume">
 			<value>0.5</value>
@@ -339,6 +339,9 @@
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{9c1d265e-eb21-468b-a0de-87a232cd1788}">
+		<property name="startOffset">
+			<value>15</value>
+		</property>
 		<property name="pitch">
 			<value>-4.5</value>
 		</property>
@@ -347,6 +350,9 @@
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{f929d896-d829-46fd-af4f-9a534547258e}">
+		<property name="startOffset">
+			<value>15</value>
+		</property>
 		<property name="pitch">
 			<value>3.60000014</value>
 		</property>
