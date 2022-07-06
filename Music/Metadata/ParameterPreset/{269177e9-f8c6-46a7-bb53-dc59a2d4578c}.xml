@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{269177e9-f8c6-46a7-bb53-dc59a2d4578c}">
+		<property name="name">
+			<value>Pizdec</value>
+		</property>
+		<relationship name="folder">
+			<destination>{0e31ef0d-5348-42e8-987c-338d44978c99}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{2da6195a-2d72-45d6-bcb4-2281b108ac88}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{2da6195a-2d72-45d6-bcb4-2281b108ac88}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>4</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Nachalo</value>
+			<value>Mini Pizdec</value>
+			<value>Ochen Pizdec</value>
+			<value>VASHE PIZDEC</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

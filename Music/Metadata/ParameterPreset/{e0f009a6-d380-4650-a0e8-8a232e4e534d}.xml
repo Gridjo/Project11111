@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{e0f009a6-d380-4650-a0e8-8a232e4e534d}">
+		<property name="name">
+			<value>Hard Point</value>
+		</property>
+		<relationship name="folder">
+			<destination>{0e31ef0d-5348-42e8-987c-338d44978c99}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{6c366efb-97ff-4c8d-9c7e-50da34d32ce5}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{6c366efb-97ff-4c8d-9c7e-50da34d32ce5}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Nachalo</value>
+			<value>Mini Hard</value>
+			<value>Very Hard</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

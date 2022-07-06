@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{a7d29eac-38ee-43f2-9778-676749d2cfbe}">
+		<property name="assetPath">
+			<value>420254__redroxpeterpepper__step-skeleton - Trimmed.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.34113378684807255</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8fb74228-b398-4c4f-b6e2-a284104fba47}</destination>
+		</relationship>
+	</object>
+</objects>
