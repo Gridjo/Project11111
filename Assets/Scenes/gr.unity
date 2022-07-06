@@ -709,34 +709,9 @@ MonoBehaviour:
   GameManager: {fileID: 357845948}
   waves:
   - meles: 10
-    ranges: 0
-    Npc: 0
-  - meles: 0
-    ranges: 0
-    Npc: 0
-  second:
-  - time: 1
-    meles: 2
-    ranges: 2
-    Npc: 2
-  - time: 0
-    meles: 1
     ranges: 1
     Npc: 1
-  - time: 0
-    meles: 3
-    ranges: 3
-    Npc: 3
-  - time: 0
-    meles: 1
-    ranges: 1
-    Npc: 1
-  - time: 0
-    meles: 1
-    ranges: 1
-    Npc: 1
-  - time: 0
-    meles: 1
+  - meles: 1
     ranges: 1
     Npc: 1
   WaveNomber: 0
@@ -747,7 +722,6 @@ MonoBehaviour:
   BarCenter: {fileID: 474594234}
   BarLeft: {fileID: 2128149969}
   BarRight: {fileID: 1305014424}
-  timeSp: 0
 --- !u!4 &605318368
 Transform:
   m_ObjectHideFlags: 0
@@ -3740,6 +3714,10 @@ PrefabInstance:
       propertyPath: prefab
       value: 
       objectReference: {fileID: 5342731118385530413, guid: 0fd3c5f1a99f02b428eddcea5f42baa5, type: 3}
+    - target: {fileID: 4106967545854621108, guid: 07fe71e05d2bb004b88d6894a157438c, type: 3}
+      propertyPath: CountPool
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4106967545854621108, guid: 07fe71e05d2bb004b88d6894a157438c, type: 3}
       propertyPath: GameManager11
       value: 
