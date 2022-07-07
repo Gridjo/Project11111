@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{2806bd60-8093-4cc8-bbc6-5d76334e3294}">
+		<property name="assetPath">
+			<value>542922__mrthomas2000__plug-insert-and-remove-from-outlet.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>8.3866666666666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8fb74228-b398-4c4f-b6e2-a284104fba47}</destination>
+		</relationship>
+	</object>
+</objects>
