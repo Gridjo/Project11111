@@ -22,7 +22,7 @@ public class Turret : MonoBehaviour
         turretTransform = FindObjectOfType<turretdirection>().transform;
         currentGun = GetComponentInChildren<GunT>();
         fireRate = currentGun.GetRateOfFire();
-        turretLifetime = 120f;
+        turretLifetime = 25f;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -68,7 +68,7 @@ public class Turret : MonoBehaviour
         if(turretLifetime <= 0)
         {
             turretObj.SetActive(false);
-            turretLifetime = 120f;
+            turretLifetime = 25f;
         }
         if (tmp == 1)
         {

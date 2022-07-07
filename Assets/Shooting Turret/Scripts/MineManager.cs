@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Oculus.Interaction.Samples;
 using UnityEngine;
 using HurricaneVR.Framework.ControllerInput;
-
+using UnityEngine.UI;
 public class MineManager : MonoBehaviour
 {
     public List<GameObject> pooledObjects;
@@ -18,9 +18,13 @@ public class MineManager : MonoBehaviour
     public Transform platformparent;
     public GameObject PlayerController;
     public GameObject Gm;
+    public Text text;
+    private float timetoenable;
 
     void Start()
     {
+        text.enabled = false;
+        text.text = "NOT ENOUGH ENERGY";
         pooledObjects = new List<GameObject>();
         GameObject tmp;
         for (int i = 0; i < amountToPool; i++)
@@ -41,8 +45,20 @@ public class MineManager : MonoBehaviour
 
     void Update()
     {
+        timetoenable -= Time.deltaTime;
+        if (timetoenable <= 0)
+        {
+            text.enabled = false;
+        }
+        if ((PlayerController.GetComponent<HVRPlayerInputs>().IsCrouchActivated) && (Gm.GetComponent<GameManager>().Energy < 150))
+        {
+            text.enabled = true;
+            timetoenable = 1f;
+            return;
+        }
+
         GameObject tmp;
-        if ((PlayerController.GetComponent<HVRPlayerInputs>().IsCrouchActivated)&&(Gm.GetComponent<GameManager>().Energy >= 100))
+        if ((PlayerController.GetComponent<HVRPlayerInputs>().IsCrouchActivated)&&(Gm.GetComponent<GameManager>().Energy >= 150))
         {
             Gm.GetComponent<GameManager>().Energy -= 100;
             for (int j = 0; j < amountToPool; j++)

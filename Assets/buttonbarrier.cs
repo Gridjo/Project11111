@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class buttonbarrier : MonoBehaviour
 {
@@ -15,42 +16,31 @@ public class buttonbarrier : MonoBehaviour
 
     void Start()
     {
-        
+ 
     }
 
-    public void OnCollisionEnter(Collision other)
+    public void OnTriggerEnter(Collider other)
     {
-        if (((other.gameObject.tag == "righthand")||(other.gameObject.tag == "lefthand")) && button.gameObject.tag == "barcentbut" && (Gm.GetComponent<GameManager>().Energy >= 100))
+
+        if (((other.gameObject.tag == "righthand") || (other.gameObject.tag == "lefthand")) && button.gameObject.tag == "barcentbut" && (Gm.GetComponent<GameManager>().Energy >= 120))
         {
-            if(BarCenter.activeSelf)
-            {
-                return;
-            }
-            Gm.GetComponent<GameManager>().Energy -= 100;
+            Gm.GetComponent<GameManager>().Energy -= 120;
             centerBut.SetActive(false);
             leftBut.SetActive(false);
             rightBut.SetActive(false);
             BarCenter.SetActive(true);
         }
-        if (((other.gameObject.tag == "righthand") || (other.gameObject.tag == "lefthand")) && button.gameObject.tag == "barleftbut" && (Gm.GetComponent<GameManager>().Energy >= 100))
+        if (((other.gameObject.tag == "righthand") || (other.gameObject.tag == "lefthand")) && button.gameObject.tag == "barleftbut" && (Gm.GetComponent<GameManager>().Energy >= 120))
         {
-            if (BarLeft.activeSelf)
-            {
-                return;
-            }
-            Gm.GetComponent<GameManager>().Energy -= 100;
+            Gm.GetComponent<GameManager>().Energy -= 120;
             centerBut.SetActive(false);
             leftBut.SetActive(false);
             rightBut.SetActive(false);
             BarLeft.SetActive(true);
         }
-        if (((other.gameObject.tag == "righthand") || (other.gameObject.tag == "lefthand")) && button.gameObject.tag == "barrightbut" && (Gm.GetComponent<GameManager>().Energy >= 100))
+        if (((other.gameObject.tag == "righthand") || (other.gameObject.tag == "lefthand")) && button.gameObject.tag == "barrightbut" && (Gm.GetComponent<GameManager>().Energy >= 120))
         {
-            if (BarRight.activeSelf)
-            {
-                return;
-            }
-            Gm.GetComponent<GameManager>().Energy -= 100;
+            Gm.GetComponent<GameManager>().Energy -= 120;
             centerBut.SetActive(false);
             leftBut.SetActive(false);
             rightBut.SetActive(false);

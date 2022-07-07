@@ -33,7 +33,7 @@ public class BulletManager : MonoBehaviour
         if (other.gameObject.tag == "ggwp" )  
         {
             GunT.bullet.SetActive(false);
-            transform.GetComponentInParent<Enemy>().GetDamage(10);
+            transform.GetComponentInParent<Enemy>().GetDamage(4);
         }
     }
     
