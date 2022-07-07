@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class buttonbarrier : MonoBehaviour
 {
@@ -15,11 +16,12 @@ public class buttonbarrier : MonoBehaviour
 
     void Start()
     {
-        
+ 
     }
 
     public void OnTriggerEnter(Collider other)
     {
+
         if (((other.gameObject.tag == "righthand") || (other.gameObject.tag == "lefthand")) && button.gameObject.tag == "barcentbut" && (Gm.GetComponent<GameManager>().Energy >= 120))
         {
             Gm.GetComponent<GameManager>().Energy -= 120;
