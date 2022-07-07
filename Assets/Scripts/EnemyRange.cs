@@ -19,7 +19,7 @@ public class EnemyRange : Enemy
             = GetComponent<NavMeshAgent>();
 
         agent.destination = goal.position;
-        agent.speed = EnemySpeed;
+        agent.speed = 2f;
         gameObject.GetComponent<Rigidbody>().isKinematic = true;
         curHeetPoint = maxHeetPoint;
         reachedAttackDistance = false;

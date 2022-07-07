@@ -7,7 +7,7 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    public int AttackDamage = 1;
+    public int AttackDamage = 5;
     public float EnemySpeed = 3.5f;
     public float timeToAtack = 1f, timeToAtackClone = 1f;
     public float curHeetPoint = 100, maxHeetPoint = 100;

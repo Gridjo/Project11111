@@ -27,14 +27,14 @@ public class TurretManager : MonoBehaviour
         {
             text.enabled = false;
         }
-        if ((PlayerController.GetComponent<HVRPlayerInputs>().IsJumpActivated) && (Gm.GetComponent<GameManager>().Energy < 200))
+        if ((PlayerController.GetComponent<HVRPlayerInputs>().IsTeleportActivated) && (Gm.GetComponent<GameManager>().Energy < 200))
         {
             text.enabled = true;
             timetoenable = 1f;
             return;
         }
 
-            if ((PlayerController.GetComponent<HVRPlayerInputs>().IsJumpActivated) && (Gm.GetComponent<GameManager>().Energy >= 200))
+            if ((PlayerController.GetComponent<HVRPlayerInputs>().IsTeleportActivated) && (Gm.GetComponent<GameManager>().Energy >= 200))
             {
                 Gm.GetComponent<GameManager>().Energy -= 200;
                 int tmp;
