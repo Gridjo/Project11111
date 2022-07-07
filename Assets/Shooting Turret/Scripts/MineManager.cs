@@ -23,7 +23,6 @@ public class MineManager : MonoBehaviour
 
     void Start()
     {
-        text.enabled = false;
         text.text = "NOT ENOUGH ENERGY";
         pooledObjects = new List<GameObject>();
         GameObject tmp;
@@ -45,15 +44,16 @@ public class MineManager : MonoBehaviour
 
     void Update()
     {
-        timetoenable -= Time.deltaTime;
+        text.text = "NOT ENOUGH ENERGY";
+        /*timetoenable -= Time.deltaTime;
         if (timetoenable <= 0)
         {
             text.enabled = false;
-        }
+        }*/
         if ((PlayerController.GetComponent<HVRPlayerInputs>().IsCrouchActivated) && (Gm.GetComponent<GameManager>().Energy < 150))
         {
             text.enabled = true;
-            timetoenable = 1f;
+            //timetoenable = 1f;
             return;
         }
 

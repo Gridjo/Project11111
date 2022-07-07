@@ -24,6 +24,8 @@ public class SpawnEnemy : MonoBehaviour
     private int iR = 1;
     private int iN = 1;
     private bool Stoop = false;
+    public GameObject ggp;
+    public GameObject ggr;
 
 
 
@@ -56,6 +58,8 @@ public class SpawnEnemy : MonoBehaviour
         curEnemy.gameObject.GetComponent<Enemy>().BarCenter = BarCenter;
         curEnemy.gameObject.GetComponent<Enemy>().BarRight = BarRight;
         curEnemy.gameObject.GetComponent<Enemy>().BarLeft = BarLeft;
+        curEnemy.gameObject.GetComponent<Enemy>().ggr = ggr;
+        curEnemy.gameObject.GetComponent<Enemy>().ggp = ggp;
         curEnemy.gameObject.SetActive(true);
 
         canSpawnM = true;

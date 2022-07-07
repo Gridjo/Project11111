@@ -5,6 +5,7 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,7 +20,15 @@ public class GameManager : MonoBehaviour
     public GameObject[] ModSp;
     public GameObject spawnPoint;
     public float ScoreReiting = 0;
+    public StudioEventEmitter soundReplaceModule;
+    public static GameManager Instance;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        TryGetComponent(out soundReplaceModule);
+        Instance = this;
+    }
+
     void Start()
     {
         Text.text = Convert.ToString(Score);

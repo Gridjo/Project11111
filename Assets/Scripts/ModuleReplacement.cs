@@ -1,3 +1,4 @@
+using FMODUnity;
 using HurricaneVR.Framework.Core;
 using HurricaneVR.Framework.Weapons.Guns;
 using System;
@@ -16,18 +17,26 @@ public class ModuleReplacement : MonoBehaviour
     private bodyModul bodyModul;
     private HVRPistol hvrp;
     public GameObject ModPoolSpawnPoint;
+    public StudioEventEmitter emitter;
+
+    private Moduls lModule;
 
     private void Awake()
     {
         _mainPistol = gameObject.transform.parent.parent.parent;
         hvrp = _mainPistol.GetComponent<HVRPistol>();
+        
     }
 
-    void Update()
+    private void Start()
     {
-
+        emitter = GameManager.Instance.soundReplaceModule;
     }
 
+    void SetterLModul()
+    {
+        module.TryGetComponent(out lModule);
+    }
 
     void FindBody()
     {
@@ -36,8 +45,7 @@ public class ModuleReplacement : MonoBehaviour
             if(pistol.transform.GetChild(x).GetComponent<bodyModul>())
             {
                 this.module = pistol.transform.GetChild(x).gameObject;
-                module.TryGetComponent(out Moduls m);
-                m.DeSub();
+                SetterLModul();
                 Debug.Log("Body found");
             }
         }
@@ -50,8 +58,7 @@ public class ModuleReplacement : MonoBehaviour
             if (pistol.transform.GetChild(x).GetComponent<bareModul>())
             {
                 this.module = pistol.transform.GetChild(x).gameObject;
-                module.TryGetComponent(out Moduls m);
-                m.DeSub();
+                SetterLModul();
                 Debug.Log("Barrel found");
             }
         }
@@ -64,8 +71,7 @@ public class ModuleReplacement : MonoBehaviour
             if (pistol.transform.GetChild(x).GetComponent<ModulsInfo>())
             {
                 this.module = pistol.transform.GetChild(x).gameObject;
-                module.TryGetComponent(out Moduls m);
-                m.DeSub();
+                SetterLModul();
                 Debug.Log("Stock found");
             }
         }
@@ -92,8 +98,15 @@ public class ModuleReplacement : MonoBehaviour
             if (hvrp.CanIsModificate)
             {
                 if (other.TryGetComponent<Moduls>(out Moduls modsInfo))
+                {
                     if (modsInfo.AlreadyInGun)
                         return;
+                }
+                else
+                {
+                    return;
+                }
+                emitter.Play();
                 if (other.GetComponent<bodyModul>())
                 {
                     if (this.moduleType == ModuleType.body)
@@ -118,7 +131,9 @@ public class ModuleReplacement : MonoBehaviour
                         StockReplace(grb, other);
                     }
                 }
+
                 hvrp.gameObject.GetComponent<ModulAllInGun>().ModulsFind();
+                module.GetComponent<Moduls>().ClearPistol();
             }
         }
 

@@ -16,25 +16,25 @@ public class TurretManager : MonoBehaviour
 
     void Start()
     {
-        text.enabled = false;
         text.text = "NOT ENOUGH ENERGY";
     }
 
     void Update()
     {
+        text.text = "NOT ENOUGH ENERGY";
         timetoenable -= Time.deltaTime;
         if(timetoenable <= 0)
         {
             text.enabled = false;
         }
-        if ((PlayerController.GetComponent<HVRPlayerInputs>().IsStandActivated) && (Gm.GetComponent<GameManager>().Energy < 200))
+        if ((PlayerController.GetComponent<HVRPlayerInputs>().IsJumpActivated) && (Gm.GetComponent<GameManager>().Energy < 200))
         {
             text.enabled = true;
             timetoenable = 1f;
             return;
         }
 
-            if ((PlayerController.GetComponent<HVRPlayerInputs>().IsStandActivated) && (Gm.GetComponent<GameManager>().Energy >= 200))
+            if ((PlayerController.GetComponent<HVRPlayerInputs>().IsJumpActivated) && (Gm.GetComponent<GameManager>().Energy >= 200))
             {
                 Gm.GetComponent<GameManager>().Energy -= 200;
                 int tmp;

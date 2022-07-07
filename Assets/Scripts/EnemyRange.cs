@@ -49,6 +49,7 @@ public class EnemyRange : Enemy
                 GameManager1.transform.GetComponent<GameManager>().GetScore((int)(ScorePoint));
             EnemyDeath();
         }
+        Uron = (int)(ggp.GetComponent<ModulAllInGun>().damage + ggr.GetComponent<ModulAllInGun>().damage);
 
     }
 
@@ -74,7 +75,7 @@ public class EnemyRange : Enemy
         if (collision.gameObject.tag == "ggwp")
         {
             Debug.Log("EnTER");
-            GetDamage(100);
+            GetDamage(Uron);
         }
 
     }
