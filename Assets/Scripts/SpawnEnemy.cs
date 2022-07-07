@@ -50,7 +50,7 @@ public class SpawnEnemy : MonoBehaviour
         canSpawnN = false;
         yield return new WaitForSeconds(1f);
         var curEnemy = enemyPoolMeles.transform.GetChild(0);
-        curEnemy.SetParent(spawnPoint[UnityEngine.Random.Range(0, 10)].transform, false);
+        curEnemy.SetParent(spawnPoint[UnityEngine.Random.Range(0, enemyPoolMeles.transform.childCount)].transform, false);
         gameObject.transform.localPosition = new Vector3();
         curEnemy.gameObject.GetComponent<Enemy>().SpawnManager = gameObject;
         curEnemy.gameObject.GetComponent<Enemy>().BarCenter = BarCenter;
