@@ -21,7 +21,9 @@ public class Enemy : MonoBehaviour
     public GameObject BarCenter;
     public GameObject BarLeft;
     public GameObject BarRight;
-
+    public int Uron;
+    public GameObject ggp;
+    public GameObject ggr; 
     void OnEnable()
     {
         
@@ -33,6 +35,7 @@ public class Enemy : MonoBehaviour
         gameObject.GetComponent<Rigidbody>().isKinematic = true;
         curHeetPoint = maxHeetPoint;
         reachedAttackDistance = false;
+        
     }
 
     // Update is called once per frame
@@ -54,6 +57,7 @@ public class Enemy : MonoBehaviour
             EnemyDeath();
            
         }
+        
 
     }
     public void Stop()
@@ -110,7 +114,7 @@ public class Enemy : MonoBehaviour
         if (myCollision.gameObject.tag == "ggwp")
         {
             Debug.Log("EnTER");
-            GetDamage(100);
+            GetDamage(Uron);
         }
     }
 
@@ -124,7 +128,7 @@ public class Enemy : MonoBehaviour
         if (myCollision.gameObject.tag == "ggwp")
         {
             Debug.Log("EnTER");
-            GetDamage(100);
+            GetDamage(Uron);
         }
     }
 }

@@ -21,7 +21,7 @@ public class EnemyMele : Enemy
         {
             
             Debug.Log("EnTER");
-            GetDamage(100);
+            GetDamage(Uron);
         }
     }
 
@@ -61,5 +61,6 @@ public class EnemyMele : Enemy
                 GameManager1.transform.GetComponent<GameManager>().GetScore((int)(ScorePoint));
             EnemyDeath();
         }
+        Uron = (int)(ggp.GetComponent<ModulAllInGun>().damage + ggr.GetComponent<ModulAllInGun>().damage);
     }
 }

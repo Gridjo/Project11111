@@ -28,6 +28,7 @@ public class Moduls : MonoBehaviour
     private ModulsInfo script_stock;
     private bareModul script_barrel;
     private GameObject pistolMain;
+    private UnityAction act;
     private bool ItCritical = false;
 
     private void Awake()
@@ -161,8 +162,8 @@ public class Moduls : MonoBehaviour
             Debug.Log($"{fir.GetPersistentEventCount()}");
             */
 
-
-            pistolMain.GetComponent<HVRPistol>().aFired.AddListener(DurabilitySub);
+            act = DurabilitySub;
+            pistolMain.GetComponent<HVRPistol>().aFired.AddListener(act);
             Debug.Log($"{pistolMain.GetComponent<HVRPistol>().aFired.GetPersistentEventCount()}");
         }
     }
@@ -175,7 +176,7 @@ public class Moduls : MonoBehaviour
 
     public void DeSub()
     {
-       //7 pistolMain.GetComponent<HVRPistol>().aFired.RemoveListener(DurabilitySub);
+       pistolMain.GetComponent<HVRPistol>().aFired.RemoveListener(act);
     }
 
     public void Destroy()
@@ -191,7 +192,15 @@ public class Moduls : MonoBehaviour
         if (ItCritical)
         {
             pistolMain.GetComponent<HVRPistol>().CriticalModuleIsBroken = IsBroken();
+            
         }
+        pistolMain = null;
+
+    }
+    public void ClearPistol()
+    {
+        DeSub();
+        pistolMain = null;
         
     }
 
