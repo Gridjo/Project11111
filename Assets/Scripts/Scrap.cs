@@ -12,17 +12,20 @@ public class Scrap : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "gunn")
+        if (GetComponent<HVRGrabbable>().HandGrabbers.Count >= 1)
         {
-            if (other.gameObject.TryGetComponent(out hvrp))
+            if (other.gameObject.tag == "gunn")
             {
-                Debug.Log("Scrap_0");
-                if (hvrp.CanReload)
+                if (other.gameObject.TryGetComponent(out hvrp))
                 {
-                    if (gameObject.TryGetComponent(out grb))
+                    Debug.Log("Scrap_0");
+                    if (hvrp.CanReload)
                     {
-                        Debug.Log("Scrap_1");
-                        ToInputScrapToAmmo(gameObject.GetComponent<HVRGrabbable>());
+                        if (gameObject.TryGetComponent(out grb))
+                        {
+                            Debug.Log("Scrap_1");
+                            ToInputScrapToAmmo(gameObject.GetComponent<HVRGrabbable>());
+                        }
                     }
                 }
             }
