@@ -53,7 +53,7 @@ MonoBehaviour:
     Path: event:/SkeletonAttack
   Event: 
   PlayEvent: 11
-  StopEvent: 2
+  StopEvent: 12
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -115,7 +115,7 @@ MonoBehaviour:
     Path: event:/SkeletonSteps
   Event: 
   PlayEvent: 1
-  StopEvent: 2
+  StopEvent: 12
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -290,6 +290,9 @@ MonoBehaviour:
   BarCenter: {fileID: 3533157329660121647, guid: a634305e9ce00ff45a1cd876004cb3bc, type: 3}
   BarLeft: {fileID: 8245562323467374054, guid: 39157ddf68d21b248b5052a9129a4679, type: 3}
   BarRight: {fileID: 4380372391996802367, guid: cb51cd45fb690b04fb3aa2c02af4eaf3, type: 3}
+  Uron: 0
+  ggp: {fileID: 0}
+  ggr: {fileID: 0}
   hp:
   - 15
   - 21

@@ -90,7 +90,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 91e0b34c2b2f4e044921cd8113d0d663, type: 2}
+  - {fileID: 2100000, guid: 1b68ffca77c4c6344af03830dbeca2ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -186,7 +186,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 91e0b34c2b2f4e044921cd8113d0d663, type: 2}
+  - {fileID: 2100000, guid: 1b68ffca77c4c6344af03830dbeca2ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -440,7 +440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6884945149875892991
 Transform:
   m_ObjectHideFlags: 0
@@ -588,6 +588,9 @@ MonoBehaviour:
   BarCenter: {fileID: 3533157329660121647, guid: a634305e9ce00ff45a1cd876004cb3bc, type: 3}
   BarLeft: {fileID: 8245562323467374054, guid: 39157ddf68d21b248b5052a9129a4679, type: 3}
   BarRight: {fileID: 4380372391996802367, guid: cb51cd45fb690b04fb3aa2c02af4eaf3, type: 3}
+  Uron: 0
+  ggp: {fileID: 0}
+  ggr: {fileID: 0}
   bullet: {fileID: 1416612301078285262, guid: 3ed8c00874f08e143926957c67766de6, type: 3}
   BuletSpeed: 10000
   Pivot: {fileID: 0}

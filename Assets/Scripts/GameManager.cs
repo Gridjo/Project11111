@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
     }
     public void GetScore(int ScoreIn)
     {
-        Score += ScoreIn;
+        Score += ScoreIn/1.5f;
         Text.text = Convert.ToString(Score);
     }
     public void MinusScore(int ScoreIn)
