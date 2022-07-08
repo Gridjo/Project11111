@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.56553555, g: 0.5655354, b: 0.56553805, a: 1}
+  m_IndirectSpecularColor: {r: 0.5657588, g: 0.566327, b: 0.565711, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -725,7 +725,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5515134bbb0515545a347aafbba91666, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 273a1f5f05089b94783a0c0e95dc9b53, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1666,11 +1666,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -16144178
-      Data2: 1249951164
-      Data3: 1014942345
-      Data4: 1937807116
-    Path: event:/MusicStart
+      Data1: 239325085
+      Data2: 1108798275
+      Data3: 2112790973
+      Data4: 1130410211
+    Path: event:/MusicStart 2
   Event: 
   PlayEvent: 1
   StopEvent: 12
@@ -1863,7 +1863,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: XOCUS
+  m_Text: XOCUS Juniors
 --- !u!222 &1461848503
 CanvasRenderer:
   m_ObjectHideFlags: 0

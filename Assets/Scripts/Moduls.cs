@@ -18,6 +18,7 @@ public class Moduls : MonoBehaviour
     public float startDurability = 100f;
     public float subDurability;
     public int recCost;
+    private bool isSub = false;
 
     public ModuleType mType;
     public bool IsBroken() { return durability <= 0; }
@@ -33,6 +34,10 @@ public class Moduls : MonoBehaviour
 
     private void Awake()
     {
+        if(AlreadyInGun)
+        {
+            pistolMain = FindParentPistol();
+        }
         PreInit();
     }
 
@@ -90,6 +95,22 @@ public class Moduls : MonoBehaviour
         {
             if (IsBroken())
                 Destroy();
+        }
+        
+        else
+        {
+            try
+            {
+                var rb = GetComponent<Rigidbody>();
+                if (!rb.useGravity && !rb.isKinematic)
+                {
+                    rb.useGravity = true;
+                }
+            }
+            catch
+            {
+
+            }
         }
     }
 
@@ -163,6 +184,7 @@ public class Moduls : MonoBehaviour
             */
 
             act = DurabilitySub;
+            isSub = true;
             pistolMain.GetComponent<HVRPistol>().aFired.AddListener(act);
             Debug.Log($"{pistolMain.GetComponent<HVRPistol>().aFired.GetPersistentEventCount()}");
         }
@@ -176,6 +198,7 @@ public class Moduls : MonoBehaviour
 
     public void DeSub()
     {
+       isSub = false;
        pistolMain.GetComponent<HVRPistol>().aFired.RemoveListener(act);
     }
 
@@ -186,7 +209,8 @@ public class Moduls : MonoBehaviour
         {
             ChangeAmmoSocketGun();
         }
-        DeSub();
+        if(isSub)
+            DeSub();
         gameObject.SetActive(false);
 
         if (ItCritical)
@@ -199,9 +223,9 @@ public class Moduls : MonoBehaviour
     }
     public void ClearPistol()
     {
-        DeSub();
-        pistolMain = null;
-        
+        if(isSub)
+            DeSub();
+        pistolMain = null; 
     }
 
     public static int GetRarityValue(Rarity r)

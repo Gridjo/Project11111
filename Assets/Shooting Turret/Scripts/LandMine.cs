@@ -9,6 +9,7 @@ public class LandMine : MonoBehaviour
 {
     public GameObject landMine;
     public GameObject explosive;
+    public GameObject animExp;
     void Start()
     {
         
@@ -18,7 +19,9 @@ public class LandMine : MonoBehaviour
     {
         if((other.gameObject.tag == "MeleEntity")|| (other.gameObject.tag == "RangeEntity"))// in main code rework tags
         {
+            Instantiate(animExp, landMine.transform.position, landMine.transform.rotation);
             Instantiate(explosive, landMine.transform.position,landMine.transform.rotation);
+            animExp.SetActive(true);
             explosive.SetActive(true);
             landMine.SetActive(false);
         }
@@ -26,7 +29,7 @@ public class LandMine : MonoBehaviour
         {
             NavMeshAgent agent
            = other.gameObject.GetComponent<NavMeshAgent>();
-            agent.speed  = 2;
+            agent.speed  = 1;
         }
         }
 

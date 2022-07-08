@@ -798,11 +798,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1327614416
-      Data2: 1152501607
-      Data3: 1619957385
-      Data4: 271661670
-    Path: event:/MusicDeath
+      Data1: 70366064
+      Data2: 1247617356
+      Data3: 630140826
+      Data4: 927594760
+    Path: event:/MusicDeath 2
   Event: 
   PlayEvent: 11
   StopEvent: 12
@@ -935,7 +935,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: XOCUS
+  m_Text: XOCUS Juniors
 --- !u!222 &1055165694
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1526,7 +1526,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5515134bbb0515545a347aafbba91666, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 273a1f5f05089b94783a0c0e95dc9b53, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

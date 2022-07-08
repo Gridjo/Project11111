@@ -440,7 +440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6884945149875892991
 Transform:
   m_ObjectHideFlags: 0
@@ -582,9 +582,9 @@ MonoBehaviour:
   goal: {fileID: 0}
   enemyPool: {fileID: 3523271792038204247, guid: b3e836ec1f40b6841bfd5d375d716beb, type: 3}
   reachedAttackDistance: 0
-  GameManager1: {fileID: 0}
+  GameManager1: {fileID: 5688493640717583194, guid: e5a8e811cf84de147aa355c0ee8be380, type: 3}
   ScorePoint: 10
-  SpawnManager: {fileID: 0}
+  SpawnManager: {fileID: 8674122887631804599, guid: 0919c3ee53c0d8c4d85b672117900d51, type: 3}
   BarCenter: {fileID: 3533157329660121647, guid: a634305e9ce00ff45a1cd876004cb3bc, type: 3}
   BarLeft: {fileID: 8245562323467374054, guid: 39157ddf68d21b248b5052a9129a4679, type: 3}
   BarRight: {fileID: 4380372391996802367, guid: cb51cd45fb690b04fb3aa2c02af4eaf3, type: 3}
