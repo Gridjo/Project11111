@@ -16,7 +16,7 @@ public class baaang : MonoBehaviour
   
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "ggwp" )  
+        /*if (other.gameObject.tag == "ggwp" )  
         {
             if (GunT.bullet)
             {
@@ -29,6 +29,6 @@ public class baaang : MonoBehaviour
         {
             transform.GetComponentInParent<Enemy>().GetDamage(10000);
             Destroy(other.gameObject, 0.2f);
-        }
+        }*/
     }
 }

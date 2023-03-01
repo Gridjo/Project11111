@@ -8,19 +8,20 @@ public class RecyclerOut : MonoBehaviour
 {
 
     public GameObject prefabScrap;
-    public RecyclerIn recIn;
+   // public RecyclerIn recIn;
 
     public static RecyclerOut Instance;
 
 
 
-    private void Awake()
+    /*private void Awake()
     {
         Instance = this;
 
-    }
+    }*/
     public void TakeScrap()
     {
+        return;
         //Spawn of scrap
         if (PlayerVariables.Instance.GetBagScrapsAmount() <= 0)
         {
@@ -35,9 +36,9 @@ public class RecyclerOut : MonoBehaviour
         }
         else
         {
-            if (PlayerVariables.Instance.GetBagScrapsAmount() < prefabScrap.GetComponent<Scrap>().AmountScrap)
+           // if (PlayerVariables.Instance.GetBagScrapsAmount() < prefabScrap.GetComponent<Scrap>().AmountScrap)
             {
-                prefabScrap.GetComponent<Scrap>().AmountScrap = PlayerVariables.Instance.GetBagScrapsAmount();
+             //   prefabScrap.GetComponent<Scrap>().AmountScrap = PlayerVariables.Instance.GetBagScrapsAmount();
             }
             if (gameObject.TryGetComponent(out HVRSocket _socket))
             {
@@ -45,7 +46,7 @@ public class RecyclerOut : MonoBehaviour
                 {
                     _scrap.AmountScrap = 10;
                     _socket.CanInteract = true;
-                    recIn.ShowBagScrapText();
+                    //recIn.ShowBagScrapText();
                     prefabScrap.transform.localPosition = new Vector3(0f, 0f, 0f);
                 }
             }

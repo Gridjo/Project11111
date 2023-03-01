@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public float EnergyMultiplier = 1, ScoreWaveMod = 0, CountVis = 0;
     private float TimeEner = 1f, TimeEnerOut = 1f;
     private int hhj;
-    public GameObject ModulPool;
+    //public GameObject ModulPool;
     public GameObject[] Childs;
     public GameObject[] ModSp;
     public GameObject spawnPoint;
@@ -70,8 +70,10 @@ public class GameManager : MonoBehaviour
 
     public void ChSpawnModul()
     {
+
+        return;
         hhj = 0;
-        Childs = new GameObject[ModulPool.transform.childCount];
+        //Childs = new GameObject[ModulPool.transform.childCount];
         ModSp = null;
         
         float ScoreJunk = Score * 0.2f;
@@ -99,11 +101,11 @@ public class GameManager : MonoBehaviour
         CountVis++;
         
         
-        for (int i = 0; i < ModulPool.transform.childCount;  i++)
-        {
-            if (ModulPool.transform.GetChild(i).TryGetComponent(out Moduls tt));
-                Childs[i] = ModulPool.transform.GetChild(i).gameObject;
-        }
+        //for (int i = 0; i < ModulPool.transform.childCount;  i++)
+     //   {
+     //       if (ModulPool.transform.GetChild(i).TryGetComponent(out Moduls tt));
+     //           Childs[i] = ModulPool.transform.GetChild(i).gameObject;
+      //  }
         
         for (int i = 0, j=0; i < Childs.Length; i++)
         {
@@ -262,13 +264,13 @@ public class GameManager : MonoBehaviour
     
     void Fixxx()
     {
-        for (int i = 0; i < ModulPool.transform.childCount; i++)
+        /*for (int i = 0; i < ModulPool.transform.childCount; i++)
         {
             if (ModulPool.transform.GetChild(i).gameObject.name == "GrabTracker")
             {
                 Destroy(ModulPool.transform.GetChild(i).gameObject);
             }
-        }
+        }*/
         for (int i = 0; i < spawnPoint.transform.childCount; i++)
         {
             if (spawnPoint.transform.GetChild(i).gameObject.name == "GrabTracker")
