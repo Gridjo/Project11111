@@ -713,6 +713,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pistol: {fileID: 77359249}
   moduleType: 0
+  ModPoolSpawnPoint: {fileID: 0}
+  emitter: {fileID: 0}
 --- !u!1 &226665974
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,6 +881,10 @@ PrefabInstance:
     - target: {fileID: 5162100993017133232, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
       propertyPath: m_Name
       value: MyPistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162100993017133232, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5162100993017133234, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
       propertyPath: Orientation
@@ -1814,7 +1820,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &743011482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1827,9 +1833,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98de3b269e8d9904692361bfb3ef5fa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AlreadyInGun: 0
   Raryti: 0
   durCoef: 0.9
   junkPrice: 14
+  durability: 0
+  startDurability: 100
+  subDurability: 0
+  recCost: 0
+  mType: 0
+  junkPerShoot_barrel: 0
+  durCoef_stock: 0
   recoil: -3
 --- !u!114 &743011483
 MonoBehaviour:
@@ -2806,33 +2820,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307671362}
   m_Mesh: {fileID: -4126568152517062684, guid: 139a1d2404f43d640bbe1edb9c53b7bf, type: 3}
---- !u!1 &1331072442 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5162100992255741858, guid: a851cb351b0a2a14c8821347323d7af7, type: 3}
-  m_PrefabInstance: {fileID: 249833809}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1331072449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1331072442}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10345b4efa150014fb756a02715a4231, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SocketOrientation: {fileID: 0}
-  SocketScale: 1
-  CounterScale: {x: 1, y: 1, z: 1}
-  ScaleOverride: {fileID: 0}
-  SocketedClip: {fileID: 0}
-  UnsocketedClip: {fileID: 0}
-  LinkedGrabbables: []
-  Tags:
-    Tags: {fileID: 11400000, guid: 0e83bcde818c784468e6c9a69d44702f, type: 2}
-    _data: 8
 --- !u!1 &1353437060
 GameObject:
   m_ObjectHideFlags: 0
@@ -4072,7 +4059,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1807543951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4085,9 +4072,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52c5de1920fb0fb4c899dc170bacf980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AlreadyInGun: 0
   Raryti: 2
   durCoef: 1
   junkPrice: 64
+  durability: 0
+  startDurability: 100
+  subDurability: 0
+  recCost: 0
+  mType: 0
+  junkPerShoot_barrel: 0
+  durCoef_stock: 0
   damage: 200
   recoil: 14
   bulletType: 0
@@ -5143,11 +5138,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1945857186170941695, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
   m_PrefabInstance: {fileID: 1989129545}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1989129549 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4213687656850692700, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
-  m_PrefabInstance: {fileID: 1989129545}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1989129550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5214,19 +5204,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!114 &1989129552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1989129549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70322fa13321b9e46b0c230461f3e2a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Pover: 110
 --- !u!114 &2026407188 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8575909756848812406, guid: 9d18a71358dd26f408908648eb8563ef, type: 3}
@@ -5343,7 +5320,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2047890943
 Transform:
   m_ObjectHideFlags: 0
@@ -5617,9 +5594,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa5fd02aca9a8874881c231f6307fd14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AlreadyInGun: 0
   Raryti: 1
   durCoef: 1
   junkPrice: 36
+  durability: 0
+  startDurability: 100
+  subDurability: 0
+  recCost: 0
+  mType: 0
+  junkPerShoot_barrel: 0
+  durCoef_stock: 0
   attSpeed: 3.5
   magCapacity: 20
   shootingType: 2
@@ -5829,9 +5814,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52c5de1920fb0fb4c899dc170bacf980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AlreadyInGun: 0
   Raryti: 0
   durCoef: 1
   junkPrice: 14
+  durability: 0
+  startDurability: 100
+  subDurability: 0
+  recCost: 0
+  mType: 0
+  junkPerShoot_barrel: 0
+  durCoef_stock: 0
   damage: 3
   recoil: 5
   bulletType: 0
@@ -5946,6 +5939,10 @@ PrefabInstance:
     - target: {fileID: 7058122478221182287, guid: d821e90d921a3f3429f25a843b8d4781, type: 3}
       propertyPath: m_Name
       value: RifleGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 7058122478221182287, guid: d821e90d921a3f3429f25a843b8d4781, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7058122479584376882, guid: d821e90d921a3f3429f25a843b8d4781, type: 3}
       propertyPath: ExtraIgnoreCollisionParents.Array.data[0]

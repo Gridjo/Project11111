@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Platform : MonoBehaviour
 {
-    public float HeetPoints = 10000, MaxHeetPoints = 10000;
+    public float HeetPoints = 100, MaxHeetPoints = 100;
 
     // Start is called before the first frame update  
     void Start()
