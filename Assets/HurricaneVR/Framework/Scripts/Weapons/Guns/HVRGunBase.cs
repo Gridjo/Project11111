@@ -708,7 +708,7 @@ namespace HurricaneVR.Framework.Weapons.Guns
         protected virtual bool CanFire()
         {
            // if (CriticalModuleIsBroken)
-                return false;
+               // return false;
             if (ShotAmmoTake > GameAmmo)
                 return false;
             if (GameAmmo <= 0)

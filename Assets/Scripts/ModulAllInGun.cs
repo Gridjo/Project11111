@@ -53,11 +53,8 @@ using UnityEngine;
 
         public void ReloadTextAmmo()
         {
+            return;
         
-        if (1==1)
-            AmmoText.text = "X";
-        else
-            AmmoText.text = $"{hvrp.GameAmmo}";
         }
 
         void FindBody()

@@ -107,7 +107,7 @@ public class GameManager : MonoBehaviour
      //           Childs[i] = ModulPool.transform.GetChild(i).gameObject;
       //  }
         
-        for (int i = 0, j=0; i < Childs.Length; i++)
+        for (int i = 0; i < Childs.Length; i++)
         {
             if(Childs[i].TryGetComponent(out Moduls tt))
             if (ScoreWaveMod > tt.junkPrice)
