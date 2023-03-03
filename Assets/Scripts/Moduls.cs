@@ -215,8 +215,8 @@ public class Moduls : MonoBehaviour
 
         if (ItCritical)
         {
-            pistolMain.GetComponent<HVRPistol>().CriticalModuleIsBroken = IsBroken();
-            
+            /*pistolMain.GetComponent<HVRPistol>().CriticalModuleIsBroken = IsBroken();*/
+
         }
         pistolMain = null;
 

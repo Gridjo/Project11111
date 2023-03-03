@@ -54,7 +54,7 @@ using UnityEngine;
         public void ReloadTextAmmo()
         {
         
-        if (hvrp.CriticalModuleIsBroken)
+        if (1==1)
             AmmoText.text = "X";
         else
             AmmoText.text = $"{hvrp.GameAmmo}";
@@ -146,7 +146,6 @@ using UnityEngine;
             }
         }
         hvrp.GetComponent<HVRPistol>().CanReload = true;
-        hvrp.GetComponent<HVRPistol>().CriticalModuleIsBroken = false;
     }    
 
         private void SetMaxAmmo()
