@@ -152,15 +152,7 @@ public class SpawnEnemy : MonoBehaviour
     }
     void SPVD()
     {
-        try
-        {
-            GameManager.GetComponent<GameManager>().ChSpawnModul();
-            GameManager.GetComponent<GameManager>().CountVis = 0;
-        }
-        catch (NullReferenceException e)
-        {
-            SPVD();
-        }
+     
     }
 
     [Serializable]

@@ -21,7 +21,7 @@ public class AnimSoundMatcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(enemy.reachedAttackDistance == true && emitter.IsPlaying())
+        if(enemy.reachedAttackDistance && emitter.IsPlaying())
         {
             emitter.Stop();
             gg.SetActive(true);

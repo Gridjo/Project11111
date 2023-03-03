@@ -32,7 +32,6 @@ namespace HurricaneVR.Framework.Weapons.Guns
         public int GameAmmo = 0;
         public int GameMaxAmmo;
         public int ShotAmmoTake;
-        public bool CriticalModuleIsBroken = false;
         public bool CanReload = true;
         public UnityEvent aFired;
        

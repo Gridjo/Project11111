@@ -50,15 +50,14 @@ public class MineManager : MonoBehaviour
         {
             text.enabled = false;
         }*/
-        if ((PlayerController.GetComponent<HVRPlayerInputs>().IsCrouchActivated) && (Gm.GetComponent<GameManager>().Energy < 150))
+        if ((PlayerController.GetComponent<HVRPlayerInputs>().IsCrouchActivated) && (Gm.GetComponent<GameManager>().Energy < 50))
         {
             text.enabled = true;
             //timetoenable = 1f;
             return;
         }
 
-        GameObject tmp;
-        if ((PlayerController.GetComponent<HVRPlayerInputs>().IsCrouchActivated)&&(Gm.GetComponent<GameManager>().Energy >= 150))
+        if ((PlayerController.GetComponent<HVRPlayerInputs>().IsCrouchActivated)&&(Gm.GetComponent<GameManager>().Energy >= 50))
         {
             Gm.GetComponent<GameManager>().Energy -= 100;
             for (int j = 0; j < amountToPool; j++)

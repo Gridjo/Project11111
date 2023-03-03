@@ -9,7 +9,7 @@ public class UIModulsInfo : MonoBehaviour
 {
 
     //public static UIModulsIInfo Instance;
-    public GameObject prefabInfoPanel;
+    /*public GameObject prefabInfoPanel;
     private InfoModulsTextValues InfoPanel;
     private string StypeValue, SrarityValue, SshotCostValue, SdamageValue, SdurValue, SdurStartValue, SdurCoefValue, SshotTypeValue, SrecCostValue, SmagCapacity, StypeBullet;
     private GameObject InitedPanel;
@@ -107,5 +107,5 @@ public class UIModulsInfo : MonoBehaviour
     void Update()
     {
         
-    }
+    }*/
 }
