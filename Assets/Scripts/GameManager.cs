@@ -196,7 +196,7 @@ public class GameManager : MonoBehaviour
     }
     public void SpawnModul(GameObject Mod)
     {
-        
+        return;
         Mod.transform.SetParent(spawnPoint.transform, false);
         Mod.transform.position = new Vector3();
         Mod.transform.localPosition = new Vector3();

@@ -31,6 +31,10 @@ public class EnemyRange : Enemy
     {
         if (reachedAttackDistance)
         {
+            if (gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>().isActiveAndEnabled)
+            {
+                gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>().enabled = false;
+            }
             if (timeToAtack <= 0)
             {
                 /*GiveDamage(goal);*/

@@ -36,10 +36,10 @@ public class RecyclerOut : MonoBehaviour
         }
         else
         {
-           // if (PlayerVariables.Instance.GetBagScrapsAmount() < prefabScrap.GetComponent<Scrap>().AmountScrap)
-            {
-             //   prefabScrap.GetComponent<Scrap>().AmountScrap = PlayerVariables.Instance.GetBagScrapsAmount();
-            }
+            /* if (PlayerVariables.Instance.GetBagScrapsAmount() < prefabScrap.GetComponent<Scrap>().AmountScrap)
+             //{
+              //   prefabScrap.parenet.gamebject.GetComponent<Scrap>().AmountScrap.count() = PlayerVariables.Instance.GetBagScrapsAmount();
+             }*/
             if (gameObject.TryGetComponent(out HVRSocket _socket))
             {
                 if (prefabScrap.TryGetComponent(out Scrap _scrap))
