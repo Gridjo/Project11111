@@ -10,15 +10,16 @@ namespace HurricaneVR.Framework.Weapons.Guns
             base.Awake();
         }
 
-        public void SetMaxAmmo(int amount)
+        /*public void SetMaxAmmo(int amount)
         {
             GameMaxAmmo = amount;
-        }
+        }*/
 
         //Adding Ammo
         //Return ostatok for ScrapCube
         public int AddAmmo(int amount)
         {
+            return 0;
             int ostatok = 0;
 
                 if (GameAmmo < GameMaxAmmo)
