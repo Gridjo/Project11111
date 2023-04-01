@@ -19,7 +19,7 @@ namespace HurricaneVR.Framework.Weapons.Guns
         //Return ostatok for ScrapCube
         public int AddAmmo(int amount)
         {
-            return 0;
+            return 100;
             int ostatok = 0;
 
                 if (GameAmmo < GameMaxAmmo)

@@ -141,6 +141,7 @@ public class ModuleReplacement : MonoBehaviour
 
     void PistolBodyReplace(HVRGrabbable grb, Collider other)
     {
+        return;
         FindBody();
         grb.ForceRelease();
         grb.enabled = false;
@@ -167,6 +168,7 @@ public class ModuleReplacement : MonoBehaviour
 
     void RifleBodyReplace(HVRGrabbable grb, Collider other)
     {
+        return;
         FindBody();
         grb.ForceRelease();
         grb.enabled = false;
@@ -204,6 +206,7 @@ public class ModuleReplacement : MonoBehaviour
 
     void BodyReplace(HVRGrabbable grb, Collider other)
     {
+        return;
         if (_mainPistol.gameObject.GetComponent<HVRPistol>().TypeGun == TypeGun.pistol)
             PistolBodyReplace(grb, other);
         else if (_mainPistol.gameObject.GetComponent<HVRPistol>().TypeGun == TypeGun.rifle)
@@ -221,6 +224,7 @@ public class ModuleReplacement : MonoBehaviour
 
     void BarrelReplace(HVRGrabbable grb, Collider other)
     {
+        return;
         FindBarrel();
         grb.ForceRelease();
         grb.enabled = false;
@@ -247,6 +251,7 @@ public class ModuleReplacement : MonoBehaviour
 
     void StockReplace(HVRGrabbable grb, Collider other)
     {
+        return;
         FindStock();
         grb.ForceRelease();
         grb.enabled = false;

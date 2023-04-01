@@ -707,13 +707,7 @@ namespace HurricaneVR.Framework.Weapons.Guns
 
         protected virtual bool CanFire()
         {
-           // if (CriticalModuleIsBroken)
-               // return false;
-            if (ShotAmmoTake > GameAmmo)
-                return false;
-            if (GameAmmo <= 0)
-                return false;
-            
+           
             return true;
             
         }
@@ -896,7 +890,7 @@ namespace HurricaneVR.Framework.Weapons.Guns
 
         protected virtual void OnFire(Vector3 direction)
         {
-            GameAmmo -= ShotAmmoTake;
+           // GameAmmo -= ShotAmmoTake;
             FireBullet(direction);
         //    FireHaptics();
         }

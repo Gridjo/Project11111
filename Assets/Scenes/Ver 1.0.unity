@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.056336965, g: 0.009480024, b: 0.0009113174, a: 1}
+  m_IndirectSpecularColor: {r: 0.056357797, g: 0.009486724, b: 0.0009414677, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1769,7 +1769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8575909758062007608, guid: 9d18a71358dd26f408908648eb8563ef, type: 3}
       propertyPath: GameAmmo
-      value: 999
+      value: 9999
       objectReference: {fileID: 0}
     - target: {fileID: 8575909758062007608, guid: 9d18a71358dd26f408908648eb8563ef, type: 3}
       propertyPath: GameMaxAmmo
@@ -6221,6 +6221,18 @@ PrefabInstance:
     - target: {fileID: 895931574203538078, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: BulletSpeed
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 910567304678775787, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: GameAmmo
+      value: 9999
+      objectReference: {fileID: 0}
+    - target: {fileID: 910567304678775787, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: GameMaxAmmo
+      value: 9999
+      objectReference: {fileID: 0}
+    - target: {fileID: 910567304678775787, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
+      propertyPath: ShotAmmoTake
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1039676465061025225, guid: df24b8b1f9cfa9e46be81dd8db0da93c, type: 3}
       propertyPath: recIn
